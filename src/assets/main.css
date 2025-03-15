@@ -5,3 +5,32 @@ body {
 h1, h2 {
   font-family: 'Merriweather', serif;
 }
+
+:root {
+  /* Greens */
+  --green-light: #c9d2c5;
+  --green-medium-light: #85a98d;
+  --green-medium: #51796f;
+  --green-dark: #364f52;
+  --green-darker: #2f3d46;
+
+  /* Purples */
+  --purple-darkest: #241942;
+  --purple-dark: #5f558d;
+  --purple-medium: #9f86c0;
+  --purple-light: #be95c5;
+  --purple-lightest: #dfb1cb;
+
+  /* Bookshelf & Book Colors */
+  --bookshelf-dark-purple: #5f0f40;
+  --bookshelf-wine-red: #99041e;
+  --bookshelf-bright-orange: #fa8d26;
+  --bookshelf-dark-orange: #e26516;
+  --bookshelf-dark-teal: #0e4d5c;
+}
+
+/* Example usage: */
+body {
+  background-color: var(--green-light);
+  color: var(--purple-darkest);
+}
