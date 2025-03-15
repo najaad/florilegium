@@ -1,7 +1,7 @@
 <template>
   <div class="coming-soon">
     <h1>💖 Coming Soon! 💖</h1>
-    <p> 💖 Exciting features are on the way Shannon 💖 </p>
+    <p> 💖 Exciting features are on the way Shannon 💖 THIS IS THE BOOK SHELFFFFFF </p>
   </div>
 </template>
 
