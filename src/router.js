@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "./views/Home.vue";
-import Bookshelf from "./views/Bookshelf.vue";
-import Progress from "./views/Progress.vue";
+import Home from "./views/HomeView.vue";
+import Bookshelf from "./views/BookshelfView.vue";
+import Progress from "./views/ProgressView.vue";
 import AtoZ from "./views/AtoZ.vue";
 
 const routes = [
