@@ -1,7 +1,7 @@
 <template>
   <div class="coming-soon">
-    <h1>💖 Coming Soon! 💖</h1>
-    <p> 💖 Exciting features are on the way Shannon 💖 </p>
+    <h1>💖 Coming Soon!  A to Z Challenge 💖</h1>
+    <p> 💖 Exciting features are on the way Shannon, this is for the A to Z reading challenge 💖 </p>
   </div>
 </template>
 
