@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <Navigation />
+    <SidebarNavigation />
     <router-view />
   </div>
 </template>
 
 <script>
-import Navigation from "./components/Navigation.vue";
+import SidebarNavigation from "./components/SidebarNavigation.vue";
 
 export default {
-  components: { Navigation },
+  components: { SidebarNavigation },
 };
 </script>
 
