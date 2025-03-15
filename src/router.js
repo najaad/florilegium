@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "./views/HomeView.vue";
-import Bookshelf from "./views/BookshelfView.vue";
-import Progress from "./views/ProgressView.vue";
-import AtoZ from "./views/AtoZView.vue";
+import HomeView from "./views/HomeView.vue";
+import BookshelfView from "./views/BookshelfView.vue";
+import ProgressView from "./views/ProgressView.vue";
+import AtoZView from "./views/AtoZView.vue";
 
 const routes = [
   { path: "/", component: HomeView },
