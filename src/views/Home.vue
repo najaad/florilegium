@@ -1,19 +1,15 @@
- <template>
-  <div class="hello">
-    <h1>Hello Shannon!</h1>
+<template>
+  <div class="home-container">
+    <h1>hiiii Shannon! 💌 </h1>
+    <p>📖 Site coming soon... goodreads isn't ready bitch</p>
   </div>
 </template>
 
-<script>
-export default {
-  name: "Home"
-};
-</script>
-
-<style>
-.hello {
-  font-family: 'Inter', sans-serif;
+<style scoped>
+.home-container {
   text-align: center;
-  margin-top: 20vh;
+  margin-left: 260px; /* Push content right so it doesn’t overlap sidebar */
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
 }
 </style>
