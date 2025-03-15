@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "Navigation"
+  name: "SidebarNavigation"
 };
 </script>
 
@@ -39,7 +39,7 @@ export default {
   flex-direction: column;
 }
 
-nav ul {
+nav ul { 
   list-style: none;
   padding: 0;
 }
