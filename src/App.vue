@@ -1,19 +1,28 @@
 <template>
-  <div class="hello">
-    <h1>Hello Shannon!</h1>
+  <div id="app">
+    <Navigation />
+    <router-view />
   </div>
 </template>
 
 <script>
+import Navigation from "./components/Navigation.vue";
+
 export default {
-  name: "App"
+  components: { Navigation },
 };
 </script>
 
 <style>
-.hello {
+body {
   font-family: 'Inter', sans-serif;
+  background-color: var(--green-light);
+  color: var(--purple-darkest);
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
   text-align: center;
-  margin-top: 20vh;
 }
 </style>
