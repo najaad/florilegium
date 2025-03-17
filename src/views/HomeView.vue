@@ -21,11 +21,5 @@
   }
 }
 
-@media (max-width: 760px) {
-  body {
-    background-color: red !important;
-  }
-}
-
 </style>
 
