@@ -20,5 +20,12 @@
     padding: 10px; /* Reduce padding */
   }
 }
+
+@media (max-width: 760px) {
+  body {
+    background-color: red !important;
+  }
+}
+
 </style>
 
