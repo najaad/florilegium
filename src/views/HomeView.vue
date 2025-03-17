@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 .home-container {
   text-align: center;
   margin-left: 260px; /* Default for desktop */
