@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   title: "Florilegium",
   description: "Shannon's personal book tracking app",
   icons: {
-    icon: '/star.jpg',
-    shortcut: '/star.jpg',
-    apple: '/star.jpg',
+    icon: '/star.png',
+    shortcut: '/star.png',
+    apple: '/star.png',
   },
   openGraph: {
     title: "Florilegium - Book Tracker",
