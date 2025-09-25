@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* Custom Florilegium Theme - Based on Vue version */
+:root {
+  /* Florilegium Theme Colors - From Vue version */
+  --florilegium-primary: #51796f; /* green-medium */
+  --florilegium-primary-content: #ffffff;
+  --florilegium-secondary: #9f86c0; /* purple-medium */
+  --florilegium-secondary-content: #ffffff;
+  --florilegium-accent: #be95c5; /* purple-light */
+  --florilegium-accent-content: #241942; /* purple-darkest */
+  --florilegium-neutral: #85a98d; /* green-medium-light */
+  --florilegium-neutral-content: #241942; /* purple-darkest */
+  --florilegium-base-100: #c9d2c5; /* green-light */
+  --florilegium-base-200: #85a98d; /* green-medium-light */
+  --florilegium-base-300: #51796f; /* green-medium */
+  --florilegium-base-content: #241942; /* purple-darkest */
+  --florilegium-info: #0e4d5c; /* bookshelf-dark-teal */
+  --florilegium-success: #51796f; /* green-medium */
+  --florilegium-warning: #fa8d26; /* bookshelf-bright-orange */
+  --florilegium-error: #99041e; /* bookshelf-wine-red */
+}
+
+/* Apply Florilegium theme */
+[data-theme="valentine"] {
+  --p: var(--florilegium-primary);
+  --pc: var(--florilegium-primary-content);
+  --s: var(--florilegium-secondary);
+  --sc: var(--florilegium-secondary-content);
+  --a: var(--florilegium-accent);
+  --ac: var(--florilegium-accent-content);
+  --n: var(--florilegium-neutral);
+  --nc: var(--florilegium-neutral-content);
+  --b1: var(--florilegium-base-100);
+  --b2: var(--florilegium-base-200);
+  --b3: var(--florilegium-base-300);
+  --bc: var(--florilegium-base-content);
+  --in: var(--florilegium-info);
+  --su: var(--florilegium-success);
+  --wa: var(--florilegium-warning);
+  --er: var(--florilegium-error);
+}
+
+/* Custom Florilegium styles */
+[data-theme="valentine"] body {
+  background-color: var(--florilegium-base-100);
+  color: var(--florilegium-base-content);
+}
+
+[data-theme="valentine"] .bg-primary {
+  background-color: var(--florilegium-primary) !important;
+}
+
+[data-theme="valentine"] .text-primary-content {
+  color: var(--florilegium-primary-content) !important;
+}
+
+[data-theme="valentine"] .bg-secondary {
+  background-color: var(--florilegium-secondary) !important;
+}
+
+[data-theme="valentine"] .text-secondary-content {
+  color: var(--florilegium-secondary-content) !important;
+}
+
+[data-theme="valentine"] .bg-accent {
+  background-color: var(--florilegium-accent) !important;
+}
+
+[data-theme="valentine"] .text-accent-content {
+  color: var(--florilegium-accent-content) !important;
+}
+
+[data-theme="valentine"] .bg-base-100 {
+  background-color: var(--florilegium-base-100) !important;
+}
+
+[data-theme="valentine"] .bg-base-200 {
+  background-color: var(--florilegium-base-200) !important;
+}
+
+[data-theme="valentine"] .bg-base-300 {
+  background-color: var(--florilegium-base-300) !important;
+}
