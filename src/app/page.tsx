@@ -1032,7 +1032,7 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
             </div>
           </div>
         ) : (
-          <div className="flex-1 text-sm md:text-base text-base-content/60">
+          <div className="flex-1 text-sm md:text-base text-base-content/60 font-bold">
             {tbrList.length === 0 ? 'No books in TBR list' : 'Click to pick a random book from your TBR list'}
           </div>
         )}
