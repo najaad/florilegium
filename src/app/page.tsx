@@ -56,8 +56,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-base-100">
-      {/* Header */}
-      <div className="navbar bg-primary text-primary-content shadow-lg">
+      {/* Fixed Header */}
+      <div className="navbar bg-primary text-primary-content shadow-lg fixed top-0 left-0 right-0 z-50">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl text-primary-content">💕 Hi Shannon!</a>
         </div>
@@ -72,11 +72,11 @@ export default function Home() {
       </div>
 
       {/* Welcome Section */}
-      <div className="hero bg-base-200 py-12">
+      <div className="hero bg-base-200 py-12 pt-24">
         <div className="hero-content text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-8xl font-bold mb-4">Reading Tracker</h1>
-            <p className="py-6 text-3xl mb-8">Welcome to your personal reading dashboard. Track your books, celebrate your progress, and discover your reading patterns.</p>
+            <h1 className="text-6xl font-bold mb-4">Reading Tracker</h1>
+            <p className="py-6 text-2xl mb-8">Welcome to your personal reading dashboard. Track your books, celebrate your progress, and discover your reading patterns.</p>
             
                     {/* Scrolling Currently Reading Banner */}
                     {data?.currentlyReading && data.currentlyReading.length > 0 && (
