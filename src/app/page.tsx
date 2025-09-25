@@ -39,6 +39,14 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('top');
 
+  const scrollToSection = (sectionId: string) => {
+    setActiveSection(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   useEffect(() => {
     // Fetch from our mock API endpoint
     fetch('/api/overview')
@@ -59,81 +67,66 @@ export default function Home() {
     <main className="min-h-screen bg-base-100">
       {/* Fixed Header */}
       <div className="bg-primary text-primary-content shadow-lg fixed top-0 left-0 right-0 z-50">
-        {/* Top Row - Greeting and Avatar */}
-        <div className="navbar">
-          <div className="flex-1">
-            <a className="btn btn-ghost text-xl text-primary-content">💕 Hi Shannon!</a>
-          </div>
-          <div className="flex-none gap-2">
-            <div className="dropdown dropdown-end">
-              <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full bg-primary-content text-primary">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         {/* Navigation Buttons */}
-        <div className="px-4 pb-3">
+        <div className="px-4 py-3">
           <div className="flex flex-col md:flex-row gap-2 md:gap-3 items-center justify-center">
             {/* Mobile: 2 rows of 3, Desktop: 1 row of 6 */}
             <div className="flex flex-col md:flex-row gap-2 md:gap-3">
               {/* First Row (Mobile) / First 3 (Desktop) */}
               <div className="flex gap-2 md:gap-3">
-                <button 
-                  onClick={() => setActiveSection('top')}
-                  className={`
-                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
-                    ${activeSection === 'top' 
-                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
-                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
-                    }
-                    focus:outline-none focus:ring-2 focus:ring-primary/20
-                  `}
-                >
-                  <span className="relative z-10">Top</span>
-                  {activeSection === 'top' && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
-                  )}
-                </button>
-                <button 
-                  onClick={() => setActiveSection('stats')}
-                  className={`
-                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
-                    ${activeSection === 'stats' 
-                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
-                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
-                    }
-                    focus:outline-none focus:ring-2 focus:ring-primary/20
-                  `}
-                >
-                  <span className="relative z-10">Stats</span>
-                  {activeSection === 'stats' && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
-                  )}
-                </button>
-                <button 
-                  onClick={() => setActiveSection('goals')}
-                  className={`
-                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
-                    ${activeSection === 'goals' 
-                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
-                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
-                    }
-                    focus:outline-none focus:ring-2 focus:ring-primary/20
-                  `}
-                >
-                  <span className="relative z-10">Goals</span>
-                  {activeSection === 'goals' && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
-                  )}
-                </button>
+                      <button 
+                        onClick={() => scrollToSection('top')}
+                        className={`
+                          relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
+                          ${activeSection === 'top' 
+                            ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                            : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                          }
+                          focus:outline-none focus:ring-2 focus:ring-primary/20
+                        `}
+                      >
+                        <span className="relative z-10">Top</span>
+                        {activeSection === 'top' && (
+                          <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+                        )}
+                      </button>
+                      <button 
+                        onClick={() => scrollToSection('stats')}
+                        className={`
+                          relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
+                          ${activeSection === 'stats' 
+                            ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                            : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                          }
+                          focus:outline-none focus:ring-2 focus:ring-primary/20
+                        `}
+                      >
+                        <span className="relative z-10">Stats</span>
+                        {activeSection === 'stats' && (
+                          <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+                        )}
+                      </button>
+                      <button 
+                        onClick={() => scrollToSection('goals')}
+                        className={`
+                          relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
+                          ${activeSection === 'goals' 
+                            ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                            : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                          }
+                          focus:outline-none focus:ring-2 focus:ring-primary/20
+                        `}
+                      >
+                        <span className="relative z-10">Goals</span>
+                        {activeSection === 'goals' && (
+                          <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+                        )}
+                      </button>
               </div>
               {/* Second Row (Mobile) / Last 3 (Desktop) */}
               <div className="flex gap-2 md:gap-3">
                 <button 
-                  onClick={() => setActiveSection('genres')}
+                  onClick={() => scrollToSection('genres')}
                   className={`
                     relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
                     ${activeSection === 'genres' 
@@ -149,7 +142,7 @@ export default function Home() {
                   )}
                 </button>
                 <button 
-                  onClick={() => setActiveSection('authors')}
+                  onClick={() => scrollToSection('authors')}
                   className={`
                     relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
                     ${activeSection === 'authors' 
@@ -165,7 +158,7 @@ export default function Home() {
                   )}
                 </button>
                 <button 
-                  onClick={() => setActiveSection('predictions')}
+                  onClick={() => scrollToSection('predictions')}
                   className={`
                     relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
                     ${activeSection === 'predictions' 
@@ -175,7 +168,7 @@ export default function Home() {
                     focus:outline-none focus:ring-2 focus:ring-primary/20
                   `}
                 >
-                  <span className="relative z-10">Predictions</span>
+                  <span className="relative z-10">Pacing</span>
                   {activeSection === 'predictions' && (
                     <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
                   )}
@@ -187,11 +180,11 @@ export default function Home() {
       </div>
 
       {/* Welcome Section */}
-      <div className="hero bg-base-200 py-10 pt-24">
+      <div id="top" className="hero bg-base-200 py-10 pt-20">
         <div className="hero-content text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-6xl font-bold mb-4">Reading Tracker</h1>
-            <p className="py-1 text-xl mb-8">Welcome to your personal reading dashboard. Track your books, celebrate your progress, and discover your reading patterns.</p>
+            <h1 className="text-4xl font-bold mb-4">Reading Tracker</h1>
+            <p className="py-1 text-xl mb-8">Hi Shannon! 💕</p>
             
                     {/* Scrolling Currently Reading Banner */}
                     {data?.currentlyReading && data.currentlyReading.length > 0 && (
@@ -263,7 +256,7 @@ export default function Home() {
         {/* Charts Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {/* Reading Progress Chart */}
-                  <div className="bg-base-200 shadow-xl rounded-lg p-4 md:p-8">
+                  <div id="stats" className="bg-base-200 shadow-xl rounded-lg p-4 md:p-8">
                     <h2 className="text-2xl font-bold text-center mb-6">Books per Month</h2>
                     <div className="w-full h-64">
                       <ResponsiveContainer width="100%" height="100%">
@@ -365,8 +358,8 @@ export default function Home() {
         {/* Goals Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Books Goals Card */}
-          <div className="bg-base-200 shadow-xl rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-center mb-6">Books Goals</h2>
+          <div id="goals" className="bg-base-200 shadow-xl rounded-lg p-8">
+            <h2 className="text-2xl font-bold text-center mb-6">Book Goals</h2>
             <div className="space-y-6">
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">
@@ -411,7 +404,7 @@ export default function Home() {
 
           {/* Pages Goals Card */}
           <div className="bg-base-200 shadow-xl rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-center mb-6">Pages Goals</h2>
+            <h2 className="text-2xl font-bold text-center mb-6">Page Goals</h2>
             <div className="space-y-6">
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">
@@ -460,7 +453,7 @@ export default function Home() {
                   {/* Genres Row */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Top Genres */}
-                    <div className="bg-base-200 shadow-xl rounded-lg p-8">
+                    <div id="genres" className="bg-base-200 shadow-xl rounded-lg p-8">
                       <h2 className="text-2xl font-bold text-center mb-6">Top Genres</h2>
                       <div className="space-y-4">
                         {data?.topGenres.map((genre, index) => {
@@ -548,7 +541,7 @@ export default function Home() {
                   {/* Authors Row */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Top Authors */}
-                    <div className="bg-base-200 shadow-xl rounded-lg p-8">
+                    <div id="authors" className="bg-base-200 shadow-xl rounded-lg p-8">
                       <h2 className="text-2xl font-bold text-center mb-6">Top Authors</h2>
                       <div className="space-y-4">
                         {data?.topAuthors.map((author, index) => {
@@ -643,7 +636,7 @@ export default function Home() {
         {/* Interactive Tools Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Pacing Calculator */}
-          <div className="bg-base-200 shadow-xl rounded-lg p-8">
+          <div id="predictions" className="bg-base-200 shadow-xl rounded-lg p-8">
             <h2 className="text-2xl font-bold text-center mb-6">Pacing Calculator</h2>
             <PacingCalculator books={data?.currentlyReading || []} />
           </div>
