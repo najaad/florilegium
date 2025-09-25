@@ -81,8 +81,8 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Fetch from our mock API endpoint
-    fetch('/api/overview')
+    // Fetch from our Python function
+    fetch('/api/main')
       .then(r => r.json())
       .then(setData)
       .finally(() => setLoading(false));
