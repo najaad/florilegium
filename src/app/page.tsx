@@ -488,7 +488,7 @@ export default function Home() {
                             return (
                               <div key={genre.name} className="flex items-center justify-between p-3 bg-base-100 rounded-lg">
                                 <div className="flex items-center space-x-3">
-                                  <div className={`${colors[index % colors.length]} rounded-full w-10 h-10`}></div>
+                                  <div className={`w-6 h-6 ${colors[index % colors.length]} rounded-full`}></div>
                                   <div>
                                     <div className="text-lg font-semibold">{genre.name}</div>
                                     <div className="text-xs opacity-70"><span className="font-bold text-sm text-base-content">{genre.currentYear}</span> books this year & <span className="font-bold text-sm text-base-content">{genre.pastYears}</span> books in previous years</div>
