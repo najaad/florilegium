@@ -1019,13 +1019,13 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
         {selectedBook ? (
           <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
             {/* Book Info Box */}
-            <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 py-1 md:py-1.5 flex-1 md:flex-2 md:min-w-0 md:max-w-[60%] flex items-center">
+            <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 flex-1 md:flex-2 md:min-w-0 md:max-w-[60%] flex items-center min-h-[2.5rem] md:min-h-[3rem]">
               <div className={`text-base-content ${selectedBook.title.length > 30 ? 'text-xs md:text-sm' : 'text-sm md:text-base'}`}>
                 <span className="font-semibold">{selectedBook.title}</span> by <span className="font-medium">{selectedBook.author}</span>
               </div>
             </div>
             {/* Genre Badge */}
-            <div className="bg-primary text-primary-content border-2 border-base-300 rounded-md px-3 md:px-4 py-1 md:py-1.5 flex-shrink-0 md:flex-1 flex items-center justify-center">
+            <div className="bg-primary text-primary-content border-2 border-base-300 rounded-md px-3 md:px-4 flex-shrink-0 md:flex-1 flex items-center justify-center min-h-[2.5rem] md:min-h-[3rem]">
               <div className="text-sm md:text-base font-medium text-center">
                 {selectedBook.genre}
               </div>
