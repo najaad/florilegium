@@ -1017,7 +1017,7 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
 
         {/* Selected Book Display */}
         {selectedBook ? (
-          <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
+          <div className="flex-1 flex flex-row items-center gap-2 md:gap-3">
             {/* Book Info Box */}
             <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 flex-1 md:flex-2 md:min-w-0 md:max-w-[60%] flex items-center min-h-[2.5rem] md:min-h-[3rem]">
               <div className={`text-base-content ${selectedBook.title.length > 30 ? 'text-xs md:text-sm' : 'text-sm md:text-base'}`}>
