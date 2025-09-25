@@ -992,7 +992,7 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
           onClick={pickRandomBook}
           disabled={tbrList.length === 0}
           className={`
-            relative py-2 px-1 md:p-2 rounded-lg transition-all duration-200 transform flex-shrink-0
+            relative h-full md:p-2 rounded-lg transition-all duration-200 transform flex-shrink-0 flex items-center justify-center
             ${tbrList.length === 0 
               ? 'bg-gray-300 text-gray-500 cursor-not-allowed border-2 border-gray-400' 
               : 'bg-primary text-secondary-content hover:bg-secondary/80 hover:scale-105 active:scale-95 shadow-lg border-2 border-secondary/30 focus:border-secondary/50'
@@ -1020,7 +1020,7 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
           <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
             {/* Book Info Box */}
             <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 py-1 md:py-1.5 flex-1 md:flex-2 md:min-w-0 md:max-w-[60%]">
-              <div className="text-sm md:text-base text-base-content truncate">
+              <div className={`text-base-content ${selectedBook.title.length > 30 ? 'text-xs md:text-sm' : 'text-sm md:text-base'}`}>
                 <span className="font-semibold">{selectedBook.title}</span> by <span className="font-medium">{selectedBook.author}</span>
               </div>
             </div>
