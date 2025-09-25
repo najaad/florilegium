@@ -67,7 +67,7 @@ export default function Home() {
           <div className="bg-secondary text-secondary-content rounded-lg shadow-lg p-8 text-center">
             <div className="text-lg font-semibold mb-2">Pages Read</div>
             <div className="text-6xl font-bold mb-2">{data?.totals.pages?.toLocaleString() ?? 0}</div>
-            <div className="text-sm opacity-90">Total pages</div>
+            <div className="text-sm opacity-90">Total pages this year</div>
           </div>
 
           <div className="bg-accent text-accent-content rounded-lg shadow-lg p-8 text-center">
@@ -96,9 +96,72 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Reading Goals Card */}
+          {/* Reading Stats Card */}
           <div className="bg-base-200 shadow-xl rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-center mb-6">Reading Goals</h2>
+            <h2 className="text-2xl font-bold text-center mb-6">Reading Stats</h2>
+            
+            {/* Top Section - Daily/Weekly/Monthly */}
+            <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="bg-primary/10 rounded-xl p-4 text-center border border-primary/20">
+                <div className="text-3xl font-bold text-primary mb-1">15</div>
+                <div className="text-sm font-medium opacity-80">pages/day</div>
+              </div>
+              <div className="bg-secondary/10 rounded-xl p-4 text-center border border-secondary/20">
+                <div className="text-3xl font-bold text-secondary mb-1">105</div>
+                <div className="text-sm font-medium opacity-80">pages/week</div>
+              </div>
+              <div className="bg-accent/10 rounded-xl p-4 text-center border border-accent/20">
+                <div className="text-3xl font-bold text-accent mb-1">450</div>
+                <div className="text-sm font-medium opacity-80">pages/month</div>
+              </div>
+            </div>
+
+            {/* Bottom Section - Records */}
+            <div className="space-y-4">
+              <div className="bg-base-100 rounded-xl p-4 border border-base-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-sm opacity-70 mb-1">Average Book Length</div>
+                    <div className="text-xl font-bold text-primary">320 pages</div>
+                  </div>
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <div className="w-6 h-6 bg-primary rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-base-100 rounded-xl p-4 border border-base-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-sm opacity-70 mb-1">Fastest Read</div>
+                    <div className="text-xl font-bold text-secondary">180 pages in 3 days</div>
+                  </div>
+                  <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+                    <div className="w-6 h-6 bg-secondary rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-base-100 rounded-xl p-4 border border-base-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-sm opacity-70 mb-1">Longest Book</div>
+                    <div className="text-xl font-bold text-accent">650 pages</div>
+                  </div>
+                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                    <div className="w-6 h-6 bg-accent rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Goals Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Books Goals Card */}
+          <div className="bg-base-200 shadow-xl rounded-lg p-8">
+            <h2 className="text-2xl font-bold text-center mb-6">Books Goals</h2>
             <div className="space-y-6">
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">12/24</div>
@@ -112,11 +175,40 @@ export default function Home() {
                 <div className="text-sm opacity-70 mt-2">50% complete</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">3/4</div>
+                <div className="text-4xl font-bold mb-2">2/4</div>
                 <div className="text-lg font-semibold mb-2">Monthly Goal</div>
                 <div className="relative w-full bg-base-100 rounded-full h-6 overflow-hidden">
                   <div
                     className="h-full bg-primary rounded-full transition-all duration-500 ease-out"
+                    style={{ width: '50%' }}
+                  ></div>
+                </div>
+                <div className="text-sm opacity-70 mt-2">50% complete</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Pages Goals Card */}
+          <div className="bg-base-200 shadow-xl rounded-lg p-8">
+            <h2 className="text-2xl font-bold text-center mb-6">Pages Goals</h2>
+            <div className="space-y-6">
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-2">1,000/2,000</div>
+                <div className="text-lg font-semibold mb-2">Annual Goal</div>
+                <div className="relative w-full bg-base-100 rounded-full h-6 overflow-hidden">
+                  <div
+                    className="h-full bg-secondary rounded-full transition-all duration-500 ease-out"
+                    style={{ width: '50%' }}
+                  ></div>
+                </div>
+                <div className="text-sm opacity-70 mt-2">50% complete</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-2">150/200</div>
+                <div className="text-lg font-semibold mb-2">Monthly Goal</div>
+                <div className="relative w-full bg-base-100 rounded-full h-6 overflow-hidden">
+                  <div
+                    className="h-full bg-secondary rounded-full transition-all duration-500 ease-out"
                     style={{ width: '75%' }}
                   ></div>
                 </div>
