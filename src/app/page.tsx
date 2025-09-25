@@ -137,9 +137,9 @@ export default function Home() {
                     <h2 className="text-2xl font-bold text-center mb-6">Books per Month</h2>
                     <div className="w-full h-64">
                       <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={data?.byMonth || []} margin={{ left: 10, right: 10, top: 5, bottom: 5 }}>
+                        <BarChart data={data?.byMonth || []} margin={{ left: 5, right: 5, top: 5, bottom: 5 }}>
                           <XAxis dataKey="month" fontSize={12} />
-                          <YAxis allowDecimals={false} fontSize={12} />
+                          <YAxis allowDecimals={false} fontSize={12} width={30} />
                           <Tooltip />
                           <Bar dataKey="count" fill="#51796f" radius={[4, 4, 0, 0]} />
                         </BarChart>
@@ -461,11 +461,11 @@ function PacingCalculator({ books }: { books: { title: string; author: string; p
   return (
     <div className="space-y-6">
       {/* Book Selector */}
-      <div className="bg-base-100 rounded-xl p-6 border border-base-300 shadow-sm">
+      <div className="bg-base-100 rounded-xl p-4 md:p-6 border border-base-300 shadow-sm">
         <label className="block text-lg font-semibold text-base-content mb-4">Choose Your Book</label>
         <div className="relative">
           <select 
-            className="select select-bordered w-full bg-base-100 text-base-content appearance-none cursor-pointer hover:bg-base-200 transition-colors duration-200 focus:ring-2 focus:ring-primary/20 focus:border-primary"
+            className="w-full px-4 py-3 bg-white border-2 border-base-300 rounded-lg text-base-content hover:border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 appearance-none cursor-pointer text-sm md:text-base"
             value={selectedBook}
             onChange={(e) => {
               setSelectedBook(e.target.value);
