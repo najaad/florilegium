@@ -15,6 +15,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Florilegium",
   description: "Shannon's personal book tracking app",
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/apple-icon.png',
+  },
+  openGraph: {
+    title: "Florilegium - Book Tracker",
+    description: "Shannon's personal book tracking app",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
