@@ -9,6 +9,8 @@ def handler(request):
     Currently uses mock data - replace with real CSV processing as needed.
     """
     
+    print("Python function called!")  # Debug log
+    
     # TODO: Replace this with your actual CSV processing
     # Example: df = pd.read_csv('your-books-data.csv')
     

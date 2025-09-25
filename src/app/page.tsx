@@ -84,7 +84,13 @@ export default function Home() {
     // Fetch from our Python function
     fetch('/api/main')
       .then(r => r.json())
-      .then(setData)
+      .then(data => {
+        console.log('Received data:', data);
+        setData(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      })
       .finally(() => setLoading(false));
   }, []);
 
