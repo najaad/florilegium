@@ -235,7 +235,7 @@ export default function Home() {
             
                     {/* Scrolling Currently Reading Banner */}
                     {data?.currentlyReading && data.currentlyReading.length > 0 && (
-                      <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 md:p-4 overflow-hidden">
+                      <div className="bg-primary/10 border border-primary/20 rounded-lg p-2 md:p-3 overflow-hidden">
                         <div className="flex flex-col md:flex-row items-center justify-center">
                           <div className="text-sm md:text-lg font-semibold text-primary mb-2 md:mb-0 md:mr-4">
                             You are currently reading {data.currentlyReading.length} book{data.currentlyReading.length !== 1 ? 's' : ''}:
@@ -1017,16 +1017,16 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
 
         {/* Selected Book Display */}
         {selectedBook ? (
-          <div className="flex-1 flex items-center gap-2 md:gap-3">
+          <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
             {/* Book Info Box */}
-            <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 py-1 md:py-1.5 flex-2 min-w-0 max-w-[60%]">
+            <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 py-1 md:py-1.5 flex-1 md:flex-2 md:min-w-0 md:max-w-[60%]">
               <div className="text-sm md:text-base text-base-content truncate">
                 <span className="font-semibold">{selectedBook.title}</span> by <span className="font-medium">{selectedBook.author}</span>
               </div>
             </div>
             {/* Genre Badge */}
-            <div className="bg-primary text-primary-content border-2 border-base-300 rounded-md px-3 md:px-4 py-1 md:py-1.5 flex-1">
-              <div className="text-sm md:text-base font-medium">
+            <div className="bg-primary text-primary-content border-2 border-base-300 rounded-md px-3 md:px-4 py-1 md:py-1.5 flex-shrink-0 md:flex-1">
+              <div className="text-sm md:text-base font-medium text-center">
                 {selectedBook.genre}
               </div>
             </div>
