@@ -29,7 +29,8 @@ type Overview = {
   lastYearTotals: { books: number; pages: number };
   currentYearStart: string;
   longestBooksByGenre: { genre: string; title: string; author: string; pages: number }[];
-  consistentAuthors: { name: string; currentYear: number; lastYear: number; totalBooks: number }[];
+  consistentGenres: { name: string; currentYear: number; pastYears: number; totalBooks: number }[];
+  consistentAuthors: { name: string; currentYear: number; pastYears: number; totalBooks: number }[];
   longestBooksByAuthor: { author: string; title: string; pages: number }[];
 };
 
@@ -104,6 +105,17 @@ export default function Home() {
                         </div>
                       </div>
                     )}
+                    
+                    {/* Placeholder Box */}
+                    <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-3 md:p-4 mt-4">
+                      <div className="flex items-center justify-center h-full">
+                        <div className="text-center">
+                          <div className="text-sm md:text-4xl font-semibold text-secondary mb-2">
+                            Coming Soon - TBR Randomizer
+                          </div>
+                        </div>
+                      </div>
+                    </div>
           </div>
         </div>
       </div>
