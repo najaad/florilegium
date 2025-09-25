@@ -325,63 +325,89 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Reading Insights */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Top Genres */}
-          <div className="bg-base-200 shadow-xl rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-center mb-6">Top Genres</h2>
-            <div className="space-y-4">
-              {data?.topGenres.map((genre, index) => {
-                const colors = ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-neutral'];
-                const totalBooks = data.totals.books;
-                const percentage = totalBooks ? Math.round((genre.count / totalBooks) * 100) : 0;
-                return (
-                  <div key={genre.name} className="flex items-center justify-between p-4 bg-base-100 rounded-lg">
-                    <div className="flex items-center space-x-4">
-                      <div className={`w-6 h-6 ${colors[index % colors.length]} rounded-full`}></div>
-                      <span className="text-lg font-semibold">{genre.name}</span>
+                {/* Reading Insights */}
+                <div className="space-y-6">
+                  {/* Genres Row */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* Top Genres */}
+                    <div className="bg-base-200 shadow-xl rounded-lg p-8">
+                      <h2 className="text-2xl font-bold text-center mb-6">Top Genres</h2>
+                      <div className="space-y-4">
+                        {data?.topGenres.map((genre, index) => {
+                          const colors = ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-base-content'];
+                          const totalBooks = data.totals.books;
+                          const percentage = totalBooks ? Math.round((genre.count / totalBooks) * 100) : 0;
+                          return (
+                            <div key={genre.name} className="flex items-center justify-between p-4 bg-base-100 rounded-lg">
+                              <div className="flex items-center space-x-4">
+                                <div className={`w-6 h-6 ${colors[index % colors.length]} rounded-full`}></div>
+                                <span className="text-lg font-semibold">{genre.name}</span>
+                              </div>
+                              <div className="text-right">
+                                <div className="text-2xl font-bold">{genre.count}</div>
+                                <div className="text-sm opacity-70">{percentage}%</div>
+                              </div>
+                            </div>
+                          );
+                        }) || (
+                          <div className="text-center text-gray-500 p-4">No genre data available</div>
+                        )}
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold">{genre.count}</div>
-                      <div className="text-sm opacity-70">{percentage}%</div>
-                    </div>
-                  </div>
-                );
-              }) || (
-                <div className="text-center text-gray-500 p-4">No genre data available</div>
-              )}
-            </div>
-          </div>
 
-          {/* Top Authors */}
-          <div className="bg-base-200 shadow-xl rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-center mb-6">Top Authors</h2>
-            <div className="space-y-4">
-              {data?.topAuthors.map((author, index) => {
-                const colors = ['bg-primary text-primary-content', 'bg-secondary text-secondary-content', 'bg-accent text-accent-content', 'bg-neutral text-neutral-content'];
-                const totalBooks = data.totals.books;
-                const percentage = totalBooks ? Math.round((author.count / totalBooks) * 100) : 0;
-                const initials = author.name.split(' ').map(n => n[0]).join('').toUpperCase();
-                return (
-                  <div key={author.name} className="flex items-center space-x-4 p-4 bg-base-100 rounded-lg">
-                    <div className={`${colors[index % colors.length]} rounded-full w-12 h-12 flex items-center justify-center`}>
-                      <span className="text-sm font-bold">{initials}</span>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-lg font-semibold">{author.name}</div>
-                      <div className="text-sm opacity-70">{author.count} book{author.count !== 1 ? 's' : ''} read</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold">{percentage}%</div>
+                    {/* Genre Placeholder */}
+                    <div className="bg-base-200 shadow-xl rounded-lg p-8">
+                      <h2 className="text-2xl font-bold text-center mb-6">Coming Soon</h2>
+                      <div className="text-center py-12">
+                        <div className="text-6xl mb-4">📊</div>
+                        <p className="text-lg opacity-70">Your next genre insight will go here!</p>
+                        <p className="text-sm opacity-50 mt-2">Perfect spot for more genre analytics</p>
+                      </div>
                     </div>
                   </div>
-                );
-              }) || (
-                <div className="text-center text-gray-500 p-4">No author data available</div>
-              )}
-            </div>
-          </div>
-        </div>
+
+                  {/* Authors Row */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* Top Authors */}
+                    <div className="bg-base-200 shadow-xl rounded-lg p-8">
+                      <h2 className="text-2xl font-bold text-center mb-6">Top Authors</h2>
+                      <div className="space-y-4">
+                        {data?.topAuthors.map((author, index) => {
+                          const colors = ['bg-primary text-primary-content', 'bg-secondary text-secondary-content', 'bg-accent text-accent-content', 'bg-base-content text-base-100'];
+                          const totalBooks = data.totals.books;
+                          const percentage = totalBooks ? Math.round((author.count / totalBooks) * 100) : 0;
+                          const initials = author.name.split(' ').map(n => n[0]).join('').toUpperCase();
+                          return (
+                            <div key={author.name} className="flex items-center space-x-4 p-4 bg-base-100 rounded-lg">
+                              <div className={`${colors[index % colors.length]} rounded-full w-12 h-12 flex items-center justify-center`}>
+                                <span className="text-sm font-bold">{initials}</span>
+                              </div>
+                              <div className="flex-1">
+                                <div className="text-lg font-semibold">{author.name}</div>
+                                <div className="text-sm opacity-70">{author.count} book{author.count !== 1 ? 's' : ''} read</div>
+                              </div>
+                              <div className="text-right">
+                                <div className="text-2xl font-bold">{percentage}%</div>
+                              </div>
+                            </div>
+                          );
+                        }) || (
+                          <div className="text-center text-gray-500 p-4">No author data available</div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Author Placeholder */}
+                    <div className="bg-base-200 shadow-xl rounded-lg p-8">
+                      <h2 className="text-2xl font-bold text-center mb-6">Coming Soon</h2>
+                      <div className="text-center py-12">
+                        <div className="text-6xl mb-4">👤</div>
+                        <p className="text-lg opacity-70">Your next author insight will go here!</p>
+                        <p className="text-sm opacity-50 mt-2">Perfect spot for more author analytics</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
         {/* Interactive Tools Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

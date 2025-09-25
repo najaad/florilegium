@@ -35,6 +35,8 @@
   --b2: var(--florilegium-base-200);
   --b3: var(--florilegium-base-300);
   --bc: var(--florilegium-base-content);
+  --bc1: var(--florilegium-base-content); /* dark purple background */
+  --bc1c: var(--florilegium-base-100);    /* light green text */
   --in: var(--florilegium-info);
   --su: var(--florilegium-success);
   --wa: var(--florilegium-warning);
@@ -81,6 +83,14 @@
 
 [data-theme="valentine"] .bg-base-300 {
   background-color: var(--florilegium-base-300) !important;
+}
+
+[data-theme="valentine"] .bg-base-content {
+  background-color: var(--bc1) !important;
+}
+
+[data-theme="valentine"] .text-base-100 {
+  color: var(--bc1c) !important;
 }
 
 /* Scrolling animation for currently reading banner */
