@@ -110,11 +110,27 @@ export async function GET() {
       { name: 'Jane Austen', currentYear: 2, pastYears: 2, totalBooks: 4 }
     ],
     
-    longestBooksByAuthor: [
-      { author: 'Brandon Sanderson', title: 'The Way of Kings', pages: 1007 },
-      { author: 'Agatha Christie', title: 'The Murder of Roger Ackroyd', pages: 320 },
-      { author: 'Jane Austen', title: 'Pride and Prejudice', pages: 432 }
-    ]
+            longestBooksByAuthor: [
+              { author: 'Brandon Sanderson', title: 'The Way of Kings', pages: 1007 },
+              { author: 'Agatha Christie', title: 'The Murder of Roger Ackroyd', pages: 320 },
+              { author: 'Jane Austen', title: 'Pride and Prejudice', pages: 432 }
+            ],
+            
+            // TBR (To Be Read) list for randomizer
+            tbrList: [
+              { title: 'The Midnight Library', author: 'Matt Haig', genre: 'Fiction' },
+              { title: 'Circe', author: 'Madeline Miller', genre: 'Fantasy' },
+              { title: 'The Seven Husbands of Evelyn Hugo', author: 'Taylor Jenkins Reid', genre: 'Historical Fiction' },
+              { title: 'Project Hail Mary', author: 'Andy Weir', genre: 'Sci-Fi' },
+              { title: 'The Way of Kings', author: 'Brandon Sanderson', genre: 'Fantasy' },
+              { title: 'Dune', author: 'Frank Herbert', genre: 'Sci-Fi' },
+              { title: 'The Silent Patient', author: 'Alex Michaelides', genre: 'Thriller' },
+              { title: 'Educated', author: 'Tara Westover', genre: 'Memoir' },
+              { title: 'The Book Thief', author: 'Markus Zusak', genre: 'Historical Fiction' },
+              { title: 'The Night Circus', author: 'Erin Morgenstern', genre: 'Fantasy' },
+              { title: 'Where the Crawdads Sing', author: 'Delia Owens', genre: 'Fiction' },
+              { title: 'The Alchemist', author: 'Paulo Coelho', genre: 'Fiction' }
+            ]
   };
 
   return NextResponse.json(mockData);

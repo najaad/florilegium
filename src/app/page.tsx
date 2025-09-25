@@ -32,6 +32,7 @@ type Overview = {
   consistentGenres: { name: string; currentYear: number; pastYears: number; totalBooks: number }[];
   consistentAuthors: { name: string; currentYear: number; pastYears: number; totalBooks: number }[];
   longestBooksByAuthor: { author: string; title: string; pages: number }[];
+  tbrList: { title: string; author: string; genre: string }[];
 };
 
 export default function Home() {
@@ -49,6 +50,33 @@ export default function Home() {
         top: elementPosition,
         behavior: 'smooth'
       });
+      
+      // Remove focus from any button to prevent stuck white border
+      setTimeout(() => {
+        if (document.activeElement && document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
+      }, 100);
+      
+      // Reset active section after scroll completes to let scroll detection take over
+      setTimeout(() => {
+        const handleScroll = () => {
+          const sections = ['top', 'stats', 'goals', 'genres', 'authors', 'predictions'];
+          const headerHeight = 80;
+          
+          for (let i = sections.length - 1; i >= 0; i--) {
+            const element = document.getElementById(sections[i]);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              if (rect.top <= headerHeight + 50) {
+                setActiveSection(sections[i]);
+                break;
+              }
+            }
+          }
+        };
+        handleScroll();
+      }, 1000); // Wait for smooth scroll to complete
     }
   };
 
@@ -58,6 +86,28 @@ export default function Home() {
       .then(r => r.json())
       .then(setData)
       .finally(() => setLoading(false));
+  }, []);
+
+  // Scroll-based navigation
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['top', 'stats', 'goals', 'genres', 'authors', 'predictions'];
+      const headerHeight = 80;
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i]);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= headerHeight + 50) { // 50px buffer
+            setActiveSection(sections[i]);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   if (loading) {
@@ -211,16 +261,8 @@ export default function Home() {
                       </div>
                     )}
                     
-                    {/* Placeholder Box */}
-                    <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-3 md:p-4 mt-4">
-                      <div className="flex items-center justify-center h-full">
-                        <div className="text-center">
-                          <div className="text-sm md:text-4xl font-semibold text-secondary mb-2">
-                            Coming Soon - TBR Randomizer
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    {/* TBR Randomizer */}
+                    <TBRRandomizer tbrList={data?.tbrList || []} />
           </div>
         </div>
       </div>
@@ -916,6 +958,84 @@ function AnnualReadingForecast({ data }: { data: Overview | null }) {
             (based on your {averageBookLength.toFixed(0)}-page avg book length)
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// TBR Randomizer Component
+function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; genre: string }[] }) {
+  const [selectedBook, setSelectedBook] = useState<{ title: string; author: string; genre: string } | null>(null);
+  const [isSpinning, setIsSpinning] = useState(false);
+
+  const pickRandomBook = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (tbrList.length === 0) return;
+    
+    // Remove focus to prevent stuck state
+    event.currentTarget.blur();
+    
+    setIsSpinning(true);
+    
+    // Add a small delay for the spinning effect
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * tbrList.length);
+      setSelectedBook(tbrList[randomIndex]);
+      setIsSpinning(false);
+    }, 500);
+  };
+
+  return (
+    <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-1 md:p-2 mt-4">
+      <div className="flex items-center gap-2 md:gap-3">
+        {/* Random Button - Icon Only */}
+        <button
+          onClick={pickRandomBook}
+          disabled={tbrList.length === 0}
+          className={`
+            relative p-1 md:p-2 rounded-lg transition-all duration-200 transform flex-shrink-0
+            ${tbrList.length === 0 
+              ? 'bg-gray-300 text-gray-500 cursor-not-allowed border-2 border-gray-400' 
+              : 'bg-primary text-secondary-content hover:bg-secondary/80 hover:scale-105 active:scale-95 shadow-lg border-2 border-secondary/30 focus:border-secondary/50'
+            }
+            focus:outline-none focus:ring-2 focus:ring-secondary/20
+          `}
+        >
+          <svg 
+            className={`w-4 h-4 md:w-5 md:h-5 ${isSpinning ? 'animate-spin' : ''}`} 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" 
+            />
+          </svg>
+        </button>
+
+        {/* Selected Book Display */}
+        {selectedBook ? (
+          <div className="flex-1 flex items-center gap-2 md:gap-3">
+            {/* Book Info Box */}
+            <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 py-1 md:py-1.5 flex-2 min-w-0 max-w-[60%]">
+              <div className="text-sm md:text-base text-base-content truncate">
+                <span className="font-semibold">{selectedBook.title}</span> by <span className="font-medium">{selectedBook.author}</span>
+              </div>
+            </div>
+            {/* Genre Badge */}
+            <div className="bg-primary text-primary-content border-2 border-base-300 rounded-md px-3 md:px-4 py-1 md:py-1.5 flex-1">
+              <div className="text-sm md:text-base font-medium">
+                {selectedBook.genre}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="flex-1 text-sm md:text-base text-base-content/60">
+            {tbrList.length === 0 ? 'No books in TBR list' : 'Click to pick a random book from your TBR list'}
+          </div>
+        )}
       </div>
     </div>
   );
