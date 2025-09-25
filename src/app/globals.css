@@ -93,6 +93,15 @@
   color: var(--bc1c) !important;
 }
 
+[data-theme="valentine"] .bg-info {
+  background-color: var(--florilegium-info) !important; /* #0e4d5c */
+}
+
+[data-theme="valentine"] .bg-error {
+  background-color: var(--florilegium-error) !important;
+}
+
+
 /* Scrolling animation for currently reading banner */
 @keyframes scroll {
   0% {

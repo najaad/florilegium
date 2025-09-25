@@ -71,19 +71,50 @@ export async function GET() {
       { name: 'Fantasy', count: 5 },
       { name: 'Mystery', count: 3 },
       { name: 'Romance', count: 2 },
-      { name: 'Sci-Fi', count: 2 }
+      { name: 'Sci-Fi', count: 2 },
+      { name: 'Thriller', count: 2 },
+      { name: 'Historical Fiction', count: 1 }
     ],
     
     topAuthors: [
       { name: 'Brandon Sanderson', count: 3 },
       { name: 'Agatha Christie', count: 2 },
       { name: 'Jane Austen', count: 2 },
-      { name: 'Isaac Asimov', count: 1 }
+      { name: 'Isaac Asimov', count: 1 },
+      { name: 'Neil Gaiman', count: 1 },
+      { name: 'Ursula K. Le Guin', count: 1 }
     ],
     
     // Annual Reading Forecast data (consistent with frequent reader)
     lastYearTotals: { books: 52, pages: 16640 },
-    currentYearStart: '2024-01-01'
+    currentYearStart: '2024-01-01',
+    
+    // Longest books by genre (top 3)
+    longestBooksByGenre: [
+      { genre: 'Fantasy', title: 'The Way of Kings', author: 'Brandon Sanderson', pages: 1007 },
+      { genre: 'Mystery', title: 'The Murder of Roger Ackroyd', author: 'Agatha Christie', pages: 320 },
+      { genre: 'Romance', title: 'Pride and Prejudice', author: 'Jane Austen', pages: 432 }
+    ],
+    
+    // Genre reading patterns
+    consistentGenres: [
+      { name: 'Fantasy', currentYear: 5, pastYears: 6, totalBooks: 11 },
+      { name: 'Mystery', currentYear: 3, pastYears: 4, totalBooks: 7 },
+      { name: 'Romance', currentYear: 2, pastYears: 3, totalBooks: 5 }
+    ],
+    
+    // Author reading patterns
+    consistentAuthors: [
+      { name: 'Brandon Sanderson', currentYear: 3, pastYears: 4, totalBooks: 7 },
+      { name: 'Agatha Christie', currentYear: 2, pastYears: 3, totalBooks: 5 },
+      { name: 'Jane Austen', currentYear: 2, pastYears: 2, totalBooks: 4 }
+    ],
+    
+    longestBooksByAuthor: [
+      { author: 'Brandon Sanderson', title: 'The Way of Kings', pages: 1007 },
+      { author: 'Agatha Christie', title: 'The Murder of Roger Ackroyd', pages: 320 },
+      { author: 'Jane Austen', title: 'Pride and Prejudice', pages: 432 }
+    ]
   };
 
   return NextResponse.json(mockData);

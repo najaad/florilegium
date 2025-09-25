@@ -28,6 +28,9 @@ type Overview = {
   topAuthors: { name: string; count: number }[];
   lastYearTotals: { books: number; pages: number };
   currentYearStart: string;
+  longestBooksByGenre: { genre: string; title: string; author: string; pages: number }[];
+  consistentAuthors: { name: string; currentYear: number; lastYear: number; totalBooks: number }[];
+  longestBooksByAuthor: { author: string; title: string; pages: number }[];
 };
 
 export default function Home() {
@@ -334,18 +337,18 @@ export default function Home() {
                       <h2 className="text-2xl font-bold text-center mb-6">Top Genres</h2>
                       <div className="space-y-4">
                         {data?.topGenres.map((genre, index) => {
-                          const colors = ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-base-content'];
+                          const colors = ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-base-content', 'bg-error', 'bg-info'];
                           const totalBooks = data.totals.books;
                           const percentage = totalBooks ? Math.round((genre.count / totalBooks) * 100) : 0;
                           return (
-                            <div key={genre.name} className="flex items-center justify-between p-4 bg-base-100 rounded-lg">
-                              <div className="flex items-center space-x-4">
-                                <div className={`w-6 h-6 ${colors[index % colors.length]} rounded-full`}></div>
-                                <span className="text-lg font-semibold">{genre.name}</span>
+                            <div key={genre.name} className="flex items-center space-x-4 p-4 bg-base-100 rounded-lg">
+                              <div className={`${colors[index]} rounded-full w-12 h-12`}></div>
+                              <div className="flex-1">
+                                <div className="text-lg font-semibold">{genre.name}</div>
+                                <div className="text-sm opacity-70">{genre.count} book{genre.count !== 1 ? 's' : ''} read</div>
                               </div>
                               <div className="text-right">
-                                <div className="text-2xl font-bold">{genre.count}</div>
-                                <div className="text-sm opacity-70">{percentage}%</div>
+                                <div className="text-2xl font-bold">{percentage}%</div>
                               </div>
                             </div>
                           );
@@ -355,13 +358,62 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Genre Placeholder */}
+                    {/* Genre Reading Patterns */}
                     <div className="bg-base-200 shadow-xl rounded-lg p-8">
-                      <h2 className="text-2xl font-bold text-center mb-6">Coming Soon</h2>
-                      <div className="text-center py-12">
-                        <div className="text-6xl mb-4">hiiiii</div>
-                        <p className="text-lg opacity-70">Next genre insight will go here!</p>
-                        <p className="text-sm opacity-50 mt-2">imagine more genre analytics</p>
+                      <h2 className="text-2xl font-bold text-center mb-6">Genre Reading Patterns</h2>
+                      
+                      {/* Consistent Genres Section */}
+                      <div className="mb-6">
+                        <h3 className="text-lg font-semibold mb-4 text-center">Consistent Genres</h3>
+                        <div className="space-y-3">
+                          {data?.consistentGenres.map((genre, index) => {
+                            const colors = ['bg-primary', 'bg-secondary', 'bg-accent'];
+                            return (
+                              <div key={genre.name} className="flex items-center justify-between p-3 bg-base-100 rounded-lg">
+                                <div className="flex items-center space-x-3">
+                                  <div className={`${colors[index % colors.length]} rounded-full w-10 h-10`}></div>
+                                  <div>
+                                    <div className="text-lg font-semibold">{genre.name}</div>
+                                    <div className="text-xs opacity-70"><span className="font-bold text-sm text-base-content">{genre.currentYear}</span> books this year & <span className="font-bold text-sm text-base-content">{genre.pastYears}</span> books in previous years</div>
+                                  </div>
+                                </div>
+                                <div className="text-right">
+                                  <div className="text-lg font-bold">{genre.totalBooks}</div>
+                                  <div className="text-xs opacity-70">total</div>
+                                </div>
+                              </div>
+                            );
+                          }) || (
+                            <div className="text-center text-gray-500 p-4">No consistent genre data available</div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Longest Books by Genre Section */}
+                      <div>
+                        <h3 className="text-lg font-semibold mb-4 text-center">Longest Books by Genre</h3>
+                        <div className="space-y-3">
+                          {data?.longestBooksByGenre.map((book, index) => {
+                            const colors = ['bg-primary', 'bg-secondary', 'bg-accent'];
+                            return (
+                              <div key={book.genre} className="flex items-center justify-between p-3 bg-base-100 rounded-lg">
+                                <div className="flex items-center space-x-3">
+                                  <div className={`w-6 h-6 ${colors[index % colors.length]} rounded-full`}></div>
+                                  <div>
+                                    <div className="text-lg font-semibold">{book.genre}</div>
+                                    <div className="text-xs opacity-70">{book.title}</div>
+                                  </div>
+                                </div>
+                                <div className="text-right">
+                                  <div className="text-lg font-bold">{book.pages}</div>
+                                  <div className="text-xs opacity-70">pages</div>
+                                </div>
+                              </div>
+                            );
+                          }) || (
+                            <div className="text-center text-gray-500 p-4">No genre book data available</div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -373,7 +425,7 @@ export default function Home() {
                       <h2 className="text-2xl font-bold text-center mb-6">Top Authors</h2>
                       <div className="space-y-4">
                         {data?.topAuthors.map((author, index) => {
-                          const colors = ['bg-primary text-primary-content', 'bg-secondary text-secondary-content', 'bg-accent text-accent-content', 'bg-base-content text-base-100'];
+                          const colors = ['bg-primary text-primary-content', 'bg-secondary text-secondary-content', 'bg-accent text-accent-content', 'bg-base-content text-base-100', 'bg-error text-base-100', 'bg-info text-base-100'];
                           const totalBooks = data.totals.books;
                           const percentage = totalBooks ? Math.round((author.count / totalBooks) * 100) : 0;
                           const initials = author.name.split(' ').map(n => n[0]).join('').toUpperCase();
@@ -397,13 +449,65 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Author Placeholder */}
+                    {/* Author Reading Patterns */}
                     <div className="bg-base-200 shadow-xl rounded-lg p-8">
-                      <h2 className="text-2xl font-bold text-center mb-6">Coming Soon</h2>
-                      <div className="text-center py-12">
-                        <div className="text-6xl mb-4">bloop</div>
-                        <p className="text-lg opacity-70">soon more author insight will go here!</p>
-                        <p className="text-sm opacity-50 mt-2">imagine more author analytics</p>
+                      <h2 className="text-2xl font-bold text-center mb-6">Author Reading Patterns</h2>
+                      
+                      {/* Consistent Authors Section */}
+                      <div className="mb-6">
+                        <h3 className="text-lg font-semibold mb-4 text-center">Consistent Authors</h3>
+                        <div className="space-y-3">
+                          {data?.consistentAuthors.map((author, index) => {
+                            const colors = ['bg-primary text-primary-content', 'bg-secondary text-secondary-content', 'bg-accent text-accent-content'];
+                            const initials = author.name.split(' ').map(n => n[0]).join('').toUpperCase();
+                            return (
+                              <div key={author.name} className="flex items-center justify-between p-3 bg-base-100 rounded-lg">
+                                <div className="flex items-center space-x-3">
+                                  <div className={`${colors[index % colors.length]} rounded-full w-10 h-10 flex items-center justify-center`}>
+                                    <span className="text-sm font-bold">{initials}</span>
+                                  </div>
+                                  <div>
+                                    <div className="text-lg font-semibold">{author.name}</div>
+                                    <div className="text-xs opacity-70"><span className="font-bold text-sm text-base-content">{author.currentYear}</span> books this year & <span className="font-bold text-sm text-base-content">{author.pastYears}</span> books in previous years</div>
+                                  </div>
+                                </div>
+                                <div className="text-right">
+                                  <div className="text-lg font-bold">{author.totalBooks}</div>
+                                  <div className="text-xs opacity-70">total</div>
+                                </div>
+                              </div>
+                            );
+                          }) || (
+                            <div className="text-center text-gray-500 p-4">No consistent author data available</div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Longest Books by Author Section */}
+                      <div>
+                        <h3 className="text-lg font-semibold mb-4 text-center">Longest Books by Author</h3>
+                        <div className="space-y-3">
+                          {data?.longestBooksByAuthor.map((book, index) => {
+                            const colors = ['bg-primary', 'bg-secondary', 'bg-accent'];
+                            return (
+                              <div key={book.author} className="flex items-center justify-between p-3 bg-base-100 rounded-lg">
+                                <div className="flex items-center space-x-3">
+                                  <div className={`w-6 h-6 ${colors[index % colors.length]} rounded-full`}></div>
+                                  <div>
+                                    <div className="text-lg font-semibold">{book.author}</div>
+                                    <div className="text-xs opacity-70">{book.title}</div>
+                                  </div>
+                                </div>
+                                <div className="text-right">
+                                  <div className="text-lg font-bold">{book.pages}</div>
+                                  <div className="text-xs opacity-70">pages</div>
+                                </div>
+                              </div>
+                            );
+                          }) || (
+                            <div className="text-center text-gray-500 p-4">No author book data available</div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -692,7 +796,7 @@ function AnnualReadingForecast({ data }: { data: Overview | null }) {
           <div className="text-sm font-semibold text-accent mb-2">Cross-Reference Check</div>
           <div className="text-xs opacity-70">
             Pages estimate converts to ~{estimatedBooksFromPages} books 
-            (based on your {averageBookLength.toFixed(0)}-page average)
+            (based on your {averageBookLength.toFixed(0)}-page average book length)
           </div>
         </div>
       </div>
