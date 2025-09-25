@@ -986,13 +986,13 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
 
   return (
     <div className="bg-secondary/10 border border-secondary/20 rounded-lg p-1 md:p-2 mt-4">
-      <div className="flex items-center gap-2 md:gap-3">
-        {/* Random Button - Icon Only */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 items-stretch">
+        {/* Random Button - Full Height on Mobile, 1/4 width on Desktop */}
         <button
           onClick={pickRandomBook}
           disabled={tbrList.length === 0}
           className={`
-            relative h-full md:p-2 rounded-lg transition-all duration-200 transform flex-shrink-0 flex items-center justify-center
+            relative p-2 md:p-2 rounded-lg transition-all duration-200 transform flex items-center justify-center
             ${tbrList.length === 0 
               ? 'bg-gray-300 text-gray-500 cursor-not-allowed border-2 border-gray-400' 
               : 'bg-primary text-secondary-content hover:bg-secondary/80 hover:scale-105 active:scale-95 shadow-lg border-2 border-secondary/30 focus:border-secondary/50'
@@ -1017,22 +1017,22 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
 
         {/* Selected Book Display */}
         {selectedBook ? (
-          <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
-            {/* Book Info Box */}
-            <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 py-1 md:py-1.5 flex-1 md:flex-2 md:min-w-0 md:max-w-[60%]">
+          <>
+            {/* Book Info Box - 2/4 width on desktop */}
+            <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 py-1 md:py-1.5 md:col-span-2 flex items-center">
               <div className={`text-base-content ${selectedBook.title.length > 30 ? 'text-xs md:text-sm' : 'text-sm md:text-base'}`}>
                 <span className="font-semibold">{selectedBook.title}</span> by <span className="font-medium">{selectedBook.author}</span>
               </div>
             </div>
-            {/* Genre Badge */}
-            <div className="bg-primary text-primary-content border-2 border-base-300 rounded-md px-3 md:px-4 py-1 md:py-1.5 flex-shrink-0 md:flex-1">
+            {/* Genre Badge - 1/4 width on desktop */}
+            <div className="bg-primary text-primary-content border-2 border-base-300 rounded-md px-3 md:px-4 py-1 md:py-1.5 flex items-center justify-center">
               <div className="text-sm md:text-base font-medium text-center">
                 {selectedBook.genre}
               </div>
             </div>
-          </div>
+          </>
         ) : (
-          <div className="flex-1 text-sm md:text-base text-base-content/60">
+          <div className="md:col-span-3 text-sm md:text-base text-base-content/60 flex items-center">
             {tbrList.length === 0 ? 'No books in TBR list' : 'Click to pick a random book from your TBR list'}
           </div>
         )}
