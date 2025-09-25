@@ -43,7 +43,12 @@ export default function Home() {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const headerHeight = 80; // Approximate height of fixed header
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -69,112 +74,104 @@ export default function Home() {
       <div className="bg-primary text-primary-content shadow-lg fixed top-0 left-0 right-0 z-50">
         {/* Navigation Buttons */}
         <div className="px-4 py-3">
-          <div className="flex flex-col md:flex-row gap-2 md:gap-3 items-center justify-center">
-            {/* Mobile: 2 rows of 3, Desktop: 1 row of 6 */}
-            <div className="flex flex-col md:flex-row gap-2 md:gap-3">
-              {/* First Row (Mobile) / First 3 (Desktop) */}
-              <div className="flex gap-2 md:gap-3">
-                      <button 
-                        onClick={() => scrollToSection('top')}
-                        className={`
-                          relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
-                          ${activeSection === 'top' 
-                            ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
-                            : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
-                          }
-                          focus:outline-none focus:ring-2 focus:ring-primary/20
-                        `}
-                      >
-                        <span className="relative z-10">Top</span>
-                        {activeSection === 'top' && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
-                        )}
-                      </button>
-                      <button 
-                        onClick={() => scrollToSection('stats')}
-                        className={`
-                          relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
-                          ${activeSection === 'stats' 
-                            ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
-                            : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
-                          }
-                          focus:outline-none focus:ring-2 focus:ring-primary/20
-                        `}
-                      >
-                        <span className="relative z-10">Stats</span>
-                        {activeSection === 'stats' && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
-                        )}
-                      </button>
-                      <button 
-                        onClick={() => scrollToSection('goals')}
-                        className={`
-                          relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
-                          ${activeSection === 'goals' 
-                            ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
-                            : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
-                          }
-                          focus:outline-none focus:ring-2 focus:ring-primary/20
-                        `}
-                      >
-                        <span className="relative z-10">Goals</span>
-                        {activeSection === 'goals' && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
-                        )}
-                      </button>
-              </div>
-              {/* Second Row (Mobile) / Last 3 (Desktop) */}
-              <div className="flex gap-2 md:gap-3">
-                <button 
-                  onClick={() => scrollToSection('genres')}
-                  className={`
-                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
-                    ${activeSection === 'genres' 
-                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
-                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
-                    }
-                    focus:outline-none focus:ring-2 focus:ring-primary/20
-                  `}
-                >
-                  <span className="relative z-10">Genres</span>
-                  {activeSection === 'genres' && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
-                  )}
-                </button>
-                <button 
-                  onClick={() => scrollToSection('authors')}
-                  className={`
-                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
-                    ${activeSection === 'authors' 
-                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
-                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
-                    }
-                    focus:outline-none focus:ring-2 focus:ring-primary/20
-                  `}
-                >
-                  <span className="relative z-10">Authors</span>
-                  {activeSection === 'authors' && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
-                  )}
-                </button>
-                <button 
-                  onClick={() => scrollToSection('predictions')}
-                  className={`
-                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
-                    ${activeSection === 'predictions' 
-                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
-                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
-                    }
-                    focus:outline-none focus:ring-2 focus:ring-primary/20
-                  `}
-                >
-                  <span className="relative z-10">Pacing</span>
-                  {activeSection === 'predictions' && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
-                  )}
-                </button>
-              </div>
-            </div>
+          <div className="flex gap-1 md:gap-3 items-center justify-center">
+            {/* All buttons in one row */}
+            <button 
+              onClick={() => scrollToSection('top')}
+              className={`
+                relative px-2 md:px-4 py-2 md:py-3 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 transform
+                ${activeSection === 'top' 
+                  ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                  : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                }
+                focus:outline-none focus:ring-2 focus:ring-primary/20
+              `}
+            >
+              <span className="relative z-10">Top</span>
+              {activeSection === 'top' && (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+              )}
+            </button>
+            <button 
+              onClick={() => scrollToSection('stats')}
+              className={`
+                relative px-2 md:px-4 py-2 md:py-3 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 transform
+                ${activeSection === 'stats' 
+                  ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                  : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                }
+                focus:outline-none focus:ring-2 focus:ring-primary/20
+              `}
+            >
+              <span className="relative z-10">Stats</span>
+              {activeSection === 'stats' && (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+              )}
+            </button>
+            <button 
+              onClick={() => scrollToSection('goals')}
+              className={`
+                relative px-2 md:px-4 py-2 md:py-3 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 transform
+                ${activeSection === 'goals' 
+                  ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                  : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                }
+                focus:outline-none focus:ring-2 focus:ring-primary/20
+              `}
+            >
+              <span className="relative z-10">Goals</span>
+              {activeSection === 'goals' && (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+              )}
+            </button>
+            <button 
+              onClick={() => scrollToSection('genres')}
+              className={`
+                relative px-2 md:px-4 py-2 md:py-3 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 transform
+                ${activeSection === 'genres' 
+                  ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                  : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                }
+                focus:outline-none focus:ring-2 focus:ring-primary/20
+              `}
+            >
+              <span className="relative z-10">Genre</span>
+              {activeSection === 'genres' && (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+              )}
+            </button>
+            <button 
+              onClick={() => scrollToSection('authors')}
+              className={`
+                relative px-2 md:px-4 py-2 md:py-3 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 transform
+                ${activeSection === 'authors' 
+                  ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                  : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                }
+                focus:outline-none focus:ring-2 focus:ring-primary/20
+              `}
+            >
+              <span className="relative z-10">Author</span>
+              {activeSection === 'authors' && (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+              )}
+            </button>
+            <button 
+              onClick={() => scrollToSection('predictions')}
+              className={`
+                relative px-2 md:px-4 py-2 md:py-3 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 transform
+                ${activeSection === 'predictions' 
+                  ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                  : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                }
+                focus:outline-none focus:ring-2 focus:ring-primary/20
+              `}
+            >
+              <span className="relative z-10">Pace</span>
+              {activeSection === 'predictions' && (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+              )}
+            </button>
           </div>
         </div>
       </div>
