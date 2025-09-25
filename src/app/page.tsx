@@ -821,16 +821,17 @@ function PacingCalculator({ books }: { books: { title: string; author: string; p
         {timeframe === 'custom' && (
           <div className="mt-4">
             <label className="block text-sm font-medium text-base-content mb-2">Select Target Date</label>
-            <div className="relative">
+            <div className="relative overflow-hidden">
               <input 
                 type="date" 
-                className="w-full px-4 py-3 bg-white border-2 border-base-300 rounded-lg text-base-content hover:border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-lg"
+                className="w-full px-3 md:px-4 py-2 md:py-3 bg-white border-2 border-base-300 rounded-lg text-base-content hover:border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm md:text-lg"
                 value={goalDate}
                 onChange={(e) => setGoalDate(e.target.value)}
                 min={today.toISOString().split('T')[0]}
+                style={{ WebkitAppearance: 'none' }}
               />
-              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:pr-3 pointer-events-none">
+                <svg className="w-4 h-4 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
