@@ -76,7 +76,7 @@ export default function Home() {
         <div className="hero-content text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-6xl font-bold mb-4">Reading Tracker</h1>
-            <p className="py-6 text-2xl mb-8">Welcome to your personal reading dashboard. Track your books, celebrate your progress, and discover your reading patterns.</p>
+            <p className="py-6 text-xl mb-8">Welcome to your personal reading dashboard. Track your books, celebrate your progress, and discover your reading patterns.</p>
             
                     {/* Scrolling Currently Reading Banner */}
                     {data?.currentlyReading && data.currentlyReading.length > 0 && (
@@ -808,7 +808,7 @@ function AnnualReadingForecast({ data }: { data: Overview | null }) {
           <div className="text-sm font-semibold text-accent mb-2">Cross-Reference Check</div>
           <div className="text-xs opacity-70">
             Pages estimate converts to ~{estimatedBooksFromPages} books 
-            (based on your {averageBookLength.toFixed(0)}-page average book length)
+            (based on your {averageBookLength.toFixed(0)}-page avg book length)
           </div>
         </div>
       </div>
