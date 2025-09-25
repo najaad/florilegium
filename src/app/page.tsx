@@ -359,9 +359,9 @@ export default function Home() {
                     <div className="bg-base-200 shadow-xl rounded-lg p-8">
                       <h2 className="text-2xl font-bold text-center mb-6">Coming Soon</h2>
                       <div className="text-center py-12">
-                        <div className="text-6xl mb-4">📊</div>
-                        <p className="text-lg opacity-70">Your next genre insight will go here!</p>
-                        <p className="text-sm opacity-50 mt-2">Perfect spot for more genre analytics</p>
+                        <div className="text-6xl mb-4">hiiiii</div>
+                        <p className="text-lg opacity-70">Next genre insight will go here!</p>
+                        <p className="text-sm opacity-50 mt-2">imagine more genre analytics</p>
                       </div>
                     </div>
                   </div>
@@ -401,9 +401,9 @@ export default function Home() {
                     <div className="bg-base-200 shadow-xl rounded-lg p-8">
                       <h2 className="text-2xl font-bold text-center mb-6">Coming Soon</h2>
                       <div className="text-center py-12">
-                        <div className="text-6xl mb-4">👤</div>
-                        <p className="text-lg opacity-70">Your next author insight will go here!</p>
-                        <p className="text-sm opacity-50 mt-2">Perfect spot for more author analytics</p>
+                        <div className="text-6xl mb-4">bloop</div>
+                        <p className="text-lg opacity-70">soon more author insight will go here!</p>
+                        <p className="text-sm opacity-50 mt-2">imagine more author analytics</p>
                       </div>
                     </div>
                   </div>
