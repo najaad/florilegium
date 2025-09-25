@@ -81,8 +81,10 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Fetch from our Python function
-    fetch('/api/main')
+    // Local: Use mock API, Production: Use Python function
+    const apiUrl = process.env.NODE_ENV === 'production' ? '/api/main' : '/api/overview';
+    
+    fetch(apiUrl)
       .then(r => r.json())
       .then(data => {
         console.log('Received data:', data);
