@@ -37,6 +37,7 @@ type Overview = {
 export default function Home() {
   const [data, setData] = useState<Overview | null>(null);
   const [loading, setLoading] = useState(true);
+  const [activeSection, setActiveSection] = useState('top');
 
   useEffect(() => {
     // Fetch from our mock API endpoint
@@ -57,14 +58,128 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-base-100">
       {/* Fixed Header */}
-      <div className="navbar bg-primary text-primary-content shadow-lg fixed top-0 left-0 right-0 z-50">
-        <div className="flex-1">
-          <a className="btn btn-ghost text-xl text-primary-content">💕 Hi Shannon!</a>
+      <div className="bg-primary text-primary-content shadow-lg fixed top-0 left-0 right-0 z-50">
+        {/* Top Row - Greeting and Avatar */}
+        <div className="navbar">
+          <div className="flex-1">
+            <a className="btn btn-ghost text-xl text-primary-content">💕 Hi Shannon!</a>
+          </div>
+          <div className="flex-none gap-2">
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full bg-primary-content text-primary">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex-none gap-2">
-          <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full bg-primary-content text-primary">
+        
+        {/* Navigation Buttons */}
+        <div className="px-4 pb-3">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-3 items-center justify-center">
+            {/* Mobile: 2 rows of 3, Desktop: 1 row of 6 */}
+            <div className="flex flex-col md:flex-row gap-2 md:gap-3">
+              {/* First Row (Mobile) / First 3 (Desktop) */}
+              <div className="flex gap-2 md:gap-3">
+                <button 
+                  onClick={() => setActiveSection('top')}
+                  className={`
+                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
+                    ${activeSection === 'top' 
+                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                    }
+                    focus:outline-none focus:ring-2 focus:ring-primary/20
+                  `}
+                >
+                  <span className="relative z-10">Top</span>
+                  {activeSection === 'top' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+                  )}
+                </button>
+                <button 
+                  onClick={() => setActiveSection('stats')}
+                  className={`
+                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
+                    ${activeSection === 'stats' 
+                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                    }
+                    focus:outline-none focus:ring-2 focus:ring-primary/20
+                  `}
+                >
+                  <span className="relative z-10">Stats</span>
+                  {activeSection === 'stats' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+                  )}
+                </button>
+                <button 
+                  onClick={() => setActiveSection('goals')}
+                  className={`
+                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
+                    ${activeSection === 'goals' 
+                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                    }
+                    focus:outline-none focus:ring-2 focus:ring-primary/20
+                  `}
+                >
+                  <span className="relative z-10">Goals</span>
+                  {activeSection === 'goals' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+                  )}
+                </button>
+              </div>
+              {/* Second Row (Mobile) / Last 3 (Desktop) */}
+              <div className="flex gap-2 md:gap-3">
+                <button 
+                  onClick={() => setActiveSection('genres')}
+                  className={`
+                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
+                    ${activeSection === 'genres' 
+                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                    }
+                    focus:outline-none focus:ring-2 focus:ring-primary/20
+                  `}
+                >
+                  <span className="relative z-10">Genres</span>
+                  {activeSection === 'genres' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+                  )}
+                </button>
+                <button 
+                  onClick={() => setActiveSection('authors')}
+                  className={`
+                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
+                    ${activeSection === 'authors' 
+                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                    }
+                    focus:outline-none focus:ring-2 focus:ring-primary/20
+                  `}
+                >
+                  <span className="relative z-10">Authors</span>
+                  {activeSection === 'authors' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+                  )}
+                </button>
+                <button 
+                  onClick={() => setActiveSection('predictions')}
+                  className={`
+                    relative px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 transform
+                    ${activeSection === 'predictions' 
+                      ? 'bg-primary text-primary-content shadow-lg scale-105 border-2 border-primary' 
+                      : 'bg-base-200 text-base-content hover:bg-base-300 hover:scale-102 border-2 border-transparent hover:border-primary/30'
+                    }
+                    focus:outline-none focus:ring-2 focus:ring-primary/20
+                  `}
+                >
+                  <span className="relative z-10">Predictions</span>
+                  {activeSection === 'predictions' && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-lg opacity-90"></div>
+                  )}
+                </button>
               </div>
             </div>
           </div>
@@ -72,7 +187,7 @@ export default function Home() {
       </div>
 
       {/* Welcome Section */}
-      <div className="hero bg-base-200 py-12 pt-24">
+      <div className="hero bg-base-200 py-6 pt-24">
         <div className="hero-content text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-6xl font-bold mb-4">Reading Tracker</h1>
