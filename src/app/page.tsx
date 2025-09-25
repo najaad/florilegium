@@ -992,7 +992,7 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
           onClick={pickRandomBook}
           disabled={tbrList.length === 0}
           className={`
-            relative p-2 md:p-2 rounded-lg transition-all duration-200 transform flex-shrink-0 flex items-center justify-center min-h-[2.5rem] md:min-h-[3rem]
+            relative p-2 md:p-2 rounded-lg transition-all duration-200 transform flex-shrink-0 flex items-center justify-center min-h-[5rem] md:min-h-[3rem]
             ${tbrList.length === 0 
               ? 'bg-gray-300 text-gray-500 cursor-not-allowed border-2 border-gray-400' 
               : 'bg-primary text-secondary-content hover:bg-secondary/80 hover:scale-105 active:scale-95 shadow-lg border-2 border-secondary/30 focus:border-secondary/50'
