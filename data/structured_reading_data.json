@@ -1339,13 +1339,13 @@
       "genre": "Horror tales"
     }
   ],
-  "completedBooks": 39,
-  "completedPages": 14397,
+  "completedBooks": 40,
+  "completedPages": 15431,
   "byMonth": [
     {
       "month": "Jan",
-      "count": 2,
-      "pages": 928
+      "count": 3,
+      "pages": 1962
     },
     {
       "month": "Feb",
@@ -1405,16 +1405,16 @@
   ],
   "topGenres": [
     {
-      "name": "Young Adult Fiction",
-      "count": 49
+      "name": "Fiction",
+      "count": 12
     },
     {
-      "name": "Fiction",
-      "count": 36
+      "name": "Young Adult Fiction",
+      "count": 11
     },
     {
       "name": "Fantasy",
-      "count": 16
+      "count": 6
     },
     {
       "name": "Romantasy",
@@ -1431,10 +1431,6 @@
   ],
   "topAuthors": [
     {
-      "name": "Sarah J. Maas",
-      "count": 16
-    },
-    {
       "name": "Tahereh Mafi",
       "count": 9
     },
@@ -1443,30 +1439,34 @@
       "count": 6
     },
     {
-      "name": "J.K. Rowling",
-      "count": 6
+      "name": "Lauren Roberts",
+      "count": 4
     },
     {
-      "name": "Suzanne Collins",
-      "count": 5
+      "name": "Rebecca Yarros",
+      "count": 3
     },
     {
-      "name": "Stephenie Meyer",
-      "count": 5
+      "name": "Hugh Howey",
+      "count": 3
+    },
+    {
+      "name": "Madeline Miller",
+      "count": 2
     }
   ],
   "longestBooksByGenre": [
     {
       "genre": "Young Adult Fiction",
-      "title": "The Hunger Games",
-      "author": "Suzanne Collins",
-      "pages": 1122
+      "title": "Unravel Me",
+      "author": "Tahereh Mafi",
+      "pages": 461
     },
     {
       "genre": "Fiction",
-      "title": "House of Earth and Blood",
-      "author": "Sarah J. Maas",
-      "pages": 1606
+      "title": "Fourth Wing",
+      "author": "Rebecca Yarros",
+      "pages": 1034
     },
     {
       "genre": "Horror",
@@ -1487,9 +1487,9 @@
       "pages": 393
     },
     {
-      "author": "Suzanne Collins",
-      "title": "The Hunger Games",
-      "pages": 1122
+      "author": "Richard Bachman",
+      "title": "The Long Walk",
+      "pages": 319
     }
   ],
   "consistentGenres": [
@@ -1533,21 +1533,21 @@
     }
   ],
   "readingStats": {
-    "pagesPerDay": 53,
-    "pagesPerWeek": 371,
-    "pagesPerMonth": 1590,
-    "averageBookLength": 369,
+    "pagesPerDay": 57,
+    "pagesPerWeek": 399,
+    "pagesPerMonth": 1710,
+    "averageBookLength": 385,
     "fastestRead": {
       "pages": 200,
       "days": 2
     },
-    "longestBook": 442
+    "longestBook": 462
   },
   "goals": {
     "books": {
       "annual": {
-        "current": 39,
-        "target": 50
+        "current": 40,
+        "target": 52
       },
       "monthly": {
         "current": 3,
@@ -1556,22 +1556,22 @@
     },
     "pages": {
       "annual": {
-        "current": 14397,
+        "current": 15431,
         "target": 20000
       },
       "monthly": {
-        "current": 1199,
+        "current": 1285,
         "target": 1666
       }
     }
   },
   "totals": {
-    "books": 39,
-    "pages": 14397
+    "books": 40,
+    "pages": 15431
   },
   "lastYearTotals": {
-    "books": 22,
-    "pages": 12933
+    "books": 82,
+    "pages": 39923
   },
   "currentYearStart": "2025-01-01"
 }

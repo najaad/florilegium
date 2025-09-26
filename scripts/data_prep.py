@@ -149,9 +149,13 @@ def process_reading_data():
         date_read = row.get('Date Read', '')
         date_added = row.get('Date Added', '')
         
-        # For READ books, if Date Read is blank, default to 2022
+        # For READ books with blank Date Read, use Date Added or failing that, today
         if exclusive_shelf == "read" and (pd.isna(date_read) or str(date_read).strip() == ''):
-            date_read = '2022/01/01'  # Default to 2022 for missing read dates
+            if pd.notna(date_added):
+                date_read = date_added  # Fallback to Date Added for read books missing completion date
+            else:
+                default_read_date = datetime.now().strftime('%Y-%m-%d')
+                date_read = default_read_date  # Use today to not poison old/blank data
         
         # Check which shelf category this book is in
         if exclusive_shelf == "currently-reading":
@@ -208,28 +212,24 @@ def process_reading_data():
                             bm["count"] += 1
                             bm["pages"] += total_pages
                 
-                # Track genres and authors
-                if genre and genre != "Unknown":
-                    genre_counts[genre] = genre_counts.get(genre, 0) + 1
+                # Only track genres/authors from current year for accurate TOP selections
+                if is_current and month and month <= 12:
+                    # Track genres and authors - ONLY if we're counting this as current year
+                    if genre and genre != "Unknown":
+                        genre_counts[genre] = genre_counts.get(genre, 0) + 1
+                        
+                        if genre not in longest_books_by_genre:
+                            longest_books_by_genre[genre] = {"title": title, "author": author, "pages": total_pages}
+                        elif total_pages > longest_books_by_genre[genre]["pages"]:
+                            longest_books_by_genre[genre] = {"title": title, "author": author, "pages": total_pages}
                     
-                    # Longest books by genre
-                    if genre not in longest_books_by_genre or total_pages > longest_books_by_genre[genre].get('pages', 0):
-                        longest_books_by_genre[genre] = {
-                            "title": title,
-                            "author": author,
-                            "pages": total_pages
-                        }
-                
-                if author:
-                    author_counts[author] = author_counts.get(author, 0) + 1
-                    
-                    # Longest books by author
-                    if author not in longest_books_by_author or total_pages > longest_books_by_author[author].get('pages', 0):
-                        longest_books_by_author[author] = {
-                            "title": title,
-                            "author": author,
-                            "pages": total_pages
-                        }
+                    if author:
+                        author_counts[author] = author_counts.get(author, 0) + 1
+                        
+                        if author not in longest_books_by_author:
+                            longest_books_by_author[author] = {"title": title, "pages": total_pages}
+                        elif total_pages > longest_books_by_author[author]["pages"]:
+                            longest_books_by_author[author] = {"title": title, "pages": total_pages}
     
     # Format the top results - limit to reasonable numbers
     top_genres = [{"name": genre, "count": count} for genre, count in 
