@@ -108,6 +108,9 @@ def enrich_with_api(csv_path: str = 'data/goodreads_enriched.csv') -> None:
     try:
         df = pd.read_csv(csv_path)
         print(f"📖 Loaded {len(df)} books")
+    except FileNotFoundError:
+        print("❌ Enriched CSV does not exist. Run manual_genres.py first to create it.")
+        return
     except Exception as e:
         print(f"❌ Error loading CSV: {e}")
         return

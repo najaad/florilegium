@@ -45,18 +45,30 @@ def find_manual_genre(title: str, author: str, isbn13: str, manual_genres: List[
 def apply_manual_genres(csv_path: str = 'data/goodreads_enriched.csv') -> None:
     """
     Apply manual genre assignments to enriched CSV.
+    If enriched CSV doesn't exist yet, copy from preprocessed data.
     """
     print("📋 Starting manual genre assignment...")
     
-    # Load data
+    # Load data - if enriched CSV doesn't exist, copy from preprocessed
     try:
         df = pd.read_csv(csv_path)
-        manual_genres = load_manual_genres()
-        print(f"📖 Loaded {len(df)} books from CSV")
-        print(f"📋 Loaded {len(manual_genres)} manual genre assignments")
-    except Exception as e:
-        print(f"❌ Error loading data: {e}")
-        return
+        print(f"📖 Loaded existing enriched CSV with {len(df)} books")
+    except (FileNotFoundError, Exception):
+        print("📖 Enriched CSV not found - copying from preprocessed data...")
+        try:
+            df = pd.read_csv('data/goodreads_preprocessed.csv').copy()
+            # Add Genre column if not present
+            if 'Genre' not in df.columns:
+                df['Genre'] = ''
+            # Save as enriched CSV for next steps
+            df.to_csv(csv_path, index=False)
+            print(f"📖 Created enriched CSV with {len(df)} books")
+        except Exception as e:
+            print(f"❌ Error creating enriched CSV: {e}")
+            return
+    
+    manual_genres = load_manual_genres()
+    print(f"📋 Loaded {len(manual_genres)} manual genre assignments")
     
     # Track changes
     updated_count = 0

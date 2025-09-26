@@ -81,17 +81,18 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Local: Use mock API, Production: Use Python function
-    const apiUrl = process.env.NODE_ENV === 'production' ? '/api/main' : '/api/refresh';
+    // Use the unified API endpoint for both local and production
+    const apiUrl = '/api/refresh';
     
     fetch(apiUrl)
       .then(r => r.json())
       .then(data => {
-        console.log('Received data:', data);
+        console.log('📊 API Response - Received data:', data);
+        console.log(`📚 Data shows: ${data.totals?.books} books, ${data.totals?.pages} pages`);
         setData(data);
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        console.error('❌ Error fetching data:', error);
       })
       .finally(() => setLoading(false));
   }, []);
