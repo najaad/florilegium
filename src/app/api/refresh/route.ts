@@ -4,24 +4,23 @@ import path from 'path';
 
 export async function GET() {
   try {
-    // Try multiple paths to find structured data - check public directory first for Vercel
-    const possiblePaths = [
-      path.join(process.cwd(), 'public', 'structured_reading_data.json'),      // Primary (Vercel-friendly path)
-      path.join(process.cwd(), 'data', 'structured_reading_data.json'),       // Fallback for local dev
-      path.join(process.cwd(), '..', 'data', 'structured_reading_data.json'),
-    ];
-
-    for (const dataPath of possiblePaths) {
-      if (fs.existsSync(dataPath)) {
-        const fileContents = fs.readFileSync(dataPath, 'utf8');
-        const realData = JSON.parse(fileContents);
-        
-        console.log(`📊 Loaded real reading data from ${dataPath}`);
-        return NextResponse.json(realData);
-      }
+    // First try loading from public directory (most reliable approach)
+    const publicPath = path.join(process.cwd(), 'public', 'structured_reading_data.json');
+    if (fs.existsSync(publicPath)) {
+      const publicData = JSON.parse(fs.readFileSync(publicPath, 'utf8'));
+      console.log(`📊 Loaded real data from public: books=${publicData.totals?.books}, pages=${publicData.totals?.pages}`);
+      return NextResponse.json(publicData);
     }
     
-    console.log('⚠️ structured_reading_data.json not found in any expected location');
+    // Alternative: try data directory
+    const dataPath = path.join(process.cwd(), 'data', 'structured_reading_data.json');
+    if (fs.existsSync(dataPath)) {
+      const dataFileContent = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+      console.log(`📊 Loaded real data from data/: books=${dataFileContent.totals?.books}, pages=${dataFileContent.totals?.pages}`);
+      return NextResponse.json(dataFileContent);
+    }
+    
+    console.log('⚠️ structured_reading_data.json not found');
   } catch (error) {
     console.error('Error loading structured reading data:', error);
   }
