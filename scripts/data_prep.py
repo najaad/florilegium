@@ -232,18 +232,18 @@ def process_reading_data():
     
     # Format the top results - limit to reasonable numbers
     top_genres = [{"name": genre, "count": count} for genre, count in 
-                 sorted(genre_counts.items(), key=lambda x: x[1], reverse=True)[:10]]
+                 sorted(genre_counts.items(), key=lambda x: x[1], reverse=True)[:6]]
     top_authors = [{"name": author, "count": count} for author, count in 
-                  sorted(author_counts.items(), key=lambda x: x[1], reverse=True)[:10]]
+                  sorted(author_counts.items(), key=lambda x: x[1], reverse=True)[:6]]
     
     longest_by_genre = [
         {"genre": genre, "title": data["title"], "author": data["author"], "pages": data["pages"]}
         for genre, data in longest_books_by_genre.items()
-    ][:10]
+    ][:3]
     longest_by_author = [
         {"author": author, "title": data["title"], "pages": data["pages"]}
         for author, data in longest_books_by_author.items()
-    ][:10]
+    ][:3]
     
     # Calculate reading stats
     total_books = data_structure["completedBooks"]
