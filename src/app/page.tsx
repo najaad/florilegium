@@ -287,20 +287,20 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-primary text-primary-content rounded-lg shadow-lg p-8 text-center">
             <div className="text-lg font-semibold mb-2">Books Read</div>
-            <div className="text-6xl font-bold mb-2">{data?.totals.books ?? 0}</div>
+            <div className="text-6xl font-bold mb-2">{data?.totals?.books ?? 0}</div>
             <div className="text-sm opacity-90">This year</div>
           </div>
 
           <div className="bg-secondary text-secondary-content rounded-lg shadow-lg p-8 text-center">
             <div className="text-lg font-semibold mb-2">Pages Read</div>
-            <div className="text-6xl font-bold mb-2">{data?.totals.pages?.toLocaleString() ?? 0}</div>
+            <div className="text-6xl font-bold mb-2">{data?.totals?.pages?.toLocaleString() ?? 0}</div>
             <div className="text-sm opacity-90">Total pages this year</div>
           </div>
 
           <div className="bg-accent text-accent-content rounded-lg shadow-lg p-8 text-center">
             <div className="text-lg font-semibold mb-2">Avg per Month</div>
             <div className="text-6xl font-bold mb-2">
-              {data?.byMonth ? Math.round(data.byMonth.reduce((sum, month) => sum + month.count, 0) / data.byMonth.length) : 0}
+              {data?.byMonth && data.byMonth.length > 0 ? Math.round(data.byMonth.reduce((sum, month) => sum + month.count, 0) / data.byMonth.length) : 0}
             </div>
             <div className="text-sm opacity-90">Books per month</div>
           </div>
@@ -326,19 +326,19 @@ export default function Home() {
                     <div className="grid grid-cols-2 gap-4 mt-6">
                       <div className="bg-primary/10 rounded-xl p-4 text-center border border-primary/20">
                         <div className="text-2xl font-bold text-primary mb-1">
-                          {data?.byMonth.reduce((max, month) => month.count > max.count ? month : max, { count: 0, month: 'None' }).month}
+                          {data?.byMonth && data.byMonth.length > 0 ? data.byMonth.reduce((max, month) => month.count > max.count ? month : max, { count: 0, month: 'None' }).month : 'None'}
                         </div>
                         <div className="text-sm font-medium opacity-80">
-                          {data?.byMonth.reduce((max, month) => month.count > max.count ? month : max, { count: 0, month: 'None' }).count} Books
+                          {data?.byMonth && data.byMonth.length > 0 ? data.byMonth.reduce((max, month) => month.count > max.count ? month : max, { count: 0, month: 'None' }).count : 0} Books
                         </div>
                         <div className="text-xs opacity-60 mt-1">Most books read</div>
                       </div>
                       <div className="bg-secondary/10 rounded-xl p-4 text-center border border-secondary/20">
                         <div className="text-2xl font-bold text-secondary mb-1">
-                          {data?.byMonth.reduce((max, month) => month.pages > max.pages ? month : max, { pages: 0, month: 'None' }).month}
+                          {data?.byMonth && data.byMonth.length > 0 ? data.byMonth.reduce((max, month) => month.pages > max.pages ? month : max, { pages: 0, month: 'None' }).month : 'None'}
                         </div>
                         <div className="text-sm font-medium opacity-80">
-                          {data?.byMonth.reduce((max, month) => month.pages > max.pages ? month : max, { pages: 0, month: 'None' }).pages} Pages
+                          {data?.byMonth && data.byMonth.length > 0 ? data.byMonth.reduce((max, month) => month.pages > max.pages ? month : max, { pages: 0, month: 'None' }).pages : 0} Pages
                         </div>
                         <div className="text-xs opacity-60 mt-1">Most pages read</div>
                       </div>
@@ -352,15 +352,15 @@ export default function Home() {
             {/* Top Section - Daily/Weekly/Monthly */}
             <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
               <div className="bg-primary/10 rounded-xl p-2 md:p-4 text-center border border-primary/20">
-                <div className="text-xl md:text-3xl font-bold text-primary mb-1">{data?.readingStats.pagesPerDay || 0}</div>
+                <div className="text-xl md:text-3xl font-bold text-primary mb-1">{data?.readingStats?.pagesPerDay || 0}</div>
                 <div className="text-xs md:text-sm font-medium opacity-80">pages/day</div>
               </div>
               <div className="bg-secondary/10 rounded-xl p-2 md:p-4 text-center border border-secondary/20">
-                <div className="text-xl md:text-3xl font-bold text-secondary mb-1">{data?.readingStats.pagesPerWeek || 0}</div>
+                <div className="text-xl md:text-3xl font-bold text-secondary mb-1">{data?.readingStats?.pagesPerWeek || 0}</div>
                 <div className="text-xs md:text-sm font-medium opacity-80">pages/week</div>
               </div>
               <div className="bg-accent/10 rounded-xl p-2 md:p-4 text-center border border-accent/20">
-                <div className="text-xl md:text-3xl font-bold text-accent mb-1">{data?.readingStats.pagesPerMonth || 0}</div>
+                <div className="text-xl md:text-3xl font-bold text-accent mb-1">{data?.readingStats?.pagesPerMonth || 0}</div>
                 <div className="text-xs md:text-sm font-medium opacity-80">pages/month</div>
               </div>
             </div>
@@ -371,7 +371,7 @@ export default function Home() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm opacity-70 mb-1">Average Book Length</div>
-                    <div className="text-xl font-bold text-primary">{data?.readingStats.averageBookLength || 0} pages</div>
+                    <div className="text-xl font-bold text-primary">{data?.readingStats?.averageBookLength || 0} pages</div>
                   </div>
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                     <div className="w-6 h-6 bg-primary rounded-full"></div>
@@ -384,7 +384,7 @@ export default function Home() {
                   <div>
                     <div className="text-sm opacity-70 mb-1">Fastest Read</div>
                     <div className="text-xl font-bold text-secondary">
-                      {data?.readingStats.fastestRead.pages || 0} pages in {data?.readingStats.fastestRead.days || 0} days
+                      {data?.readingStats?.fastestRead?.pages || 0} pages in {data?.readingStats?.fastestRead?.days || 0} days
                     </div>
                   </div>
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
@@ -397,7 +397,7 @@ export default function Home() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm opacity-70 mb-1">Longest Book</div>
-                    <div className="text-xl font-bold text-accent">{data?.readingStats.longestBook || 0} pages</div>
+                    <div className="text-xl font-bold text-accent">{data?.readingStats?.longestBook || 0} pages</div>
                   </div>
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
                     <div className="w-6 h-6 bg-accent rounded-full"></div>
@@ -433,7 +433,7 @@ export default function Home() {
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">
-                  {data?.goals.books.monthly.current || 0}/{data?.goals.books.monthly.target || 0}
+                  {data?.goals?.books?.monthly?.current || 0}/{data?.goals?.books?.monthly?.target || 0}
                 </div>
                 <div className="text-lg font-semibold mb-2">Monthly Goal</div>
                 <div className="relative w-full bg-base-100 rounded-full h-6 overflow-hidden">
@@ -457,7 +457,7 @@ export default function Home() {
             <div className="space-y-6">
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">
-                  {(data?.goals.pages.annual.current || 0).toLocaleString()}/{(data?.goals.pages.annual.target || 0).toLocaleString()}
+                  {(data?.goals?.pages?.annual?.current || 0).toLocaleString()}/{(data?.goals?.pages?.annual?.target || 0).toLocaleString()}
                 </div>
                 <div className="text-lg font-semibold mb-2">Annual Goal</div>
                 <div className="relative w-full bg-base-100 rounded-full h-6 overflow-hidden">
@@ -884,7 +884,6 @@ function AnnualReadingForecast({ data }: { data: Overview | null }) {
 
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth() + 1; // 1-12
-  const currentYear = currentDate.getFullYear();
   
   // Calculate monthly averages based on completed months
   const completedMonths = currentMonth - 1; // Months that have fully passed
