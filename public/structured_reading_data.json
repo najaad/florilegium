@@ -1637,5 +1637,10 @@
   "totals": {
     "books": 122,
     "pages": 55354
-  }
+  },
+  "lastYearTotals": {
+    "books": 22,
+    "pages": 12933
+  },
+  "currentYearStart": "2025-01-01"
 }
