@@ -456,7 +456,7 @@ export default function Home() {
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">
-                  {data?.goals?.books?.monthly?.current || 0}/{data?.goals?.books?.monthly?.target || 0}
+                  {(data?.goals?.books?.monthly?.current || 0).toLocaleString()}/{(data?.goals?.books?.monthly?.target || 0).toLocaleString()}
                 </div>
                 <div className="text-lg font-semibold mb-2">Monthly Goal</div>
                 <div className="relative w-full bg-base-100 rounded-full h-6 overflow-hidden">
@@ -497,7 +497,7 @@ export default function Home() {
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">
-                  {data?.goals?.pages?.monthly?.current || 0}/{data?.goals?.pages?.monthly?.target || 0}
+                  {(data?.goals?.pages?.monthly?.current || 0).toLocaleString()}/{(data?.goals?.pages?.monthly?.target || 0).toLocaleString()}
                 </div>
                 <div className="text-lg font-semibold mb-2">Monthly Goal</div>
                 <div className="relative w-full bg-base-100 rounded-full h-6 overflow-hidden">
