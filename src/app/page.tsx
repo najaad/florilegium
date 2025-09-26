@@ -11,7 +11,7 @@ type Overview = {
     pagesPerMonth: number;
     averageBookLength: number;
     fastestRead: { pages: number; days: number; title?: string };
-    longestBook: number;
+    longestBook: { pages: number; title: string; author: string };
   };
   goals: {
     books: {
@@ -422,8 +422,8 @@ export default function Home() {
               <div className="bg-base-100 rounded-xl p-4 border border-base-300">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm opacity-70 mb-1">Longest Book - Book Name</div>
-                    <div className="text-xl font-bold text-accent">{data?.readingStats?.longestBook || 0} pages</div>
+                    <div className="text-sm opacity-70 mb-1">Longest Book - {data?.readingStats?.longestBook?.title || "Book Name"}</div>
+                    <div className="text-xl font-bold text-accent">{data?.readingStats?.longestBook?.pages || 0} pages</div>
                   </div>
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
                     <div className="w-6 h-6 bg-accent rounded-full"></div>

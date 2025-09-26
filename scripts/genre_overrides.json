@@ -1,0 +1,24 @@
+{
+  "genre_overrides": {
+    "description": "Override specific book genres for consistent categorization.",
+    "usage": "Map misclassified genres to preferred genre names. Applied in data_prep.py before final JSON generation.",
+    "overrides": {
+      "Juvenile Fiction": "Young Adult Fiction",
+      "Fantasy fiction": "Fantasy",
+      "Boston (Mass.)": "Dark Romance",
+      "Ability": "Fantasy",
+      "Horror tales": "Horror",
+      "FICTION": "Fiction",
+      "Non-Fiction": "Nonfiction"
+    },
+    "notes": {
+      "Juvenile Fiction": "Recategorize as Young Adult for consistency",
+      "Fantasy fiction": "Standardize fantasy genre name",
+      "Boston (Mass.)": "Location-based categorization -> Dark Romance",
+      "Ability": "Assumption: likely fantasy-related categorization error",
+      "Horror tales": "Standardize horror genre name",
+      "FICTION": "Normalize capitalization",
+      "Non-Fiction": "Standardize spellings"
+    }
+  }
+}

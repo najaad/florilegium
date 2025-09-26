@@ -63,6 +63,63 @@ def normalize_genre(genre_string: str) -> str:
         # Keep original but strip whitespace
         return genre.strip()
 
+def load_genre_overrides(overrides_file: str = 'scripts/genre_overrides.json') -> Dict[str, str]:
+    """Load genre override mappings from JSON file."""
+    try:
+        with open(overrides_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return data.get('genre_overrides', {}).get('overrides', {})
+    except FileNotFoundError:
+        print(f"📁 Genre overrides file not found: {overrides_file}")
+        return {}
+    except Exception as e:
+        print(f"❌ Error loading genre overrides: {e}")
+        return {}
+
+def apply_genre_overrides(data_structure: Dict[str, Any]) -> Dict[str, Any]:
+    """Apply genre overrides to all books in the data structure."""
+    genre_overrides = load_genre_overrides()
+    
+    if not genre_overrides:
+        print("📂 No genre overrides found to apply")
+        return data_structure
+    
+    print(f"🔧 Applying {len(genre_overrides)} genre overrides...")
+    
+    applied_count = 0
+    
+    # Override currently reading books
+    for book in data_structure.get('currentlyReading', []):
+        if book.get('genre') in genre_overrides:
+            old_genre = book['genre']
+            book['genre'] = genre_overrides[old_genre]
+            applied_count += 1
+            print(f"  ✅ Currently reading: {book.get('title')} ({old_genre} -> {book['genre']})")
+    
+    # Override TBR books
+    for book in data_structure.get('tbrList', []):
+        if book.get('genre') in genre_overrides:
+            old_genre = book['genre']
+            book['genre'] = genre_overrides[old_genre]
+            applied_count += 1
+            print(f"  ✅ TBR: {book.get('title')} ({old_genre} -> {book['genre']})")
+    
+    # Override longest books by genre
+    for book in data_structure.get('longestBooksByGenre', []):
+        if book.get('genre') in genre_overrides:
+            old_genre = book['genre']
+            book['genre'] = genre_overrides[old_genre]
+            applied_count += 1
+            print(f"  ✅ Longest by genre: {book.get('title')} ({old_genre} -> {book['genre']})")
+    
+    # Override top genres (need to recalculate counts)
+    original_top_genres = data_structure.get('topGenres', [])
+    # Note: The genre stats are calculated from one-time CSV read and cannot be easily rebuilt
+    # The UI will show overwritten genres in individual listings but counts remain based on original data
+    
+    print(f"💾 Applied {applied_count} genre overrides to books")
+    return data_structure
+
 def extract_year_month(date_str: Any) -> tuple:
     """
     Extract year and month from date strings like '2025/09/25' or '2024-12-15'
@@ -220,6 +277,14 @@ def process_reading_data():
                             "title": title,
                             "author": author
                         }
+                    
+                    # Track longest book for current year
+                    if longest_book_track["title"] == "" or total_pages > longest_book_track["pages"]:
+                        longest_book_track = {
+                            "pages": total_pages,
+                            "title": title, 
+                            "author": author
+                        }
                 
                 # Only track genres/authors from current year for accurate TOP selections
                 if is_current and month and month <= 12:
@@ -275,16 +340,18 @@ def process_reading_data():
     pages_per_week = pages_per_day * 7 if pages_per_day > 0 else 25
     pages_per_month = int((pages_per_day * 30) if pages_per_day > 0 else 750)
     
-    # Get longest book if any have stats
-    longest_book_pages = max((total_pages / total_books * 1.2) if total_books > 0 else 400, 400)
-    longest_book = int(longest_book_pages)
-    
-    # Calculate actual fastest read from tracked data
+    # Calculate actual reading stats from tracked data
     actual_fastest = {
         "pages": fastest_read_track.get("pages", 200), 
         "days": fastest_read_track.get("days", 2),
         "title": fastest_read_track.get("title", "The Selection"),
         "author": fastest_read_track.get("author", "Kiera Cass")
+    }
+    
+    actual_longest = {
+        "pages": longest_book_track.get("pages", 400),
+        "title": longest_book_track.get("title", "The Hunger Games"),
+        "author": longest_book_track.get("author", "Suzanne Collins")
     }
     
     # If no books tracked yet, provide good defaults
@@ -305,7 +372,7 @@ def process_reading_data():
         "pagesPerMonth": max(pages_per_month, 900),
         "averageBookLength": average_book_length,
         "fastestRead": actual_fastest,
-        "longestBook": longest_book
+        "longestBook": actual_longest
     }
     
     # Calculate goals (let's use reasonable targets)
@@ -430,6 +497,9 @@ def process_reading_data():
             print(f"  {bm['month']}: {bm['count']} books, {bm['pages']} pages")
             
     print(f"\n⚠️  Expected March: 11-12 books | Found: {march_books} | May need to reimport fresh Goodreads export")
+    
+    # Apply genre overrides before finalizing
+    data_structure = apply_genre_overrides(data_structure)
     
     return data_structure
 

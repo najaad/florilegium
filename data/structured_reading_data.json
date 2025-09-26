@@ -151,7 +151,7 @@
     {
       "title": "The Necromancer's House",
       "author": "Christopher Buehlman",
-      "genre": "Fantasy fiction"
+      "genre": "Fantasy"
     },
     {
       "title": "Daughter of No Worlds",
@@ -746,7 +746,7 @@
     {
       "title": "Butcher & Blackbird",
       "author": "Brynne Weaver",
-      "genre": "Boston (Mass.)"
+      "genre": "Dark Romance"
     },
     {
       "title": "Shades of Grey",
@@ -986,7 +986,7 @@
     {
       "title": "Shadow and Bone",
       "author": "Leigh Bardugo",
-      "genre": "Ability"
+      "genre": "Fantasy"
     },
     {
       "title": "City of Bones",
@@ -1336,7 +1336,7 @@
     {
       "title": "It",
       "author": "Stephen King",
-      "genre": "Horror tales"
+      "genre": "Horror"
     }
   ],
   "completedBooks": 42,
@@ -1543,7 +1543,11 @@
       "title": "Shadow Me",
       "author": "Tahereh Mafi"
     },
-    "longestBook": 477
+    "longestBook": {
+      "pages": 782,
+      "title": "Catching Fire",
+      "author": "Suzanne Collins"
+    }
   },
   "goals": {
     "books": {
