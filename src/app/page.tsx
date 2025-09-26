@@ -405,7 +405,7 @@ export default function Home() {
               <div className="bg-base-100 rounded-xl p-4 border border-base-300">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm opacity-70 mb-1">Fastest Read - {data?.readingStats?.fastestRead?.title || "Shadow Me"}</div>
+                    <div className="text-sm opacity-70 mb-1">Fastest Read</div>
                     <div className="text-xl font-bold text-secondary">
                       {data?.readingStats?.fastestRead?.pages || 0} pages in {data?.readingStats?.fastestRead?.days || 0} days
                     </div>
