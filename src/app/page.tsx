@@ -418,13 +418,13 @@ export default function Home() {
                   <div
                     className="h-full bg-primary rounded-full transition-all duration-500 ease-out"
                     style={{ 
-                      width: `${data?.goals.books.annual.target ? 
-                        (data.goals.books.annual.current / data.goals.books.annual.target) * 100 : 0}%` 
+                      width: `${data?.goals?.books?.annual?.target ? 
+                        Math.round((data.goals.books.annual.current / data.goals.books.annual.target) * 100) : 0}%` 
                     }}
                   ></div>
                 </div>
                 <div className="text-sm opacity-70 mt-2">
-                  {data?.goals.books.annual.target ? 
+                  {data?.goals?.books?.annual?.target ? 
                     Math.round((data.goals.books.annual.current / data.goals.books.annual.target) * 100) : 0}% complete
                 </div>
               </div>
