@@ -26,8 +26,8 @@ type Overview = {
   currentlyReading: { title: string; author: string; totalPages: number; genre: string; progress?: number }[];
   topGenres: { name: string; count: number }[];
   topAuthors: { name: string; count: number }[];
-  lastYearTotals: { books: number; pages: number };
-  currentYearStart: string;
+  lastYearTotals?: { books: number; pages: number };
+  currentYearStart?: string;
   longestBooksByGenre: { genre: string; title: string; author: string; pages: number }[];
   consistentGenres: { name: string; currentYear: number; pastYears: number; totalBooks: number }[];
   consistentAuthors: { name: string; currentYear: number; pastYears: number; totalBooks: number }[];
@@ -903,8 +903,10 @@ function AnnualReadingForecast({ data }: { data: Overview | null }) {
   
   if (isJanuary) {
     // In January, use last year's totals as baseline
-    booksPerMonth = data.lastYearTotals.books / 12;
-    pagesPerMonth = data.lastYearTotals.pages / 12;
+    const lastYearBooks = data.lastYearTotals?.books || 0;
+    const lastYearPages = data.lastYearTotals?.pages || 0;
+    booksPerMonth = lastYearBooks / 12;
+    pagesPerMonth = lastYearPages / 12;
     estimatedBooks = Math.round(booksPerMonth * 12);
     estimatedPages = Math.round(pagesPerMonth * 12);
   } else {
@@ -915,8 +917,8 @@ function AnnualReadingForecast({ data }: { data: Overview | null }) {
     estimatedPages = Math.round(data.totals.pages + (pagesPerMonth * monthsRemaining));
   }
   
-  // Calculate average book length for conversion
-  const averageBookLength = data.totals.books > 0 ? data.totals.pages / data.totals.books : 320;
+  // Calculate average book length for conversion  
+  const averageBookLength = (data.totals?.books > 0 && data.totals?.pages) ? data.totals.pages / data.totals.books : 320;
   const estimatedBooksFromPages = Math.round(estimatedPages / averageBookLength);
 
   return (
@@ -933,7 +935,7 @@ function AnnualReadingForecast({ data }: { data: Overview | null }) {
           </div>
           <div className="text-sm opacity-60">
             {isJanuary ? 
-              `Last year: ${data.lastYearTotals.books} books (${(data.lastYearTotals.books / 12).toFixed(1)}/month)` :
+              `Last year: ${data.lastYearTotals?.books || 0} books (${((data.lastYearTotals?.books || 0) / 12).toFixed(1)}/month)` :
               `Current pace: ${booksPerMonth.toFixed(1)} books/month`
             }
           </div>
@@ -952,7 +954,7 @@ function AnnualReadingForecast({ data }: { data: Overview | null }) {
           </div>
           <div className="text-sm opacity-60">
             {isJanuary ? 
-              `Last year: ${data.lastYearTotals.pages.toLocaleString()} pages (${(data.lastYearTotals.pages / 12).toLocaleString()}/month)` :
+              `Last year: ${(data.lastYearTotals?.pages || 0).toLocaleString()} pages (${((data.lastYearTotals?.pages || 0) / 12).toLocaleString()}/month)` :
               `Current pace: ${pagesPerMonth.toLocaleString()} pages/month`
             }
           </div>
