@@ -1,0 +1,1641 @@
+{
+  "currentYear": 2025,
+  "currentlyReading": [
+    {
+      "title": "Imagine Me",
+      "author": "Tahereh Mafi",
+      "totalPages": 450,
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Flowers for Algernon",
+      "author": "Daniel Keyes",
+      "totalPages": 219,
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "Annihilation",
+      "author": "Jeff VanderMeer",
+      "totalPages": 195,
+      "genre": "Fiction"
+    },
+    {
+      "title": "What We Talk About When We Talk About Love",
+      "author": "Raymond Carver",
+      "totalPages": 159,
+      "genre": "Fiction"
+    },
+    {
+      "title": "Harry Potter and the Deathly Hallows",
+      "author": "J.K. Rowling",
+      "totalPages": 759,
+      "genre": "Fantasy"
+    }
+  ],
+  "tbrList": [
+    {
+      "title": "Spread Me",
+      "author": "Sarah Gailey",
+      "genre": "Fiction"
+    },
+    {
+      "title": "You Like It Darker",
+      "author": "Stephen King",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Between Life and Death",
+      "author": "Jaclyn Kot",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Fisherman",
+      "author": "John Langan",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Spellcaster",
+      "author": "Jaymin Eve",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Don't Let the Forest In",
+      "author": "C.G. Drews",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "House of the Beast",
+      "author": "Michelle Wong",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Fearful",
+      "author": "Lauren Roberts",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Dungeon Crawler Carl",
+      "author": "Matt Dinniman",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Tell Me What You Did",
+      "author": "Carter Wilson",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Sea of Tranquility",
+      "author": "Emily St. John Mandel",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Lion and the Deathless Dark",
+      "author": "Carissa Broadbent",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Memory Police",
+      "author": "Yōko Ogawa",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Silver Elite",
+      "author": "Dani Francis",
+      "genre": "Fiction"
+    },
+    {
+      "title": "One True Loves",
+      "author": "Taylor Jenkins Reid",
+      "genre": "Romance"
+    },
+    {
+      "title": "A Liar's Twisted Tongue",
+      "author": "Caroline Cusanelli",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "The Midnight Feast",
+      "author": "Lucy Foley",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Paris Apartment",
+      "author": "Lucy Foley",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Guest List",
+      "author": "Lucy Foley",
+      "genre": "Mystery"
+    },
+    {
+      "title": "Lord of the Flies",
+      "author": "William Golding",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Tomorrow, and Tomorrow, and Tomorrow",
+      "author": "Gabrielle Zevin",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Holy Wrath",
+      "author": "Victoria Mier",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "For Whom the Belle Tolls",
+      "author": "Jaysea Lynn",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Necromancer's House",
+      "author": "Christopher Buehlman",
+      "genre": "Fantasy fiction"
+    },
+    {
+      "title": "Daughter of No Worlds",
+      "author": "Carissa Broadbent",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Last Wish",
+      "author": "Andrzej Sapkowski",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Lamb",
+      "author": "Lucy Rose",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Throne in the Dark",
+      "author": "A.K. Caggiano",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Bull Moon Rising",
+      "author": "Ruby Dixon",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Shield of Sparrows",
+      "author": "Devney Perry",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Stars Are Dying",
+      "author": "C.C. Peñaranda",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Meet Me in Another Life",
+      "author": "Catriona Silvey",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Wicked Saints",
+      "author": "Emily A. Duncan",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "The Passengers",
+      "author": "John Marrs",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Eye of the World",
+      "author": "Robert Jordan",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Darkfever",
+      "author": "Karen Marie Moning",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Song of the Forever Rains",
+      "author": "E.J. Mellow",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Prison Healer",
+      "author": "Lynette Noni",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Nightshade",
+      "author": "Keri Lake",
+      "genre": "Man-woman relationships"
+    },
+    {
+      "title": "Gifted & Talented",
+      "author": "Olivie Blake",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Things We Do to Our Friends",
+      "author": "Heather Darwent",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Daughters of the Lake",
+      "author": "Wendy Webb",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Girl from the Well",
+      "author": "Rin Chupeco",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Depths of Vanalf",
+      "author": "Brady Hunsaker",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The City in Glass",
+      "author": "Nghi Vo",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Penpal",
+      "author": "Dathan Auerbach",
+      "genre": "Early memories"
+    },
+    {
+      "title": "Negative Space",
+      "author": "B.R. Yeager",
+      "genre": "Motion pictures"
+    },
+    {
+      "title": "Incidents Around the House",
+      "author": "Josh Malerman",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Come Closer",
+      "author": "Sara Gran",
+      "genre": "Demoniac possession"
+    },
+    {
+      "title": "Bunny",
+      "author": "Mona Awad",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Foxglove King",
+      "author": "Hannah F. Whitten",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Parable of the Sower",
+      "author": "Octavia E. Butler",
+      "genre": "Fiction"
+    },
+    {
+      "title": "A Boy and His Dog at the End of the World",
+      "author": "C.A. Fletcher",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Borne",
+      "author": "Jeff VanderMeer",
+      "genre": "Fiction"
+    },
+    {
+      "title": "A Psalm for the Wild-Built",
+      "author": "Becky Chambers",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "Our Infinite Fates",
+      "author": "Laura Steven",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Normal People",
+      "author": "Sally Rooney",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Hike",
+      "author": "Drew Magary",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Reign & Ruin",
+      "author": "J.D. Evans",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Where I End",
+      "author": "Sophie White",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Land of the Beautiful Dead",
+      "author": "R. Lee Smith",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "This Tender Land",
+      "author": "William Kent Krueger",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Earth Abides",
+      "author": "George R. Stewart",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Dark Matter",
+      "author": "Blake Crouch",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Recursion",
+      "author": "Blake Crouch",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Last House on Needless Street",
+      "author": "Catriona Ward",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Coven",
+      "author": "Harper L. Woods",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "In Universes",
+      "author": "Emet North",
+      "genre": "Fiction"
+    },
+    {
+      "title": "A Game of Love and Betrayal",
+      "author": "Elayna R. Gallea",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Last Murder at the End of the World",
+      "author": "Stuart Turton",
+      "genre": "Mystery"
+    },
+    {
+      "title": "That's Not My Name",
+      "author": "Megan Lally",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Me Before You",
+      "author": "Jojo Moyes",
+      "genre": "Fiction"
+    },
+    {
+      "title": "A Man Called Ove",
+      "author": "Fredrik Backman",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Divine Rivals",
+      "author": "Rebecca Ross",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Magic's Pawn",
+      "author": "Mercedes Lackey",
+      "genre": "Fiction"
+    },
+    {
+      "title": "I Who Have Never Known Men",
+      "author": "Jacqueline Harpman",
+      "genre": "Fiction"
+    },
+    {
+      "title": "On the Beach",
+      "author": "Nevil Shute",
+      "genre": "Post‑Apocalyptic Fiction"
+    },
+    {
+      "title": "Citadel",
+      "author": "C.M. Alongi",
+      "genre": "Fiction"
+    },
+    {
+      "title": "To Kill a Necromancer",
+      "author": "C.M. Alongi",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Break The Bodies, Haunt The Bones",
+      "author": "Micah Dean Hicks",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Divine Farce",
+      "author": "Michael S.A. Graziano",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Windows into Hell",
+      "author": "James Wymore",
+      "genre": "Horror"
+    },
+    {
+      "title": "The Library of Babel",
+      "author": "Jorge Luis Borges",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Replay",
+      "author": "Ken Grimwood",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Crave",
+      "author": "Tracy Wolff",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "The Knight and the Moth",
+      "author": "Rachel Gillig",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Vicious",
+      "author": "V.E. Schwab",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Lights Out",
+      "author": "Navessa Allen",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Get in My Swamp",
+      "author": "G.M. Fairy",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Bad Beehavior",
+      "author": "G.M. Fairy",
+      "genre": "Romance"
+    },
+    {
+      "title": "Ice Planet Barbarians",
+      "author": "Ruby Dixon",
+      "genre": "Romance"
+    },
+    {
+      "title": "The Outrun",
+      "author": "Amy Liptrot",
+      "genre": "Biography & Autobiography"
+    },
+    {
+      "title": "Tress of the Emerald Sea",
+      "author": "Brandon Sanderson",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Nocticadia",
+      "author": "Keri Lake",
+      "genre": "Dark Romance"
+    },
+    {
+      "title": "Phantasma",
+      "author": "Kaylie Smith",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Mickey7",
+      "author": "Edward Ashton",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Hollow Places",
+      "author": "T. Kingfisher",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Heartless Hunter",
+      "author": "Kristen Ciccarelli",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Elder Race",
+      "author": "Adrian Tchaikovsky",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Little Women",
+      "author": "Louisa May Alcott",
+      "genre": "Classic / Literary Fiction"
+    },
+    {
+      "title": "The Library at Mount Char",
+      "author": "Scott Hawkins",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Year One",
+      "author": "Nora Roberts",
+      "genre": "Fiction"
+    },
+    {
+      "title": "All of Us Villains",
+      "author": "Amanda Foody",
+      "genre": "JUVENILE FICTION"
+    },
+    {
+      "title": "Citizen: An American Lyric",
+      "author": "Claudia Rankine",
+      "genre": "Art"
+    },
+    {
+      "title": "The Park Service",
+      "author": "Ryan Winfield",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Daughter of the Forest",
+      "author": "Juliet Marillier",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Jasmine Throne",
+      "author": "Tasha Suri",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Sun and the Void",
+      "author": "Gabriela Romero Lacruz",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Mistborn: The Final Empire",
+      "author": "Brandon Sanderson",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Realm Breaker",
+      "author": "Victoria Aveyard",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Eden Rising",
+      "author": "Shade Owens",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Devil All the Time",
+      "author": "Donald Ray Pollock",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Starling House",
+      "author": "Alix E. Harrow",
+      "genre": "Fiction"
+    },
+    {
+      "title": "A Sorceress Comes to Call",
+      "author": "T. Kingfisher",
+      "genre": "Fiction"
+    },
+    {
+      "title": "We Used to Live Here",
+      "author": "Marcus Kliewer",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Anathema",
+      "author": "Keri Lake",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Cultish: The Language of Fanaticism",
+      "author": "Amanda Montell",
+      "genre": "Language Arts & Disciplines"
+    },
+    {
+      "title": "Rain of Shadows and Endings",
+      "author": "Melissa K. Roehrich",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Story Collector",
+      "author": "Evie Woods",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Remarkably Bright Creatures",
+      "author": "Shelby Van Pelt",
+      "genre": "Human-animal relationships"
+    },
+    {
+      "title": "Eragon",
+      "author": "Christopher Paolini",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "The Night Circus",
+      "author": "Erin Morgenstern",
+      "genre": "Fiction"
+    },
+    {
+      "title": "This Is How You Lose the Time War",
+      "author": "Amal El-Mohtar",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "The People in the Trees",
+      "author": "Hanya Yanagihara",
+      "genre": "Aging"
+    },
+    {
+      "title": "I Hope This Finds You Well",
+      "author": "Natalie Sue",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Blindness",
+      "author": "José Saramago",
+      "genre": "Post‑Apocalyptic Fiction"
+    },
+    {
+      "title": "Everything I Never Told You",
+      "author": "Celeste Ng",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Dark Places",
+      "author": "Gillian Flynn",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Reasons to Stay Alive",
+      "author": "Matt Haig",
+      "genre": "Biography & Autobiography"
+    },
+    {
+      "title": "The Bell Jar",
+      "author": "Sylvia Plath",
+      "genre": "American fiction"
+    },
+    {
+      "title": "Clockwork Angel",
+      "author": "Cassandra Clare",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Muse of Nightmares",
+      "author": "Laini Taylor",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Strange the Dreamer",
+      "author": "Laini Taylor",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "When the Moon Hatched",
+      "author": "Sarah A. Parker",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Forsaken Mate",
+      "author": "Vasilisa Drake",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Bunker Diary",
+      "author": "Kevin Brooks",
+      "genre": "Conduct of life"
+    },
+    {
+      "title": "Outer Dark",
+      "author": "Cormac McCarthy",
+      "genre": "Abandoned children"
+    },
+    {
+      "title": "Never Let Me Go",
+      "author": "Kazuo Ishiguro",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Lightlark",
+      "author": "Alex Aster",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Spark of the Everflame",
+      "author": "Penn Cole",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Lord of the Fading Lands",
+      "author": "C.L. Wilson",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Wonder",
+      "author": "R.J. Palacio",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Butcher & Blackbird",
+      "author": "Brynne Weaver",
+      "genre": "Boston (Mass.)"
+    },
+    {
+      "title": "Shades of Grey",
+      "author": "Jasper Fforde",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Eleanor Oliphant Is Completely Fine",
+      "author": "Gail Honeyman",
+      "genre": "Chick lit"
+    },
+    {
+      "title": "City of Gods and Monsters",
+      "author": "Kayla Edwards",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Earthlings",
+      "author": "Sayaka Murata",
+      "genre": "Fiction"
+    },
+    {
+      "title": "We Are All Completely Fine",
+      "author": "Daryl Gregory",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Pet Sematary",
+      "author": "Stephen King",
+      "genre": "Horror"
+    },
+    {
+      "title": "My Dark Vanessa",
+      "author": "Kate Elizabeth Russell",
+      "genre": "Fiction"
+    },
+    {
+      "title": "To Paradise",
+      "author": "Hanya Yanagihara",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Secret History",
+      "author": "Donna Tartt",
+      "genre": "Fiction"
+    },
+    {
+      "title": "A Fine Balance",
+      "author": "Rohinton Mistry",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Heart's Invisible Furies",
+      "author": "John Boyne",
+      "genre": "Literary Fiction"
+    },
+    {
+      "title": "Demon Copperhead",
+      "author": "Barbara Kingsolver",
+      "genre": "Literary Fiction"
+    },
+    {
+      "title": "On Earth We're Briefly Gorgeous",
+      "author": "Ocean Vuong",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Goldfinch",
+      "author": "Donna Tartt",
+      "genre": "Fiction"
+    },
+    {
+      "title": "I Know This Much Is True",
+      "author": "Wally Lamb",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Tell the Wolves I'm Home",
+      "author": "Carol Rifka Brunt",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Saving Noah",
+      "author": "Lucinda Berry",
+      "genre": "Romance"
+    },
+    {
+      "title": "No One Rides For Free",
+      "author": "Judith Sonnet",
+      "genre": "Horror"
+    },
+    {
+      "title": "The Starless Sea",
+      "author": "Erin Morgenstern",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Ocean at the End of the Lane",
+      "author": "Neil Gaiman",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Brutal Prince",
+      "author": "Sophie Lark",
+      "genre": "Romance"
+    },
+    {
+      "title": "The Spear Cuts Through Water",
+      "author": "Simon Jimenez",
+      "genre": "Fiction"
+    },
+    {
+      "title": "A River Enchanted",
+      "author": "Rebecca Ross",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Daughter of the Blood",
+      "author": "Anne Bishop",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Stand",
+      "author": "Stephen King",
+      "genre": "Horror"
+    },
+    {
+      "title": "Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch",
+      "author": "Terry Pratchett",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Under the Dome",
+      "author": "Stephen King",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Veiled Kingdom",
+      "author": "Holly Renee",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Curse of Shadows and Thorns",
+      "author": "L.J. Andrews",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Awakening",
+      "author": "Caroline Peckham",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Caraval",
+      "author": "Stephanie Garber",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "The Midnight Library",
+      "author": "Matt Haig",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The House in the Cerulean Sea",
+      "author": "T.J. Klune",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Nettle & Bone",
+      "author": "T. Kingfisher",
+      "genre": "Fiction"
+    },
+    {
+      "title": "A Game of Thrones",
+      "author": "George R.R. Martin",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Bonded by Thorns",
+      "author": "Elizabeth Helen",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Ruthless Enemy",
+      "author": "Marion Blackwood",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Gone to See the River Man",
+      "author": "Kristopher Triana",
+      "genre": "Horror"
+    },
+    {
+      "title": "The Black Farm",
+      "author": "Elias Witherow",
+      "genre": "Horror"
+    },
+    {
+      "title": "Fear the Flames",
+      "author": "Olivia Rose Darling",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Heavenly Bodies",
+      "author": "Imani Erriu",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Keep It in the Family",
+      "author": "John Marrs",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Tender Is the Flesh",
+      "author": "Agustina Bazterrica",
+      "genre": "Horror"
+    },
+    {
+      "title": "The Troop",
+      "author": "Nick Cutter",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Still Missing",
+      "author": "Chevy Stevens",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Ruins",
+      "author": "Scott Smith",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Vampire Academy",
+      "author": "Richelle Mead",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Shadow and Bone",
+      "author": "Leigh Bardugo",
+      "genre": "Ability"
+    },
+    {
+      "title": "City of Bones",
+      "author": "Cassandra Clare",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Red Queen",
+      "author": "Victoria Aveyard",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "The Darkest Minds",
+      "author": "Alexandra Bracken",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "The Beautiful",
+      "author": "Renée Ahdieh",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "A Shadow Bright and Burning",
+      "author": "Jessica Cluess",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "Faefever",
+      "author": "Karen Marie Moning",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Mad Honey",
+      "author": "Jodi Picoult",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Cruel Prince",
+      "author": "Holly Black",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Chapterhouse: Dune",
+      "author": "Frank Herbert",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Heretics of Dune",
+      "author": "Frank Herbert",
+      "genre": "Fiction"
+    },
+    {
+      "title": "God Emperor of Dune",
+      "author": "Frank Herbert",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Handmaid’s Tale",
+      "author": "Margaret Atwood",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Sharp Objects",
+      "author": "Gillian Flynn",
+      "genre": "Thriller"
+    },
+    {
+      "title": "Jurassic Park",
+      "author": "Michael Crichton",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Talented Mr. Ripley",
+      "author": "Patricia Highsmith",
+      "genre": "Thriller"
+    },
+    {
+      "title": "The Celestine Prophecy",
+      "author": "James Redfield",
+      "genre": "Philosophical Fiction"
+    },
+    {
+      "title": "Misery",
+      "author": "Stephen King",
+      "genre": "Horror"
+    },
+    {
+      "title": "In My Dreams I Hold a Knife",
+      "author": "Ashley Winstead",
+      "genre": "Horror"
+    },
+    {
+      "title": "A Shadow in the Ember",
+      "author": "Jennifer L. Armentrout",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "American Psycho",
+      "author": "Bret Easton Ellis",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Host",
+      "author": "Stephenie Meyer",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Atlas Six",
+      "author": "Olivie Blake",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Wake Me After the Apocalypse",
+      "author": "Jordan Rivet",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "Red Rising",
+      "author": "Pierce Brown",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Princess Trials",
+      "author": "Cordelia K. Castel",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Selection",
+      "author": "Kiera Cass",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Scorpio",
+      "author": "Marko Kloos",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "Bird Box",
+      "author": "Josh Malerman",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Slewfoot: A Tale of Bewitchery",
+      "author": "Brom",
+      "genre": "Fiction"
+    },
+    {
+      "title": "His & Hers",
+      "author": "Alice Feeney",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Daisy Darker",
+      "author": "Alice Feeney",
+      "genre": "Fiction"
+    },
+    {
+      "title": "A Soul to Keep",
+      "author": "Opal Reyne",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "From Blood and Ash",
+      "author": "Jennifer L. Armentrout",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Inheritance Games",
+      "author": "Jennifer Lynn Barnes",
+      "genre": "Mystery"
+    },
+    {
+      "title": "The Hitchhiker’s Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "The Book Thief",
+      "author": "Markus Zusak",
+      "genre": "Historical Fiction"
+    },
+    {
+      "title": "Blood of Elves",
+      "author": "Andrzej Sapkowski",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Glass Castle",
+      "author": "Jeannette Walls",
+      "genre": "Biography & Autobiography"
+    },
+    {
+      "title": "The Illustrated Man",
+      "author": "Ray Bradbury",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Slaughterhouse-Five",
+      "author": "Kurt Vonnegut Jr.",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "This is Where I Leave You",
+      "author": "Jonathan Tropper",
+      "genre": "Fiction"
+    },
+    {
+      "title": "It's Kind of a Funny Story",
+      "author": "Ned Vizzini",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Scythe",
+      "author": "Neal Shusterman",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Crooked Kingdom",
+      "author": "Leigh Bardugo",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Six of Crows",
+      "author": "Leigh Bardugo",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Acceptance",
+      "author": "Jeff VanderMeer",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Authority",
+      "author": "Jeff VanderMeer",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Station Eleven",
+      "author": "Emily St. John Mandel",
+      "genre": "Post‑Apocalyptic Fiction"
+    },
+    {
+      "title": "The Stone Sky",
+      "author": "N.K. Jemisin",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Obelisk Gate",
+      "author": "N.K. Jemisin",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Fifth Season",
+      "author": "N.K. Jemisin",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "We Need to Talk About Kevin",
+      "author": "Lionel Shriver",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Seven Husbands of Evelyn Hugo",
+      "author": "Taylor Jenkins Reid",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Amber Spyglass",
+      "author": "Philip Pullman",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Subtle Knife",
+      "author": "Philip Pullman",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Golden Compass",
+      "author": "Philip Pullman",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Son",
+      "author": "Lois Lowry",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Arrow of God",
+      "author": "Chinua Achebe",
+      "genre": "Classic Fiction"
+    },
+    {
+      "title": "No Longer at Ease",
+      "author": "Chinua Achebe",
+      "genre": "Classic Fiction"
+    },
+    {
+      "title": "Farenheit 451",
+      "author": "Ray Bradbury",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "The Princess Bride",
+      "author": "William Goldman",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Outland",
+      "author": "Dennis E. Taylor",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "Children of Dune",
+      "author": "Frank Herbert",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Dune Messiah",
+      "author": "Frank Herbert",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The War of the Worlds",
+      "author": "H.G. Wells",
+      "genre": "Science Fiction"
+    },
+    {
+      "title": "It",
+      "author": "Stephen King",
+      "genre": "Horror tales"
+    }
+  ],
+  "completedBooks": 122,
+  "completedPages": 55354,
+  "byMonth": [
+    {
+      "month": "Jan",
+      "count": 2,
+      "pages": 928
+    },
+    {
+      "month": "Feb",
+      "count": 4,
+      "pages": 1943
+    },
+    {
+      "month": "Mar",
+      "count": 10,
+      "pages": 3552
+    },
+    {
+      "month": "Apr",
+      "count": 3,
+      "pages": 827
+    },
+    {
+      "month": "May",
+      "count": 2,
+      "pages": 721
+    },
+    {
+      "month": "Jun",
+      "count": 0,
+      "pages": 0
+    },
+    {
+      "month": "Jul",
+      "count": 2,
+      "pages": 691
+    },
+    {
+      "month": "Aug",
+      "count": 6,
+      "pages": 3039
+    },
+    {
+      "month": "Sep",
+      "count": 10,
+      "pages": 2696
+    },
+    {
+      "month": "Oct",
+      "count": 0,
+      "pages": 0
+    },
+    {
+      "month": "Nov",
+      "count": 0,
+      "pages": 0
+    },
+    {
+      "month": "Dec",
+      "count": 0,
+      "pages": 0
+    }
+  ],
+  "topGenres": [
+    {
+      "name": "Young Adult Fiction",
+      "count": 49
+    },
+    {
+      "name": "Fiction",
+      "count": 36
+    },
+    {
+      "name": "Fantasy",
+      "count": 16
+    },
+    {
+      "name": "Romantasy",
+      "count": 4
+    },
+    {
+      "name": "Science Fiction",
+      "count": 2
+    },
+    {
+      "name": "Dark Romance",
+      "count": 2
+    },
+    {
+      "name": "Classic Fiction",
+      "count": 2
+    },
+    {
+      "name": "Memoir",
+      "count": 2
+    },
+    {
+      "name": "Horror",
+      "count": 1
+    },
+    {
+      "name": "Historical Fiction",
+      "count": 1
+    }
+  ],
+  "topAuthors": [
+    {
+      "name": "Sarah J. Maas",
+      "count": 16
+    },
+    {
+      "name": "Tahereh Mafi",
+      "count": 9
+    },
+    {
+      "name": "Carissa Broadbent",
+      "count": 6
+    },
+    {
+      "name": "J.K. Rowling",
+      "count": 6
+    },
+    {
+      "name": "Suzanne Collins",
+      "count": 5
+    },
+    {
+      "name": "Stephenie Meyer",
+      "count": 5
+    },
+    {
+      "name": "Rebecca Yarros",
+      "count": 4
+    },
+    {
+      "name": "Lauren Roberts",
+      "count": 4
+    },
+    {
+      "name": "John Green",
+      "count": 4
+    },
+    {
+      "name": "Sarah Dessen",
+      "count": 4
+    }
+  ],
+  "longestBooksByGenre": [
+    {
+      "genre": "Young Adult Fiction",
+      "title": "The Hunger Games",
+      "author": "Suzanne Collins",
+      "pages": 1122
+    },
+    {
+      "genre": "Fiction",
+      "title": "House of Earth and Blood",
+      "author": "Sarah J. Maas",
+      "pages": 1606
+    },
+    {
+      "genre": "Horror",
+      "title": "The Long Walk",
+      "author": "Richard Bachman",
+      "pages": 319
+    },
+    {
+      "genre": "Fantasy",
+      "title": "Harry Potter and the Order of the Phoenix",
+      "author": "J.K. Rowling",
+      "pages": 870
+    },
+    {
+      "genre": "Romantasy",
+      "title": "Fearless",
+      "author": "Lauren Roberts",
+      "pages": 608
+    },
+    {
+      "genre": "Historical Fiction",
+      "title": "The Song of Achilles",
+      "author": "Madeline Miller",
+      "pages": 351
+    },
+    {
+      "genre": "Large type books",
+      "title": "Catching Fire",
+      "author": "Suzanne Collins",
+      "pages": 782
+    },
+    {
+      "genre": "Civilization, Subterranean",
+      "title": "Dust",
+      "author": "Hugh Howey",
+      "pages": 458
+    },
+    {
+      "genre": "Science Fiction",
+      "title": "Wool",
+      "author": "Hugh Howey",
+      "pages": 584
+    },
+    {
+      "genre": "Dark Romance",
+      "title": "Haunting Adeline",
+      "author": "H.D. Carlton",
+      "pages": 583
+    }
+  ],
+  "longestBooksByAuthor": [
+    {
+      "author": "Tahereh Mafi",
+      "title": "Unravel Me",
+      "pages": 461
+    },
+    {
+      "author": "Madeline Miller",
+      "title": "Circe",
+      "pages": 393
+    },
+    {
+      "author": "Suzanne Collins",
+      "title": "The Hunger Games",
+      "pages": 1122
+    },
+    {
+      "author": "Richard Bachman",
+      "title": "The Long Walk",
+      "pages": 319
+    },
+    {
+      "author": "Rebecca Yarros",
+      "title": "Iron Flame",
+      "pages": 1246
+    },
+    {
+      "author": "Andy Weir",
+      "title": "Project Hail Mary",
+      "pages": 482
+    },
+    {
+      "author": "Carissa Broadbent",
+      "title": "The Fallen and the Kiss of Dusk",
+      "pages": 638
+    },
+    {
+      "author": "Daniel Kehlmann",
+      "title": "You Should Have Left",
+      "pages": 113
+    },
+    {
+      "author": "Lauren Roberts",
+      "title": "Fearless",
+      "pages": 608
+    },
+    {
+      "author": "Richard Matheson",
+      "title": "I Am Legend",
+      "pages": 162
+    }
+  ],
+  "readingStats": {
+    "pagesPerDay": 206,
+    "pagesPerWeek": 1442,
+    "pagesPerMonth": 6180,
+    "averageBookLength": 453,
+    "fastestRead": {
+      "pages": 309,
+      "days": 2
+    },
+    "longestBook": 544
+  },
+  "goals": {
+    "books": {
+      "annual": {
+        "current": 122,
+        "target": 158
+      },
+      "monthly": {
+        "current": 10,
+        "target": 13
+      }
+    },
+    "pages": {
+      "annual": {
+        "current": 55354,
+        "target": 66424
+      },
+      "monthly": {
+        "current": 4612,
+        "target": 5535
+      }
+    }
+  },
+  "totals": {
+    "books": 122,
+    "pages": 55354
+  }
+}

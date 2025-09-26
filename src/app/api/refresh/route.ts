@@ -4,18 +4,24 @@ import path from 'path';
 
 export async function GET() {
   try {
-    // Try to load real data from generated JSON file
-    const dataPath = path.join(process.cwd(), 'data', 'structured_reading_data.json');
-    
-    if (fs.existsSync(dataPath)) {
-      const fileContents = fs.readFileSync(dataPath, 'utf8');
-      const realData = JSON.parse(fileContents);
-      
-      console.log('📊 Loaded real reading data from structured_reading_data.json');
-      return NextResponse.json(realData);
-    } else {
-      console.log('⚠️ No structured_reading_data.json found, falling back to mock data');
+    // Try multiple paths to find structured data - check public directory first for Vercel
+    const possiblePaths = [
+      path.join(process.cwd(), 'public', 'structured_reading_data.json'),      // Primary (Vercel-friendly path)
+      path.join(process.cwd(), 'data', 'structured_reading_data.json'),       // Fallback for local dev
+      path.join(process.cwd(), '..', 'data', 'structured_reading_data.json'),
+    ];
+
+    for (const dataPath of possiblePaths) {
+      if (fs.existsSync(dataPath)) {
+        const fileContents = fs.readFileSync(dataPath, 'utf8');
+        const realData = JSON.parse(fileContents);
+        
+        console.log(`📊 Loaded real reading data from ${dataPath}`);
+        return NextResponse.json(realData);
+      }
     }
+    
+    console.log('⚠️ structured_reading_data.json not found in any expected location');
   } catch (error) {
     console.error('Error loading structured reading data:', error);
   }

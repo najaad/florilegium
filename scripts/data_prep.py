@@ -313,14 +313,23 @@ def main():
     if not structured_data:
         return
     
-    # Save to a structured JSON file for easy consumption
-    output_file = "data/structured_reading_data.json"
+    # Save to both data directory and public directory for Vercel access
+    output_file_data = "data/structured_reading_data.json"
+    output_file_public = "public/structured_reading_data.json"
+    
     try:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        # Save to data directory
+        with open(output_file_data, 'w', encoding='utf-8') as f:
             json.dump(structured_data, f, indent=2, ensure_ascii=False)
-        print(f"💾 Saved structured reading data to {output_file}")
+        print(f"💾 Saved structured reading data to {output_file_data}")
+        
+        # Copy to public directory for Vercel deployment
+        import shutil
+        shutil.copy2(output_file_data, output_file_public)
+        print(f"📋 Copied to {output_file_public} for Vercel deployment")
+        
     except Exception as e:
-        print(f"❌ Error saving {output_file}: {e}")
+        print(f"❌ Error saving {output_file_data}: {e}")
         return
     
     print("✅ Data preparation completed!")
