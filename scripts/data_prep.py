@@ -296,12 +296,84 @@ def process_reading_data():
         }
     }
 
+    # Calculate consistent genres and authors (across current and previous years)
+    df = pd.read_csv('data/goodreads_enriched.csv')
+    
+    # Track consistent genres and authors  
+    consistent_genres = {} 
+    consistent_authors = {}
+    current_year_books = []
+    previous_year_books = []
+    
+    # For each READ book, check if it's current year vs past years
+    for idx, row in df.iterrows():
+        exclusive_shelf = str(row.get('Exclusive Shelf', '')).lower().strip()
+        if exclusive_shelf == "read":
+            year, _, is_current = extract_year_month(row.get('Date Read', '') or row.get('Date Added', ''))
+            genre = normalize_genre(row.get('Genre', ''))
+            author = clean_author_name(row.get('Author', ''))
+            
+            if is_current and year == current_year:
+                # Track current year tracking for genres
+                if genre and genre != "Unknown":
+                    if genre not in consistent_genres:
+                        consistent_genres[genre] = {"current": 0, "past": 0}
+                    consistent_genres[genre]["current"] += 1
+                    current_year_books.append({"genre": genre})
+                
+                if author:
+                    if author not in consistent_authors:
+                        consistent_authors[author] = {"current": 0, "past": 0}
+                    consistent_authors[author]["current"] += 1
+                    current_year_books.append({"author": author})
+            elif year and year < current_year:
+                # Track previous years for comparison
+                if genre and genre != "Unknown":
+                    if genre not in consistent_genres:
+                        consistent_genres[genre] = {"current": 0, "past": 0}
+                    consistent_genres[genre]["past"] += 1
+                    previous_year_books.append({"genre": genre})
+                
+                if author:
+                    if author not in consistent_authors:
+                        consistent_authors[author] = {"current": 0, "past": 0}
+                    consistent_authors[author]["past"] += 1
+                    previous_year_books.append({"author": author})
+
+    # Build consistent genres/authors arrays for top 3
+    consistent_genres_top = []
+    consistent_authors_top = []
+    
+    for genre, counts in sorted(consistent_genres.items(), 
+                               key=lambda x: (x[1]["current"], x[1]["past"]), 
+                               reverse=True)[:3]:
+        if counts["current"] > 0 and counts["past"] > 0:
+            consistent_genres_top.append({
+                "name": genre,
+                "currentYear": counts["current"],
+                "pastYears": counts["past"],
+                "totalBooks": counts["current"] + counts["past"]
+            })
+    
+    for author, counts in sorted(consistent_authors.items(), 
+                               key=lambda x: (x[1]["current"], x[1]["past"]), 
+                               reverse=True)[:3]:
+        if counts["current"] > 0 and counts["past"] > 0:
+            consistent_authors_top.append({
+                "name": author,
+                "currentYear": counts["current"],
+                "pastYears": counts["past"],
+                "totalBooks": counts["current"] + counts["past"]
+            })
+
     # Add to data structure
     data_structure.update({
         "topGenres": top_genres,
         "topAuthors": top_authors, 
         "longestBooksByGenre": longest_by_genre,
         "longestBooksByAuthor": longest_by_author,
+        "consistentGenres": consistent_genres_top,
+        "consistentAuthors": consistent_authors_top,
         "readingStats": reading_stats,
         "goals": goals,
         "totals": {

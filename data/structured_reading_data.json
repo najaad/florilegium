@@ -1601,6 +1601,27 @@
       "pages": 162
     }
   ],
+  "consistentGenres": [
+    {
+      "name": "Fiction",
+      "currentYear": 11,
+      "pastYears": 9,
+      "totalBooks": 20
+    },
+    {
+      "name": "Young Adult Fiction",
+      "currentYear": 11,
+      "pastYears": 5,
+      "totalBooks": 16
+    },
+    {
+      "name": "Fantasy",
+      "currentYear": 6,
+      "pastYears": 7,
+      "totalBooks": 13
+    }
+  ],
+  "consistentAuthors": [],
   "readingStats": {
     "pagesPerDay": 206,
     "pagesPerWeek": 1442,

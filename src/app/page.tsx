@@ -90,14 +90,24 @@ export default function Home() {
     const apiUrl = '/api/refresh';
     
     fetch(apiUrl)
-      .then(r => r.json())
+      .then(r => {
+        if (!r.ok) {
+          throw new Error(`HTTP error! status: ${r.status}`);
+        }
+        return r.json();
+      })
       .then(data => {
+        if (data && (data.error || data.totals === undefined)) {
+          throw new Error('Invalid data response structure');
+        }
         console.log('📊 API Response - Received data:', data);
-        console.log(`📚 Data shows: ${data.totals?.books} books, ${data.totals?.pages} pages`);
+        console.log(`📚 Data shows: ${data?.totals?.books} books, ${data?.totals?.pages} pages`);
         setData(data);
       })
       .catch(error => {
         console.error('❌ Error fetching data:', error);
+        // Fallback to prevent site crash
+        setData(null);
       })
       .finally(() => setLoading(false));
   }, []);
@@ -128,6 +138,19 @@ export default function Home() {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <span className="loading loading-dots loading-lg" />
+      </main>
+    );
+  }
+
+  if (!data) {
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-base-100">
+        <div className="text-center">
+          <div className="text-2xl font-semibold text-warning mb-2">Loading Error</div>
+          <div className="text-base-content opacity-70">
+            Unable to load reading data at this time.
+          </div>
+        </div>
       </main>
     );
   }
@@ -252,21 +275,21 @@ export default function Home() {
                       <div className="bg-primary/10 border border-primary/20 rounded-lg p-2 md:p-3 overflow-hidden">
                         <div className="flex flex-col md:flex-row items-center justify-center">
                           <div className="text-sm md:text-lg font-semibold text-primary mb-2 md:mb-0 md:mr-4">
-                            You are currently reading {data.currentlyReading.length} book{data.currentlyReading.length !== 1 ? 's' : ''}:
+                            You are currently reading {data.currentlyReading?.length || 0} book{(data.currentlyReading?.length || 0) !== 1 ? 's' : ''}:
                           </div>
                           <div className="flex-1 overflow-hidden w-full">
                             <div className="animate-scroll whitespace-nowrap">
-                              {data.currentlyReading.map((book, index) => (
+                              {data.currentlyReading?.map((book, index) => (
                                 <span key={book.title} className="inline-block mr-6 md:mr-8 text-sm md:text-base text-base-content">
                                   <span className="font-medium">{book.title}</span> by <span className="font-medium">{book.author}</span>
-                                  {index < data.currentlyReading.length - 1 && <span className="mx-2 md:mx-4 text-primary">|</span>}
+                                  {index < (data.currentlyReading?.length || 0) - 1 && <span className="mx-2 md:mx-4 text-primary">|</span>}
                                 </span>
                               ))}
                               {/* Duplicate for seamless loop */}
-                              {data.currentlyReading.map((book, index) => (
+                              {data.currentlyReading?.map((book, index) => (
                                 <span key={`${book.title}-duplicate`} className="inline-block mr-6 md:mr-8 text-sm md:text-base text-base-content">
                                   <span className="font-medium">{book.title}</span> by <span className="font-medium">{book.author}</span>
-                                  {index < data.currentlyReading.length - 1 && <span className="mx-2 md:mx-4 text-primary">|</span>}
+                                  {index < (data.currentlyReading?.length || 0) - 1 && <span className="mx-2 md:mx-4 text-primary">|</span>}
                                 </span>
                               ))}
                             </div>
@@ -501,7 +524,7 @@ export default function Home() {
                     <div id="genres" className="bg-base-200 shadow-xl rounded-lg p-8">
                       <h2 className="text-2xl font-bold text-center mb-6">Top Genres</h2>
                       <div className="space-y-4">
-                        {data?.topGenres.map((genre, index) => {
+                        {(data?.topGenres || [])?.map((genre, index) => {
                           const colors = ['bg-primary', 'bg-secondary', 'bg-accent', 'bg-base-content', 'bg-error', 'bg-info'];
                           const totalBooks = data.totals.books;
                           const percentage = totalBooks ? Math.round((genre.count / totalBooks) * 100) : 0;
@@ -531,7 +554,7 @@ export default function Home() {
                       <div className="mb-6">
                         <h3 className="text-lg font-semibold mb-4 text-center">Consistent Genres</h3>
                         <div className="space-y-3">
-                          {data?.consistentGenres.map((genre, index) => {
+                          {(data?.consistentGenres || [])?.map((genre, index) => {
                             const colors = ['bg-primary', 'bg-secondary', 'bg-accent'];
                             return (
                               <div key={genre.name} className="flex items-center justify-between p-3 bg-base-100 rounded-lg">
@@ -558,7 +581,7 @@ export default function Home() {
                       <div>
                         <h3 className="text-lg font-semibold mb-4 text-center">Longest Books by Genre</h3>
                         <div className="space-y-3">
-                          {data?.longestBooksByGenre.map((book, index) => {
+                          {(data?.longestBooksByGenre || [])?.map((book, index) => {
                             const colors = ['bg-primary', 'bg-secondary', 'bg-accent'];
                             return (
                               <div key={book.genre} className="flex items-center justify-between p-3 bg-base-100 rounded-lg">
@@ -589,7 +612,7 @@ export default function Home() {
                     <div id="authors" className="bg-base-200 shadow-xl rounded-lg p-8">
                       <h2 className="text-2xl font-bold text-center mb-6">Top Authors</h2>
                       <div className="space-y-4">
-                        {data?.topAuthors.map((author, index) => {
+                        {(data?.topAuthors || [])?.map((author, index) => {
                           const colors = ['bg-primary text-primary-content', 'bg-secondary text-secondary-content', 'bg-accent text-accent-content', 'bg-base-content text-base-100', 'bg-error text-base-100', 'bg-info text-base-100'];
                           const totalBooks = data.totals.books;
                           const percentage = totalBooks ? Math.round((author.count / totalBooks) * 100) : 0;
@@ -622,7 +645,7 @@ export default function Home() {
                       <div className="mb-6">
                         <h3 className="text-lg font-semibold mb-4 text-center">Consistent Authors</h3>
                         <div className="space-y-3">
-                          {data?.consistentAuthors.map((author, index) => {
+                          {(data?.consistentAuthors || [])?.map((author, index) => {
                             const colors = ['bg-primary text-primary-content', 'bg-secondary text-secondary-content', 'bg-accent text-accent-content'];
                             const initials = author.name.split(' ').map(n => n[0]).join('').toUpperCase();
                             return (
@@ -652,7 +675,7 @@ export default function Home() {
                       <div>
                         <h3 className="text-lg font-semibold mb-4 text-center">Longest Books by Author</h3>
                         <div className="space-y-3">
-                          {data?.longestBooksByAuthor.map((book, index) => {
+                          {(data?.longestBooksByAuthor || [])?.map((book, index) => {
                             const colors = ['bg-primary', 'bg-secondary', 'bg-accent'];
                             return (
                               <div key={book.author} className="flex items-center justify-between p-3 bg-base-100 rounded-lg">
