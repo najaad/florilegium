@@ -132,6 +132,11 @@ def process_reading_data():
     longest_books_by_genre = {}
     longest_books_by_author = {}
     
+    # Track last year's totals for forecasting
+    last_year_totals = {"books": 0, "pages": 0}
+    current_year_start = f"{current_year}-01-01"
+    previous_year = current_year - 1
+    
     print("🔄 Processing books by shelf category...")
     
     for idx, row in df.iterrows():
@@ -142,6 +147,11 @@ def process_reading_data():
         read_count = int(row.get('Read Count', 1)) or 1
         pages = float(row.get('Number of Pages', 0)) or 0
         date_read = row.get('Date Read', '')
+        date_added = row.get('Date Added', '')
+        
+        # For READ books, if Date Read is blank, use Date Added as fallback
+        if exclusive_shelf == "read" and (pd.isna(date_read) or str(date_read).strip() == ''):
+            date_read = date_added  # Use Date Added as fallback
         
         # Check which shelf category this book is in
         if exclusive_shelf == "currently-reading":
@@ -174,6 +184,11 @@ def process_reading_data():
                 total_pages = int(pages * read_count)
                 data_structure["completedPages"] += total_pages
                 data_structure["completedBooks"] += 1
+                
+                # Check if this was read in the previous year for forecasting
+                if year == previous_year and month and month <= 12:
+                    last_year_totals["books"] += 1
+                    last_year_totals["pages"] += total_pages
                 
                 if is_current and month and month <= 12:
                     month_name = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -292,13 +307,16 @@ def process_reading_data():
         "totals": {
             "books": data_structure["completedBooks"],
             "pages": data_structure["completedPages"]
-        }
+        },
+        "lastYearTotals": last_year_totals,
+        "currentYearStart": current_year_start
     })
     
     print(f"✅ Processing Summary:")
     print(f"  📖 Currently reading: {len(data_structure['currentlyReading'])}")
     print(f"  📚 TBR: {len(data_structure['tbrList'])}")
     print(f"  ✅ Completed: {data_structure['completedBooks']} books, {data_structure['completedPages']} pages")
+    print(f"  📊 Last year totals: {last_year_totals['books']} books, {last_year_totals['pages']} pages (for forecasting)")
     
     return data_structure
 
