@@ -23,7 +23,7 @@ type Overview = {
       monthly: { current: number; target: number };
     };
   };
-  currentlyReading: { title: string; author: string; progress: number; totalPages: number }[];
+  currentlyReading: { title: string; author: string; totalPages: number; genre: string; progress?: number }[];
   topGenres: { name: string; count: number }[];
   topAuthors: { name: string; count: number }[];
   lastYearTotals: { books: number; pages: number };
@@ -702,7 +702,7 @@ export default function Home() {
 }
 
 // Pacing Calculator Component
-function PacingCalculator({ books }: { books: { title: string; author: string; progress: number; totalPages: number }[] }) {
+function PacingCalculator({ books }: { books: { title: string; author: string; totalPages: number; genre?: string; progress?: number }[] }) {
   const [selectedBook, setSelectedBook] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [goalDate, setGoalDate] = useState<string>('');
