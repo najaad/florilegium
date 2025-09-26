@@ -150,13 +150,9 @@ def process_reading_data():
         date_read = row.get('Date Read', '')
         date_added = row.get('Date Added', '')
         
-        # For READ books with blank Date Read, use Date Added or failing that, today
+        # For READ books with blank Date Read, use conservative fallback
         if exclusive_shelf == "read" and (pd.isna(date_read) or str(date_read).strip() == ''):
-            if pd.notna(date_added):
-                date_read = date_added  # Fallback to Date Added for read books missing completion date
-            else:
-                default_read_date = datetime.now().strftime('%Y-%m-%d')
-                date_read = default_read_date  # Use today to not poison old/blank data
+            date_read = '2022/01/01'  # Default for books without valid completion dates 
         
         # Check which shelf category this book is in
         if exclusive_shelf == "currently-reading":
@@ -188,18 +184,19 @@ def process_reading_data():
                 # Calculate pages with read count multiplier
                 total_pages = int(pages * read_count)
                 
-                # Check if this was read in the previous year for forecasting
+                # Check if this was read in the previous year for forecasting  
                 if year == previous_year and month and month <= 12:
                     last_year_totals["books"] += 1
                     last_year_totals["pages"] += total_pages
                 
-                # Only count books completed THIS YEAR
+                # Only count books completed THIS YEAR 
                 if is_current and month and month <= 12:
                     data_structure["completedPages"] += total_pages
                     data_structure["completedBooks"] += 1
                     month_name = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][month-1]
                     month_key = f"{current_year}-{month:02d}"
+                    
                     
                     if month_key not in monthly_stats:
                         monthly_stats[month_key] = {"count": 0, "pages": 0}
@@ -421,6 +418,17 @@ def process_reading_data():
     print(f"  📚 TBR: {len(data_structure['tbrList'])}")
     print(f"  ✅ Completed: {data_structure['completedBooks']} books, {data_structure['completedPages']} pages")
     print(f"  📊 Last year totals: {last_year_totals['books']} books, {last_year_totals['pages']} pages (for forecasting)")
+    
+    # Quick debug to verify month counts  
+    print(f"\n🔍 Monthly breakdown (March should be 11-12 books):")
+    march_books = 0  
+    for bm in data_structure["byMonth"]:
+        if bm["month"] == "Mar":
+            march_books = bm["count"]
+        if bm["count"] > 0:
+            print(f"  {bm['month']}: {bm['count']} books, {bm['pages']} pages")
+            
+    print(f"\n⚠️  Expected March: 11-12 books | Found: {march_books} | May need to reimport fresh Goodreads export")
     
     return data_structure
 

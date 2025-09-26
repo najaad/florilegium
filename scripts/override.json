@@ -1,0 +1,43 @@
+{
+  "book_overrides": {
+    "description": "Override specific book data before data preparation. Use this to fix books that were re-read in 2025 but Goodreads doesn't export the correct dates.",
+    "usage": "Edit this file to add books you've read multiple times - especially re-reads in the current year where dates are missing or incorrect.",
+    "overrides": [
+      {
+        "title": "Mockingjay",
+        "author": "Suzanne Collins",
+        "fields": {
+          "Date Read": "2025/03/15",
+          "Exclusive Shelf": "read", 
+          "Read Count": 2
+        },
+        "note": "Previously read in 2024, re-read in March 2025"
+      },
+      {
+        "title": "Catching Fire", 
+        "author": "Suzanne Collins",
+        "fields": {
+          "Date Read": "2025/03/10",
+          "Exclusive Shelf": "read",
+          "Read Count": 2
+        },
+        "note": "Previously read in 2024, re-read in March 2025"
+      },
+      {
+        "title": "The Hunger Games",
+        "author": "Suzanne Collins", 
+        "fields": {
+          "Date Read": "2025/03/05",
+          "Exclusive Shelf": "read",
+          "Read Count": 2
+        },
+        "note": "Previously read in 2024, re-read in March 2025"
+      }
+    ],
+    "fields_prompt": {
+      "Date Read": "Use format 'YYYY/MM/DD' for the completion date in current year.",
+      "Exclusive Shelf": "Set to 'read' for completed books, 'currently-reading' for in progress.",
+      "Read Count": "Number of times finishing the book. Set higher for re-reads."
+    }
+  }
+}

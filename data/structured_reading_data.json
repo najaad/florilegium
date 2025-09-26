@@ -1339,13 +1339,13 @@
       "genre": "Horror tales"
     }
   ],
-  "completedBooks": 40,
-  "completedPages": 15431,
+  "completedBooks": 42,
+  "completedPages": 16707,
   "byMonth": [
     {
       "month": "Jan",
-      "count": 3,
-      "pages": 1962
+      "count": 2,
+      "pages": 928
     },
     {
       "month": "Feb",
@@ -1354,8 +1354,8 @@
     },
     {
       "month": "Mar",
-      "count": 10,
-      "pages": 3552
+      "count": 13,
+      "pages": 5862
     },
     {
       "month": "Apr",
@@ -1405,11 +1405,11 @@
   ],
   "topGenres": [
     {
-      "name": "Fiction",
-      "count": 12
+      "name": "Young Adult Fiction",
+      "count": 13
     },
     {
-      "name": "Young Adult Fiction",
+      "name": "Fiction",
       "count": 11
     },
     {
@@ -1439,12 +1439,12 @@
       "count": 6
     },
     {
-      "name": "Lauren Roberts",
+      "name": "Suzanne Collins",
       "count": 4
     },
     {
-      "name": "Rebecca Yarros",
-      "count": 3
+      "name": "Lauren Roberts",
+      "count": 4
     },
     {
       "name": "Hugh Howey",
@@ -1458,15 +1458,15 @@
   "longestBooksByGenre": [
     {
       "genre": "Young Adult Fiction",
-      "title": "Unravel Me",
-      "author": "Tahereh Mafi",
-      "pages": 461
+      "title": "Mockingjay",
+      "author": "Suzanne Collins",
+      "pages": 780
     },
     {
       "genre": "Fiction",
-      "title": "Fourth Wing",
+      "title": "Onyx Storm",
       "author": "Rebecca Yarros",
-      "pages": 1034
+      "pages": 544
     },
     {
       "genre": "Horror",
@@ -1487,23 +1487,23 @@
       "pages": 393
     },
     {
-      "author": "Richard Bachman",
-      "title": "The Long Walk",
-      "pages": 319
+      "author": "Suzanne Collins",
+      "title": "Catching Fire",
+      "pages": 782
     }
   ],
   "consistentGenres": [
+    {
+      "name": "Young Adult Fiction",
+      "currentYear": 13,
+      "pastYears": 5,
+      "totalBooks": 18
+    },
     {
       "name": "Fiction",
       "currentYear": 11,
       "pastYears": 9,
       "totalBooks": 20
-    },
-    {
-      "name": "Young Adult Fiction",
-      "currentYear": 11,
-      "pastYears": 5,
-      "totalBooks": 16
     },
     {
       "name": "Fantasy",
@@ -1526,30 +1526,30 @@
       "totalBooks": 6
     },
     {
-      "name": "Lauren Roberts",
+      "name": "Suzanne Collins",
       "currentYear": 4,
       "pastYears": 0,
       "totalBooks": 4
     }
   ],
   "readingStats": {
-    "pagesPerDay": 57,
-    "pagesPerWeek": 399,
-    "pagesPerMonth": 1710,
-    "averageBookLength": 385,
+    "pagesPerDay": 62,
+    "pagesPerWeek": 434,
+    "pagesPerMonth": 1860,
+    "averageBookLength": 397,
     "fastestRead": {
       "pages": 69,
       "days": 1,
       "title": "Shadow Me",
       "author": "Tahereh Mafi"
     },
-    "longestBook": 462
+    "longestBook": 477
   },
   "goals": {
     "books": {
       "annual": {
-        "current": 40,
-        "target": 52
+        "current": 42,
+        "target": 54
       },
       "monthly": {
         "current": 3,
@@ -1558,22 +1558,22 @@
     },
     "pages": {
       "annual": {
-        "current": 15431,
-        "target": 20000
+        "current": 16707,
+        "target": 20048
       },
       "monthly": {
-        "current": 1285,
-        "target": 1666
+        "current": 1392,
+        "target": 1670
       }
     }
   },
   "totals": {
-    "books": 40,
-    "pages": 15431
+    "books": 42,
+    "pages": 16707
   },
   "lastYearTotals": {
-    "books": 82,
-    "pages": 39923
+    "books": 22,
+    "pages": 12933
   },
   "currentYearStart": "2025-01-01"
 }

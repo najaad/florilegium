@@ -137,7 +137,14 @@ def main():
     
     print()
     
-    # Step 4: Run data preparation for dashboard
+    # Step 4: Apply book overrides before data preparation
+    if not run_script("scripts/apply_overrides.py", "Applying book overrides"):
+        print("❌ Override application failed. Stopping workflow!")
+        return
+    
+    print()
+    
+    # Step 5: Run data preparation for dashboard
     if not run_script("scripts/data_prep.py", "Data preparation for dashboard"):
         print("❌ Data preparation failed. Stopping workflow!")
         return
