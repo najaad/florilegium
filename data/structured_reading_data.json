@@ -1344,8 +1344,8 @@
   "byMonth": [
     {
       "month": "Jan",
-      "count": 3,
-      "pages": 1962
+      "count": 2,
+      "pages": 928
     },
     {
       "month": "Feb",
@@ -1639,7 +1639,7 @@
     "pages": 55354
   },
   "lastYearTotals": {
-    "books": 82,
-    "pages": 39923
+    "books": 22,
+    "pages": 12933
   },
   "currentYearStart": 

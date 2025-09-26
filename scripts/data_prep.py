@@ -134,7 +134,7 @@ def process_reading_data():
     
     # Track last year's totals for forecasting
     last_year_totals = {"books": 0, "pages": 0}
-    current_year_start = f"{current_year}-01-01"
+    current_year_start = f"{current_year}-01-01"  # Keep as string for JSON
     previous_year = current_year - 1
     
     print("🔄 Processing books by shelf category...")
@@ -149,9 +149,9 @@ def process_reading_data():
         date_read = row.get('Date Read', '')
         date_added = row.get('Date Added', '')
         
-        # For READ books, if Date Read is blank, use Date Added as fallback
+        # For READ books, if Date Read is blank, default to 2022
         if exclusive_shelf == "read" and (pd.isna(date_read) or str(date_read).strip() == ''):
-            date_read = date_added  # Use Date Added as fallback
+            date_read = '2022/01/01'  # Default to 2022 for missing read dates
         
         # Check which shelf category this book is in
         if exclusive_shelf == "currently-reading":
@@ -251,9 +251,9 @@ def process_reading_data():
     
     # Calculate stats based on current age for realistic numbers  
     datetime_now = datetime.now()
-    current_year_start = datetime(datetime_now.year, 1, 1)
+    current_year_start_date = datetime(datetime_now.year, 1, 1)  # Keep original string for JSON
     days_in_year = 365
-    current_day_of_year = (datetime_now - current_year_start).days + 1
+    current_day_of_year = (datetime_now - current_year_start_date).days + 1
     
     # Sanity checks and defaults
     if total_books == 0 or total_pages == 0:

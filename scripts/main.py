@@ -144,13 +144,8 @@ def main():
     
     print()
     
-    # Step 5: Optional - Deploy and sync to Vercel
-    deploy_choice = input("❓ Deploy to Vercel now? (yes/no): ").strip().lower()
-    if deploy_choice in ['yes', 'y']:
-        if not run_script("scripts/vercel_deploy.py", "Vercel deployment and sync", interactive=True):
-            print("⚠️  Deployment failed, but data files are ready (see manual deployment steps below)")
-    else:
-        print("⏭️ Skipping automatic deployment")
+    # Vercel deployment is automatic via GitHub merge → skip prompt
+    print("⏭️ Skipping manual deployment (Vercel auto-deploys from GitHub)")
     
     print()
     print("🎉 Workflow completed successfully!")
@@ -159,10 +154,7 @@ def main():
     print("   • data/goodreads_enriched.csv (with genres)")
     print("   • data/structured_reading_data.json (dashboard-ready data)")
     print()
-    if deploy_choice not in ['yes', 'y']:
-        print("🚀 Ready for dashboard! Run 'python scripts/vercel_deploy.py' to deploy")
-    else:
-        print("🌟 Dashboard should be live and updated!")
+    print("🚀 Ready for dashboard! Merge to GitHub for auto-deploy to Vercel")
 
 if __name__ == "__main__":
     main()

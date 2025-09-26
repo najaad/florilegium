@@ -900,8 +900,8 @@ function AnnualReadingForecast({ data }: { data: Overview | null }) {
   
   if (isJanuary) {
     // In January, use last year's totals as baseline
-    const lastYearBooks = data.lastYearTotals?.books || 0;
-    const lastYearPages = data.lastYearTotals?.pages || 0;
+    const lastYearBooks = data.lastYearTotals?.books || 25; // Safe default if missing
+    const lastYearPages = data.lastYearTotals?.pages || 8500; // Safe default if missing  
     booksPerMonth = lastYearBooks / 12;
     pagesPerMonth = lastYearPages / 12;
     estimatedBooks = Math.round(booksPerMonth * 12);
