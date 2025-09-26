@@ -182,15 +182,16 @@ def process_reading_data():
             if pages > 0:
                 # Calculate pages with read count multiplier
                 total_pages = int(pages * read_count)
-                data_structure["completedPages"] += total_pages
-                data_structure["completedBooks"] += 1
                 
                 # Check if this was read in the previous year for forecasting
                 if year == previous_year and month and month <= 12:
                     last_year_totals["books"] += 1
                     last_year_totals["pages"] += total_pages
                 
+                # Only count books completed THIS YEAR
                 if is_current and month and month <= 12:
+                    data_structure["completedPages"] += total_pages
+                    data_structure["completedBooks"] += 1
                     month_name = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][month-1]
                     month_key = f"{current_year}-{month:02d}"

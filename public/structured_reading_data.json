@@ -1339,8 +1339,8 @@
       "genre": "Horror tales"
     }
   ],
-  "completedBooks": 122,
-  "completedPages": 55354,
+  "completedBooks": 39,
+  "completedPages": 14397,
   "byMonth": [
     {
       "month": "Jan",
@@ -1427,22 +1427,6 @@
     {
       "name": "Dark Romance",
       "count": 2
-    },
-    {
-      "name": "Classic Fiction",
-      "count": 2
-    },
-    {
-      "name": "Memoir",
-      "count": 2
-    },
-    {
-      "name": "Horror",
-      "count": 1
-    },
-    {
-      "name": "Historical Fiction",
-      "count": 1
     }
   ],
   "topAuthors": [
@@ -1469,22 +1453,6 @@
     {
       "name": "Stephenie Meyer",
       "count": 5
-    },
-    {
-      "name": "Rebecca Yarros",
-      "count": 4
-    },
-    {
-      "name": "Lauren Roberts",
-      "count": 4
-    },
-    {
-      "name": "John Green",
-      "count": 4
-    },
-    {
-      "name": "Sarah Dessen",
-      "count": 4
     }
   ],
   "longestBooksByGenre": [
@@ -1505,48 +1473,6 @@
       "title": "The Long Walk",
       "author": "Richard Bachman",
       "pages": 319
-    },
-    {
-      "genre": "Fantasy",
-      "title": "Harry Potter and the Order of the Phoenix",
-      "author": "J.K. Rowling",
-      "pages": 870
-    },
-    {
-      "genre": "Romantasy",
-      "title": "Fearless",
-      "author": "Lauren Roberts",
-      "pages": 608
-    },
-    {
-      "genre": "Historical Fiction",
-      "title": "The Song of Achilles",
-      "author": "Madeline Miller",
-      "pages": 351
-    },
-    {
-      "genre": "Large type books",
-      "title": "Catching Fire",
-      "author": "Suzanne Collins",
-      "pages": 782
-    },
-    {
-      "genre": "Civilization, Subterranean",
-      "title": "Dust",
-      "author": "Hugh Howey",
-      "pages": 458
-    },
-    {
-      "genre": "Science Fiction",
-      "title": "Wool",
-      "author": "Hugh Howey",
-      "pages": 584
-    },
-    {
-      "genre": "Dark Romance",
-      "title": "Haunting Adeline",
-      "author": "H.D. Carlton",
-      "pages": 583
     }
   ],
   "longestBooksByAuthor": [
@@ -1564,41 +1490,6 @@
       "author": "Suzanne Collins",
       "title": "The Hunger Games",
       "pages": 1122
-    },
-    {
-      "author": "Richard Bachman",
-      "title": "The Long Walk",
-      "pages": 319
-    },
-    {
-      "author": "Rebecca Yarros",
-      "title": "Iron Flame",
-      "pages": 1246
-    },
-    {
-      "author": "Andy Weir",
-      "title": "Project Hail Mary",
-      "pages": 482
-    },
-    {
-      "author": "Carissa Broadbent",
-      "title": "The Fallen and the Kiss of Dusk",
-      "pages": 638
-    },
-    {
-      "author": "Daniel Kehlmann",
-      "title": "You Should Have Left",
-      "pages": 113
-    },
-    {
-      "author": "Lauren Roberts",
-      "title": "Fearless",
-      "pages": 608
-    },
-    {
-      "author": "Richard Matheson",
-      "title": "I Am Legend",
-      "pages": 162
     }
   ],
   "consistentGenres": [
@@ -1623,41 +1514,41 @@
   ],
   "consistentAuthors": [],
   "readingStats": {
-    "pagesPerDay": 206,
-    "pagesPerWeek": 1442,
-    "pagesPerMonth": 6180,
-    "averageBookLength": 453,
+    "pagesPerDay": 53,
+    "pagesPerWeek": 371,
+    "pagesPerMonth": 1590,
+    "averageBookLength": 369,
     "fastestRead": {
-      "pages": 309,
+      "pages": 200,
       "days": 2
     },
-    "longestBook": 544
+    "longestBook": 442
   },
   "goals": {
     "books": {
       "annual": {
-        "current": 122,
-        "target": 158
+        "current": 39,
+        "target": 50
       },
       "monthly": {
-        "current": 10,
-        "target": 13
+        "current": 3,
+        "target": 4
       }
     },
     "pages": {
       "annual": {
-        "current": 55354,
-        "target": 66424
+        "current": 14397,
+        "target": 20000
       },
       "monthly": {
-        "current": 4612,
-        "target": 5535
+        "current": 1199,
+        "target": 1666
       }
     }
   },
   "totals": {
-    "books": 122,
-    "pages": 55354
+    "books": 39,
+    "pages": 14397
   },
   "lastYearTotals": {
     "books": 22,
