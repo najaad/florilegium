@@ -407,7 +407,10 @@ export default function Home() {
                   <div>
                     <div className="text-sm opacity-70 mb-1">Fastest Read</div>
                     <div className="text-xl font-bold text-secondary">
-                      <strong>Fastest Read</strong> - {data?.readingStats?.fastestRead?.title || "The Hunger Games"}
+                      {data?.readingStats?.fastestRead?.pages || 0} pages in {data?.readingStats?.fastestRead?.days || 0} days
+                    </div>
+                    <div className="text-sm opacity-70 mt-1">
+                      {data?.readingStats?.fastestRead?.title || "The Hunger Games"}
                     </div>
                   </div>
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
@@ -419,7 +422,7 @@ export default function Home() {
               <div className="bg-base-100 rounded-xl p-4 border border-base-300">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm opacity-70 mb-1">Longest Book</div>
+                    <div className="text-sm opacity-70 mb-1">Longest Book - Book Name</div>
                     <div className="text-xl font-bold text-accent">{data?.readingStats?.longestBook || 0} pages</div>
                   </div>
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">

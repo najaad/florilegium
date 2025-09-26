@@ -132,6 +132,7 @@ def process_reading_data():
     longest_books_by_genre = {}
     longest_books_by_author = {}
     fastest_read_track = {"pages": 0, "days": 999, "title": "", "author": ""}
+    longest_book_track = {"pages": 0, "title": "", "author": ""}
     
     # Track last year's totals for forecasting
     last_year_totals = {"books": 0, "pages": 0}
