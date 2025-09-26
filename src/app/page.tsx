@@ -911,10 +911,12 @@ function AnnualReadingForecast({ data }: { data: Overview | null }) {
     estimatedPages = Math.round(pagesPerMonth * 12);
   } else {
     // Calculate based on current year's progress
-    booksPerMonth = completedMonths > 0 ? data.totals.books / completedMonths : 0;
-    pagesPerMonth = completedMonths > 0 ? data.totals.pages / completedMonths : 0;
-    estimatedBooks = Math.round(data.totals.books + (booksPerMonth * monthsRemaining));
-    estimatedPages = Math.round(data.totals.pages + (pagesPerMonth * monthsRemaining));
+    const currentBooks = data.totals?.books || 0;
+    const currentPages = data.totals?.pages || 0;
+    booksPerMonth = completedMonths > 0 ? currentBooks / completedMonths : 0;
+    pagesPerMonth = completedMonths > 0 ? currentPages / completedMonths : 0;
+    estimatedBooks = Math.round(currentBooks + (booksPerMonth * monthsRemaining));
+    estimatedPages = Math.round(currentPages + (pagesPerMonth * monthsRemaining));
   }
   
   // Calculate average book length for conversion  
