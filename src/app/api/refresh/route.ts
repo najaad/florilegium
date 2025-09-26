@@ -1,7 +1,27 @@
 import { NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
 
 export async function GET() {
-  // Complete mock data structure - this shows exactly what your Python API needs to provide
+  try {
+    // Try to load real data from generated JSON file
+    const dataPath = path.join(process.cwd(), 'data', 'structured_reading_data.json');
+    
+    if (fs.existsSync(dataPath)) {
+      const fileContents = fs.readFileSync(dataPath, 'utf8');
+      const realData = JSON.parse(fileContents);
+      
+      console.log('📊 Loaded real reading data from structured_reading_data.json');
+      return NextResponse.json(realData);
+    } else {
+      console.log('⚠️ No structured_reading_data.json found, falling back to mock data');
+    }
+  } catch (error) {
+    console.error('Error loading structured reading data:', error);
+  }
+
+  // Fallback to mock data if real data unavailable
+  console.log('🔄 Using mock data as fallback');
   const mockData = {
     // Main stats (43 books through September)
     totals: { books: 43, pages: 13760 },

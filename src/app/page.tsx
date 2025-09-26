@@ -82,7 +82,7 @@ export default function Home() {
 
   useEffect(() => {
     // Local: Use mock API, Production: Use Python function
-    const apiUrl = process.env.NODE_ENV === 'production' ? '/api/main' : '/api/overview';
+    const apiUrl = process.env.NODE_ENV === 'production' ? '/api/main' : '/api/refresh';
     
     fetch(apiUrl)
       .then(r => r.json())

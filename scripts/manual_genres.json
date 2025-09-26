@@ -1,0 +1,805 @@
+{
+  "manual_genre_lookups": {
+    "description": "Manual genre assignments for books that failed automated lookup",
+    "books": [
+      {
+        "title": "Slaying the Vampire Conqueror",
+        "author": "Carissa Broadbent",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "Holy Wrath",
+        "author": "Victoria Mier",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "The Serpent and the Wings of Night",
+        "author": "Carissa Broadbent",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "Daughter of No Worlds",
+        "author": "Carissa Broadbent",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "Reign & Ruin",
+        "author": "J.D. Evans",
+        "isbn13": "9781951607012",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "Land of the Beautiful Dead",
+        "author": "R. Lee Smith",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "The Coven",
+        "author": "Harper L. Woods",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "To Kill a Necromancer",
+        "author": "C.M. Alongi",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "Windows into Hell",
+        "author": "James Wymore",
+        "isbn13": "9781620071601",
+        "genre": "Horror"
+      },
+      {
+        "title": "Haunting Adeline",
+        "author": "H.D. Carlton",
+        "isbn13": "",
+        "genre": "Dark Romance"
+      },
+      {
+        "title": "Nocticadia",
+        "author": "Keri Lake",
+        "isbn13": "",
+        "genre": "Dark Romance"
+      },
+      {
+        "title": "Satan's Affair",
+        "author": "H.D. Carlton",
+        "isbn13": "",
+        "genre": "Dark Romance"
+      },
+      {
+        "title": "Anathema",
+        "author": "Keri Lake",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "Gild",
+        "author": "Raven Kennedy",
+        "isbn13": "9788691989071",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "The Book of Azrael",
+        "author": "Amber V. Nicole",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "No One Rides For Free",
+        "author": "Judith Sonnet",
+        "isbn13": "",
+        "genre": "Horror"
+      },
+      {
+        "title": "Brutal Prince",
+        "author": "Sophie Lark",
+        "isbn13": "",
+        "genre": "Romance"
+      },
+      {
+        "title": "Curse of Shadows and Thorns",
+        "author": "L.J. Andrews",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "Gone to See the River Man",
+        "author": "Kristopher Triana",
+        "isbn13": "",
+        "genre": "Horror"
+      },
+      {
+        "title": "The Princess Trials",
+        "author": "Cordelia K. Castel",
+        "isbn13": "",
+        "genre": "Fantasy"
+      },
+      {
+        "title": "The Book Thief",
+        "author": "Markus Zusak",
+        "isbn13": "",
+        "genre": "Historical Fiction"
+      },
+  {
+    "title": "Shatter Me",
+    "author": "Tahereh Mafi",
+    "isbn13": "",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "The Long Walk",
+    "author": "Richard Bachman",
+    "isbn13": "",
+    "genre": "Horror"
+  },
+  {
+    "title": "The Fallen and the Kiss of Dusk",
+    "author": "Carissa Broadbent",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Songbird & the Heart of Stone",
+    "author": "Carissa Broadbent",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Dungeon Crawler Carl",
+    "author": "Matt Dinniman",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Lion and the Deathless Dark",
+    "author": "Carissa Broadbent",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "One True Loves",
+    "author": "Taylor Jenkins Reid",
+    "isbn13": "",
+    "genre": "Romance"
+  },
+  {
+    "title": "The Ashes & the Star‑Cursed King",
+    "author": "Carissa Broadbent",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Guest List",
+    "author": "Lucy Foley",
+    "isbn13": "",
+    "genre": "Mystery"
+  },
+  {
+    "title": "Six Scorched Roses",
+    "author": "Carissa Broadbent",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Throne in the Dark",
+    "author": "A.K. Caggiano",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Flowers for Algernon",
+    "author": "Daniel Keyes",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "Fearless",
+    "author": "Lauren Roberts",
+    "isbn13": "",
+    "genre": "Romantasy"
+  },
+  {
+    "title": "Song of the Forever Rains",
+    "author": "E.J. Mellow",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Powerful",
+    "author": "Lauren Roberts",
+    "isbn13": "",
+    "genre": "Romantasy"
+  },
+  {
+    "title": "Depths of Vanalf",
+    "author": "Brady Hunsaker",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "A Psalm for the Wild‑Built",
+    "author": "Becky Chambers",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "The Song of Achilles",
+    "author": "Madeline Miller",
+    "isbn13": "",
+    "genre": "Historical Fiction"
+  },
+  {
+    "title": "Reckless",
+    "author": "Lauren Roberts",
+    "isbn13": "",
+    "genre": "Romantasy"
+  },
+  {
+    "title": "Powerless",
+    "author": "Lauren Roberts",
+    "isbn13": "",
+    "genre": "Romantasy"
+  },
+  {
+    "title": "The Last Murder at the End of the World",
+    "author": "Stuart Turton",
+    "isbn13": "",
+    "genre": "Mystery"
+  },
+  {
+    "title": "On the Beach",
+    "author": "Nevil Shute",
+    "isbn13": "",
+    "genre": "Post‑Apocalyptic Fiction"
+  },
+  {
+    "title": "Vicious",
+    "author": "V.E. Schwab",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Lights Out",
+    "author": "Navessa Allen",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Bad Beehavior",
+    "author": "G.M. Fairy",
+    "isbn13": "",
+    "genre": "Romance"
+  },
+  {
+    "title": "Ice Planet Barbarians",
+    "author": "Ruby Dixon",
+    "isbn13": "",
+    "genre": "Romance"
+  },
+  {
+    "title": "Shift",
+    "author": "Hugh Howey",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "Tress of the Emerald Sea",
+    "author": "Brandon Sanderson",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Wool",
+    "author": "Hugh Howey",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "Little Women",
+    "author": "Louisa May Alcott",
+    "isbn13": "",
+    "genre": "Classic Fiction"
+  },
+  {
+    "title": "Daughter of the Forest",
+    "author": "Juliet Marillier",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Realm Breaker",
+    "author": "Victoria Aveyard",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Eden Rising",
+    "author": "Shade Owens",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Rain of Shadows and Endings",
+    "author": "Melissa K. Roehrich",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Harry Potter and the Deathly Hallows",
+    "author": "J.K. Rowling",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Harry Potter and the Half‑Blood Prince",
+    "author": "J.K. Rowling",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Harry Potter and the Order of the Phoenix",
+    "author": "J.K. Rowling",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "This Is How You Lose the Time War",
+    "author": "Amal El‑Mohtar",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "The Giver",
+    "author": "Lois Lowry",
+    "isbn13": "",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "Blindness",
+    "author": "José Saramago",
+    "isbn13": "",
+    "genre": "Post‑Apocalyptic Fiction"
+  },
+  {
+    "title": "Harry Potter and the Chamber of Secrets",
+    "author": "J.K. Rowling",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "To Kill a Mockingbrd",
+    "author": "Harper Lee",
+    "isbn13": "",
+    "genre": "Classic Fiction"
+  },
+  {
+    "title": "The Perks of Being a Wallflower",
+    "author": "Stephen Chbosky",
+    "isbn13": "",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "When the Moon Hatched",
+    "author": "Sarah A. Parker",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Divergent",
+    "author": "Veronica Roth",
+    "isbn13": "",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "Forsaken Mate",
+    "author": "Vasilisa Drake",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Spark of the Everflame",
+    "author": "Penn Cole",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Nickel Boys",
+    "author": "Colson Whitehead",
+    "isbn13": "",
+    "genre": "Literary Fiction"
+  },
+  {
+    "title": "Pet Sematary",
+    "author": "Stephen King",
+    "isbn13": "",
+    "genre": "Horror"
+  },
+  {
+    "title": "The Heart's Invisible Furies",
+    "author": "John Boyne",
+    "isbn13": "",
+    "genre": "Literary Fiction"
+  },
+  {
+    "title": "Demon Copperhead",
+    "author": "Barbara Kingsolver",
+    "isbn13": "",
+    "genre": "Literary Fiction"
+  },
+  {
+    "title": "Saving Noah",
+    "author": "Lucinda Berry",
+    "isbn13": "",
+    "genre": "Romance"
+  },
+  {
+    "title": "A Child Called \"It\"",
+    "author": "Dave Pelzer",
+    "isbn13": "",
+    "genre": "Memoir"
+  },
+  {
+    "title": "Things Fall Apart",
+    "author": "Chinua Achebe",
+    "isbn13": "",
+    "genre": "Classic Fiction"
+  },
+  {
+    "title": "The Diary of a Young Girl",
+    "author": "Anne Frank",
+    "isbn13": "",
+    "genre": "Memoir"
+  },
+  {
+    "title": "The Stand",
+    "author": "Stephen King",
+    "isbn13": "",
+    "genre": "Horror"
+  },
+  {
+    "title": "Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch",
+    "author": "Terry Pratchett",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Veiled Kingdom",
+    "author": "Holly Renee",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Awakening",
+    "author": "Caroline Peckham",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The House in the Cerulean Sea",
+    "author": "T.J. Klune",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Hobbit, or There and Back Again",
+    "author": "J.R.R. Tolkien",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Black Farm",
+    "author": "Elias Witherow",
+    "isbn13": "",
+  "genre": "Horror"
+  },
+  {
+    "title": "Fear the Flames",
+    "author": "Olivia Rose Darling",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Heavenly Bodies",
+    "author": "Imani Erriu",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Tender Is the Flesh",
+    "author": "Agustina Bazterrica",
+    "isbn13": "",
+    "genre": "Horror"
+  },
+  {
+    "title": "Everlost",
+    "author": "Neal Shusterman",
+    "isbn13": "9780689872372",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "Unwind",
+    "author": "Neal Shusterman",
+    "isbn13": "",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "Let It Snow",
+    "author": "John Green",
+    "isbn13": "",
+    "genre": "Romance"
+  },
+  {
+    "title": "If I Stay",
+    "author": "Gayle Forman",
+    "isbn13": "9780525421030",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "isbn13": "9780060929879",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "House of Sky and Breath",
+    "author": "Sarah J. Maas",
+    "isbn13": "9781408884423",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Sharp Objects",
+    "author": "Gillian Flynn",
+    "isbn13": "9780297851530",
+    "genre": "Thriller"
+  },
+  {
+    "title": "The Talented Mr. Ripley",
+    "author": "Patricia Highsmith",
+    "isbn13": "",
+    "genre": "Thriller"
+  },
+  {
+    "title": "The Celestine Prophecy",
+    "author": "James Redfield",
+    "isbn13": "",
+    "genre": "Philosophical Fiction"
+  },
+  {
+    "title": "The Fault in Our Stars",
+    "author": "John Green",
+    "isbn13": "",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "Eclipse",
+    "author": "Stephenie Meyer",
+    "isbn13": "9780316160209",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "The Ballad of Songbirds and Snakes",
+    "author": "Suzanne Collins",
+    "isbn13": "",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "Tower of Dawn",
+    "author": "Sarah J. Maas",
+    "isbn13": "9781639731046",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Heir of Fire",
+    "author": "Sarah J. Maas",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Misery",
+    "author": "Stephen King",
+    "isbn13": "9780450417399",
+    "genre": "Horror"
+  },
+  {
+    "title": "In My Dreams I Hold a Knife",
+    "author": "Ashley Winstead",
+    "isbn13": "9781728229881",
+    "genre": "Horror"
+  },
+  {
+    "title": "A Shadow in the Ember",
+    "author": "Jennifer L. Armentrout",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "isbn13": "9780452284234",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "The Atlas Six",
+    "author": "Olivie Blake",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Wake Me After the Apocalypse",
+    "author": "Jordan Rivet",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "Scorpio",
+    "author": "Marko Kloos",
+    "isbn13": "9781542035507",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "A Soul to Keep",
+    "author": "Opal Reyne",
+    "isbn13": "9780645510409",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Inheritance Games",
+    "author": "Jennifer Lynn Barnes",
+    "isbn13": "9781368052405",
+    "genre": "Mystery"
+  },
+  {
+    "title": "The Hitchhiker’s Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "Blood of Elves",
+    "author": "Andrzej Sapkowski",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Slaughterhouse‑Five",
+    "author": "Kurt Vonnegut Jr.",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "Scythe",
+    "author": "Neal Shusterman",
+    "isbn13": "",
+    "genre": "Young Adult Fiction"
+  },
+  {
+    "title": "Crooked Kingdom",
+    "author": "Leigh Bardugo",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Station Eleven",
+    "author": "Emily St. John Mandel",
+    "isbn13": "9780385353304",
+    "genre": "Post‑Apocalyptic Fiction"
+  },
+  {
+    "title": "The Stone Sky",
+    "author": "N.K. Jemisin",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Obelisk Gate",
+    "author": "N.K. Jemisin",
+  "isbn13": "",
+  "genre": "Fantasy"
+  },
+  {
+    "title": "The Fifth Season",
+    "author": "N.K. Jemisin",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Amber Spyglass",
+    "author": "Philip Pullman",
+    "isbn13": "9780440238157",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Subtle Knife",
+    "author": "Philip Pullman",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Golden Compass",
+    "author": "Philip Pullman",
+    "isbn13": "9780679879244",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Arrow of God",
+    "author": "Chinua Achebe",
+    "isbn13": "",
+    "genre": "Classic Fiction"
+  },
+  {
+    "title": "No Longer at Ease",
+    "author": "Chinua Achebe",
+    "isbn13": "",
+    "genre": "Classic Fiction"
+  },
+  {
+    "title": "Farenheit 451",
+    "author": "Ray Bradbury",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "The Princess Bride",
+    "author": "William Goldman",
+    "isbn13": "9780345418265",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Outland",
+    "author": "Dennis E. Taylor",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "The War of the Worlds",
+    "author": "H.G. Wells",
+    "isbn13": "9780375759239",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "The Song of Achilles",
+    "author": "Madeline Miller",
+    "isbn13": "",
+    "genre": "Romance"
+  },
+  {
+    "title": "The Ashes & the Star-Cursed King",
+    "author": "Carissa Broadbent",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "A Psalm for the Wild-Built",
+    "author": "Becky Chambers",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  },
+  {
+    "title": "Harry Potter and the Half-Blood Prince",
+    "author": "J.K. Rowling",
+    "isbn13": "",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut Jr.",
+    "isbn13": "",
+    "genre": "Science Fiction"
+  }
+    ]
+  }
+}
