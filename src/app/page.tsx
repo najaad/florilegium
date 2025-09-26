@@ -405,12 +405,9 @@ export default function Home() {
               <div className="bg-base-100 rounded-xl p-4 border border-base-300">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm opacity-70 mb-1">Fastest Read</div>
+                    <div className="text-sm opacity-70 mb-1">Fastest Read - {data?.readingStats?.fastestRead?.title || "Shadow Me"}</div>
                     <div className="text-xl font-bold text-secondary">
                       {data?.readingStats?.fastestRead?.pages || 0} pages in {data?.readingStats?.fastestRead?.days || 0} days
-                    </div>
-                    <div className="text-sm opacity-70 mt-1">
-                      {data?.readingStats?.fastestRead?.title || "The Hunger Games"}
                     </div>
                   </div>
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
@@ -422,8 +419,8 @@ export default function Home() {
               <div className="bg-base-100 rounded-xl p-4 border border-base-300">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm opacity-70 mb-1">Longest Book - {data?.readingStats?.longestBook?.title || "Book Name"}</div>
-                    <div className="text-xl font-bold text-accent">{data?.readingStats?.longestBook?.pages || 0} pages</div>
+                    <div className="text-sm opacity-70 mb-1">Longest Book - {data?.readingStats?.longestBook?.title || "Book Title"}</div>
+                    <div className="text-xl font-bold text-accent">{data?.readingStats?.longestBook?.pages || 477} pages</div>
                   </div>
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
                     <div className="w-6 h-6 bg-accent rounded-full"></div>
@@ -709,7 +706,7 @@ export default function Home() {
           {/* Pacing Calculator */}
           <div id="predictions" className="bg-base-200 shadow-xl rounded-lg p-8">
             <h2 className="text-2xl font-bold text-center mb-6">Pacing Calculator</h2>
-            <PacingCalculator books={data?.currentlyReading || []} />
+            <PacingCalculator books={data?.currentlyReading || []} readingStats={data?.readingStats} />
           </div>
 
                   {/* Annual Reading Forecast */}
@@ -725,7 +722,7 @@ export default function Home() {
 }
 
 // Pacing Calculator Component
-function PacingCalculator({ books }: { books: { title: string; author: string; totalPages: number; genre?: string; progress?: number }[] }) {
+function PacingCalculator({ books, readingStats }: { books: { title: string; author: string; totalPages: number; genre?: string; progress?: number }[], readingStats?: { pagesPerDay: number; pagesPerWeek: number; pagesPerMonth: number } }) {
   const [selectedBook, setSelectedBook] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [goalDate, setGoalDate] = useState<string>('');
@@ -767,12 +764,21 @@ function PacingCalculator({ books }: { books: { title: string; author: string; t
     const pagesRemaining = selectedBookData.totalPages - currentPage;
     const pagesPerDay = pagesRemaining / daysRemaining;
 
+    // Use smart calculation based on your reading stats (like the goals do)
+    const yourCurrentPace = readingStats?.pagesPerDay || 25;
+    
+    // Easy goal = slightly under current pace (85% of it)
+    // Challenging goal = current pace * 1.3 (30% improvement, like goals)
+    // Ambitious = over 30% improvement
+    const easyThreshold = yourCurrentPace * 0.85;
+    const challengingThreshold = yourCurrentPace * 1.3;
+
     return {
       daysRemaining,
       pagesRemaining,
       pagesPerDay,
-      isRealistic: pagesPerDay <= 50,
-      isEasy: pagesPerDay <= 20,
+      isRealistic: pagesPerDay <= challengingThreshold,
+      isEasy: pagesPerDay <= easyThreshold,
       goalDate: goalDateObj.toLocaleDateString()
     };
   };
