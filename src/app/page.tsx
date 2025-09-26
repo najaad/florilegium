@@ -767,11 +767,11 @@ function PacingCalculator({ books, readingStats }: { books: { title: string; aut
     // Use smart calculation based on your reading stats (like the goals do)
     const yourCurrentPace = readingStats?.pagesPerDay || 25;
     
-    // Easy goal = can handle up to 10% above your current pace comfortably
-    // Challenging goal = current pace * 1.4 (40% improvement - reasonable challenge)
-    // Ambitious = over 40% improvement
-    const easyThreshold = yourCurrentPace * 1.10;
-    const challengingThreshold = yourCurrentPace * 1.4;
+    // Easy goal = up to 25% above your current pace (comfortable range)
+    // Challenging goal = 25-50% above your current pace (moderate challenge)
+    // Ambitious = over 50% above your current pace (significant challenge)
+    const easyThreshold = yourCurrentPace * 1.25;
+    const challengingThreshold = yourCurrentPace * 1.5;
 
     return {
       daysRemaining,
