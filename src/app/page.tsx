@@ -40,6 +40,11 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('top');
 
+  // Helper function to safely calculate percentages
+  const getPercentage = (current: number = 0, target: number = 0) => {
+    return target > 0 ? Math.round((current / target) * 100) : 0;
+  };
+
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
@@ -411,21 +416,19 @@ export default function Home() {
             <div className="space-y-6">
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">
-                  {data?.goals.books.annual.current || 0}/{data?.goals.books.annual.target || 0}
+                  {data?.goals?.books?.annual?.current || 0}/{data?.goals?.books?.annual?.target || 0}
                 </div>
                 <div className="text-lg font-semibold mb-2">Annual Goal</div>
                 <div className="relative w-full bg-base-100 rounded-full h-6 overflow-hidden">
                   <div
                     className="h-full bg-primary rounded-full transition-all duration-500 ease-out"
                     style={{ 
-                      width: `${data?.goals?.books?.annual?.target ? 
-                        Math.round((data.goals.books.annual.current / data.goals.books.annual.target) * 100) : 0}%` 
+                      width: `${getPercentage(data?.goals?.books?.annual?.current, data?.goals?.books?.annual?.target)}%` 
                     }}
                   ></div>
                 </div>
                 <div className="text-sm opacity-70 mt-2">
-                  {data?.goals?.books?.annual?.target ? 
-                    Math.round((data.goals.books.annual.current / data.goals.books.annual.target) * 100) : 0}% complete
+                  {getPercentage(data?.goals?.books?.annual?.current, data?.goals?.books?.annual?.target)}% complete
                 </div>
               </div>
               <div className="text-center">
@@ -437,14 +440,12 @@ export default function Home() {
                   <div
                     className="h-full bg-primary rounded-full transition-all duration-500 ease-out"
                     style={{ 
-                      width: `${data?.goals.books.monthly.target ? 
-                        (data.goals.books.monthly.current / data.goals.books.monthly.target) * 100 : 0}%` 
+                      width: `${getPercentage(data?.goals?.books?.monthly?.current, data?.goals?.books?.monthly?.target)}%` 
                     }}
                   ></div>
                 </div>
                 <div className="text-sm opacity-70 mt-2">
-                  {data?.goals.books.monthly.target ? 
-                    Math.round((data.goals.books.monthly.current / data.goals.books.monthly.target) * 100) : 0}% complete
+                  {getPercentage(data?.goals?.books?.monthly?.current, data?.goals?.books?.monthly?.target)}% complete
                 </div>
               </div>
             </div>
@@ -463,33 +464,29 @@ export default function Home() {
                   <div
                     className="h-full bg-secondary rounded-full transition-all duration-500 ease-out"
                     style={{ 
-                      width: `${data?.goals.pages.annual.target ? 
-                        (data.goals.pages.annual.current / data.goals.pages.annual.target) * 100 : 0}%` 
+                      width: `${getPercentage(data?.goals?.pages?.annual?.current, data?.goals?.pages?.annual?.target)}%` 
                     }}
                   ></div>
                 </div>
                 <div className="text-sm opacity-70 mt-2">
-                  {data?.goals.pages.annual.target ? 
-                    Math.round((data.goals.pages.annual.current / data.goals.pages.annual.target) * 100) : 0}% complete
+                  {getPercentage(data?.goals?.pages?.annual?.current, data?.goals?.pages?.annual?.target)}% complete
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">
-                  {data?.goals.pages.monthly.current || 0}/{data?.goals.pages.monthly.target || 0}
+                  {data?.goals?.pages?.monthly?.current || 0}/{data?.goals?.pages?.monthly?.target || 0}
                 </div>
                 <div className="text-lg font-semibold mb-2">Monthly Goal</div>
                 <div className="relative w-full bg-base-100 rounded-full h-6 overflow-hidden">
                   <div
                     className="h-full bg-secondary rounded-full transition-all duration-500 ease-out"
                     style={{ 
-                      width: `${data?.goals.pages.monthly.target ? 
-                        (data.goals.pages.monthly.current / data.goals.pages.monthly.target) * 100 : 0}%` 
+                      width: `${getPercentage(data?.goals?.pages?.monthly?.current, data?.goals?.pages?.monthly?.target)}%` 
                     }}
                   ></div>
                 </div>
                 <div className="text-sm opacity-70 mt-2">
-                  {data?.goals.pages.monthly.target ? 
-                    Math.round((data.goals.pages.monthly.current / data.goals.pages.monthly.target) * 100) : 0}% complete
+                  {getPercentage(data?.goals?.pages?.monthly?.current, data?.goals?.pages?.monthly?.target)}% complete
                 </div>
               </div>
             </div>
