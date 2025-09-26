@@ -405,7 +405,7 @@ export default function Home() {
               <div className="bg-base-100 rounded-xl p-4 border border-base-300">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm opacity-70 mb-1">Fastest Read</div>
+                    <div className="text-sm opacity-70 mb-1">Fastest Read - {data?.readingStats?.fastestRead?.title || "Unknown"}</div>
                     <div className="text-xl font-bold text-secondary">
                       {data?.readingStats?.fastestRead?.pages || 0} pages in {data?.readingStats?.fastestRead?.days || 0} days
                     </div>
@@ -1055,69 +1055,67 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
 
   return (
     <div className="bg-primary/10 border border-secondary/20 rounded-lg p-1 md:p-2 mt-4">
-      <div className="space-y-3">
-        {/* Genre Filter Row */}
-        <div className="flex items-center gap-2">
-          <div className="text-sm font-medium text-base-content">Filter by mood:</div>
-          <select
-            value={selectedGenre}
-            onChange={(e) => setSelectedGenre(e.target.value)}
-            className="bg-base-100 border border-base-300 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
+      <div className="flex items-center gap-2 md:gap-3">
+        {/* Random Button - Icon Only */}
+        <button
+          onClick={pickRandomBook}
+          className={`
+            relative p-2 md:p-2 rounded-lg transition-all duration-200 transform flex-shrink-0 flex items-center justify-center min-h-[5rem] md:min-h-[3rem]
+            bg-primary text-secondary-content hover:bg-secondary/80 hover:scale-105 active:scale-95 shadow-lg border-2 border-secondary/30 focus:border-secondary/50
+            focus:outline-none focus:ring-2 focus:ring-secondary/20
+          `}
+        >
+          <svg 
+            className={`w-4 h-4 md:w-5 md:h-5 ${isSpinning ? 'animate-spin' : ''}`} 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
           >
-            {uniqueGenres.map(genre => (
-              <option key={genre} value={genre}>{genre}</option>
-            ))}
-          </select>
-        </div>
-        
-        {/* Main Shuffle Row */}
-        <div className="flex items-center gap-2 md:gap-3">
-          {/* Random Button - Icon Only */}
-          <button
-            onClick={pickRandomBook}
-            className={`
-              relative p-2 md:p-2 rounded-lg transition-all duration-200 transform flex-shrink-0 flex items-center justify-center min-h-[5rem] md:min-h-[3rem]
-              bg-primary text-secondary-content hover:bg-secondary/80 hover:scale-105 active:scale-95 shadow-lg border-2 border-secondary/30 focus:border-secondary/50
-              focus:outline-none focus:ring-2 focus:ring-secondary/20
-            `}
-          >
-            <svg 
-              className={`w-4 h-4 md:w-5 md:h-5 ${isSpinning ? 'animate-spin' : ''}`} 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" 
-              />
-            </svg>
-          </button>
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" 
+            />
+          </svg>
+        </button>
 
-          {/* Selected Book Display */}
-          <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
-            {/* Book Info Box */}
-            <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 flex-1 md:flex-2 md:min-w-0 md:max-w-[60%] flex items-center justify-center min-h-[2.5rem] md:min-h-[3rem]">
-              <div className="text-base-content text-center">
-                {selectedBook ? (
-                  <div className={`text-sm md:text-base ${selectedBook.title.length > 30 ? 'text-xs md:text-sm' : 'text-sm md:text-base'}`}>
-                    <span className="font-semibold">{selectedBook.title}</span> by <span className="font-medium">{selectedBook.author}</span>
-                  </div>
-                ) : (
-                  <div className="text-sm md:text-base text-base-content/60 font-bold">
-                    Click shuffle to pick a random book from your TBR list
-                  </div>
-                )}
-              </div>
+        {/* Selected Book Display */}
+        <div className="flex-1 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
+          {/* Book Info Box */}
+          <div className="bg-base-100 border-2 border-base-300 rounded-md px-2 md:px-3 flex-1 md:flex-2 md:min-w-0 md:max-w-[60%] flex items-center justify-center min-h-[2.5rem] md:min-h-[3rem]">
+            <div className="text-base-content text-center">
+              {selectedBook ? (
+                <div className={`text-sm md:text-base ${selectedBook.title.length > 30 ? 'text-xs md:text-sm' : 'text-sm md:text-base'}`}>
+                  <span className="font-semibold">{selectedBook.title}</span> by <span className="font-medium">{selectedBook.author}</span>
+                </div>
+              ) : (
+                <div className="text-sm md:text-base text-base-content/60 font-bold">
+                  Click shuffle to pick a random book from your TBR list
+                </div>
+              )}
             </div>
-            
-            {/* Genre Badge */}
-            <div className="bg-primary text-primary-content border-2 border-base-300 rounded-md px-3 md:px-4 flex-shrink-0 md:flex-1 flex items-center justify-center min-h-[2.5rem] md:min-h-[3rem]">
-              <div className="text-sm md:text-base font-medium text-center">
-                {selectedBook ? selectedBook.genre : 'Genre'}
-              </div>
+          </div>
+          
+          {/* Genre Dropdown Badge - Cute and clickable! */}
+          <div className="relative flex-shrink-0 md:flex-1">
+            <select
+              value={selectedGenre}
+              onChange={(e) => setSelectedGenre(e.target.value)}
+              className="w-full bg-primary text-primary-content border-2 border-base-300 rounded-md px-3 md:px-4 py-2 min-h-[2.5rem] md:min-h-[3rem] text-sm md:text-base font-medium text-center appearance-none cursor-pointer hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200 shadow-md hover:shadow-lg"
+              style={{ backgroundImage: 'none' }}
+            >
+              {uniqueGenres.map(genre => (
+                <option key={genre} value={genre} className="bg-base-100 text-base-content">
+                  {genre}
+                </option>
+              ))}
+            </select>
+            {/* Custom cute dropdown arrow */}
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+              <svg className="w-4 h-4 text-primary-content transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
           </div>
         </div>
