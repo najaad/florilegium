@@ -1538,8 +1538,10 @@
     "pagesPerMonth": 1710,
     "averageBookLength": 385,
     "fastestRead": {
-      "pages": 200,
-      "days": 2
+      "pages": 69,
+      "days": 1,
+      "title": "Shadow Me",
+      "author": "Tahereh Mafi"
     },
     "longestBook": 462
   },

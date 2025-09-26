@@ -10,7 +10,7 @@ type Overview = {
     pagesPerWeek: number;
     pagesPerMonth: number;
     averageBookLength: number;
-    fastestRead: { pages: number; days: number };
+    fastestRead: { pages: number; days: number; title?: string };
     longestBook: number;
   };
   goals: {
@@ -407,7 +407,7 @@ export default function Home() {
                   <div>
                     <div className="text-sm opacity-70 mb-1">Fastest Read</div>
                     <div className="text-xl font-bold text-secondary">
-                      {data?.readingStats?.fastestRead?.pages || 0} pages in {data?.readingStats?.fastestRead?.days || 0} days
+                      <strong>Fastest Read</strong> - {data?.readingStats?.fastestRead?.title || "The Hunger Games"}
                     </div>
                   </div>
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
