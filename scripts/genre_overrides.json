@@ -9,7 +9,8 @@
       "Ability": "Fantasy",
       "Horror tales": "Horror",
       "FICTION": "Fiction",
-      "Non-Fiction": "Nonfiction"
+      "Non-Fiction": "Nonfiction",
+      "JUVENILE FICTION": "Young Adult Fiction"
     },
     "notes": {
       "Juvenile Fiction": "Recategorize as Young Adult for consistency",

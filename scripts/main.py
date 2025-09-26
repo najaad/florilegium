@@ -139,12 +139,19 @@ def main():
     
     # Step 4: Apply book overrides before data preparation
     if not run_script("scripts/apply_overrides.py", "Applying book overrides"):
-        print("❌ Override application failed. Stopping workflow!")
+        print("❌ Book overrides application failed. Stopping workflow!")
         return
     
     print()
     
-    # Step 5: Run data preparation for dashboard
+    # Step 5: Apply book-specific genre overrides to CSV
+    if not run_script("scripts/apply_book_genre_overrides.py", "Applying book-specific genre overrides"):
+        print("❌ Book-specific genre overrides application failed. Stopping workflow!")
+        return
+    
+    print()
+    
+    # Step 6: Run data preparation for dashboard
     if not run_script("scripts/data_prep.py", "Data preparation for dashboard"):
         print("❌ Data preparation failed. Stopping workflow!")
         return

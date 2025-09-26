@@ -501,6 +501,9 @@ def process_reading_data():
     # Apply genre overrides before finalizing
     data_structure = apply_genre_overrides(data_structure)
     
+    # Note: Book-specific genre overrides are now applied at CSV level in main.py
+    # No need to re-apply here since they're already in the source data
+    
     return data_structure
 
 def main():

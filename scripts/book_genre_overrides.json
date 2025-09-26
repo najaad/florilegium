@@ -1,0 +1,368 @@
+{
+  "book_genre_overrides": {
+    "description": "Override specific book genres by book title, author, or ISBN. Set precise genres for books that are 'Fiction' but could be more specifically categorized.",
+    "usage": "This overrides the genre for specific books. Applied after genre mappings but before final data generation. Prioritized over automatic genre detection.",
+    "overrides": [
+      {
+        "title": "Project Hail Mary",
+        "author": "Andy Weir",
+        "genre": "Science Fiction",
+        "note": "More specific than general Fiction"
+      },
+      {
+        "title": "Bird Box",
+        "author": "Josh Malerman",
+        "genre": "Horror",
+        "note": "Specific horror categorization"
+      },
+      {
+        "title": "The Paris Apartment",
+        "author": "Lucy Foley",
+        "genre": "Mystery",
+        "note": "Mystery categorization"
+      },
+      {
+        "title": "Fourth Wing",
+        "author": "Rebecca Yarros",
+        "genre": "Romantasy",
+        "note": "Romantasy vs general Fiction"
+      },
+      {
+        "title": "Dark Matter",
+        "author": "Blake Crouch",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "You Like It Darker",
+        "author": "Stephen King",
+        "genre": "Horror",
+        "note": "Horror categorization"
+      },
+      {
+        "title": "The Last Wish",
+        "author": "Andrzej Sapkowski",
+        "genre": "Fantasy",
+        "note": "Fantasy categorization"
+      },
+      {
+        "title": "A Court of Thorns and Roses",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Under the Dome",
+        "author": "Stephen King",
+        "genre": "Horror",
+        "note": "Horror categorization"
+      },
+      {
+        "title": "The Handmaid's Tale",
+        "author": "Margaret Atwood",
+        "genre": "Dystopian",
+        "note": "Dystopian categorization"
+      },
+      {
+        "title": "The Midnight Feast",
+        "author": "Lucy Foley",
+        "genre": "Mystery",
+        "note": "Mystery categorization"
+      },
+      {
+        "title": "The Troop",
+        "author": "Nick Cutter",
+        "genre": "Horror",
+        "note": "Horror categorization"
+      },
+      {
+        "title": "The Martian",
+        "author": "Andy Weir",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "Red Rising",
+        "author": "Pierce Brown",
+        "genre": "Dystopian",
+        "note": "Dystopian categorization"
+      },
+      {
+        "title": "The Fisherman",
+        "author": "John Langan",
+        "genre": "Horror",
+        "note": "Horror categorization"
+      },
+      {
+        "title": "Annihilation",
+        "author": "Jeff VanderMeer",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "Empire of Storms",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Still Missing",
+        "author": "Chevy Stevens",
+        "genre": "Thriller",
+        "note": "Thriller categorization"
+      },
+      {
+        "title": "Keep It in the Family",
+        "author": "John Marrs",
+        "genre": "Thriller",
+        "note": "Thriller categorization"
+      },
+      {
+        "title": "Silver Elite",
+        "author": "Dani Francis",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Recursion",
+        "author": "Blake Crouch",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "Bunny",
+        "author": "Mona Awad",
+        "genre": "Horror",
+        "note": "Horror categorization"
+      },
+      {
+        "title": "Darkfever",
+        "author": "Karen Marie Moning",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Faefever",
+        "author": "Karen Marie Moning",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "The Ruins",
+        "author": "Scott Smith",
+        "genre": "Horror",
+        "note": "Horror categorization"
+      },
+      {
+        "title": "From Blood and Ash",
+        "author": "Jennifer L. Armentrout",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "The Foxglove King",
+        "author": "Hannah F. Whitten",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Nettle & Bone",
+        "author": "T. Kingfisher",
+        "genre": "Fantasy",
+        "note": "Fantasy categorization"
+      },
+      {
+        "title": "Piranesi",
+        "author": "Susanna Clarke",
+        "genre": "Fantasy",
+        "note": "Fantasy categorization"
+      },
+      {
+        "title": "A Game of Thrones",
+        "author": "George R.R. Martin",
+        "genre": "Fantasy",
+        "note": "Fantasy categorization"
+      },
+      {
+        "title": "A Court of Mist and Fury",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "A Court of Wings and Ruin",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "The Night Circus",
+        "author": "Erin Morgenstern",
+        "genre": "Fantasy",
+        "note": "Fantasy categorization"
+      },
+      {
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "Dune Messiah",
+        "author": "Frank Herbert",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "Children of Dune",
+        "author": "Frank Herbert",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "Jurassic Park",
+        "author": "Michael Crichton",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "The Illustrated Man",
+        "author": "Ray Bradbury",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "Magic's Pawn",
+        "author": "Mercedes Lackey",
+        "genre": "Fantasy",
+        "note": "Fantasy categorization"
+      },
+      {
+        "title": "A Court of Frost and Starlight",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "A Court of Silver Flames",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Bonded by Thorns",
+        "author": "Elizabeth Helen",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Gleam",
+        "author": "Raven Kennedy",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Glint",
+        "author": "Raven Kennedy",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Queen of Shadows",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Throne of Glass",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Crown of Midnight",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Kingdom of Ash",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "House of Earth and Blood",
+        "author": "Sarah J. Maas",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Iron Flame",
+        "author": "Rebecca Yarros",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Onyx Storm",
+        "author": "Rebecca Yarros",
+        "genre": "Romantasy",
+        "note": "Romantasy categorization"
+      },
+      {
+        "title": "Mickey7",
+        "author": "Edward Ashton",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "The Host",
+        "author": "Stephenie Meyer",
+        "genre": "Science Fiction",
+        "note": "Sci-fi categorization"
+      },
+      {
+        "title": "We Are All Completely Fine",
+        "author": "Daryl Gregory",
+        "genre": "Horror",
+        "note": "Horror categorization"
+      },
+      {
+        "title": "Parable of the Sower",
+        "author": "Octavia E. Butler",
+        "genre": "Dystopian",
+        "note": "Dystopian categorization"
+      },
+      {
+        "title": "The Road",
+        "author": "Cormac McCarthy",
+        "genre": "Dystopian",
+        "note": "Dystopian categorization"
+      },
+      {
+        "title": "I Am Legend",
+        "author": "Richard Matheson",
+        "genre": "Horror",
+        "note": "Horror categorization"
+      },
+      {
+        "title": "The Hollow Places",
+        "author": "T. Kingfisher",
+        "genre": "Horror",
+        "note": "Horror categorization"
+      },
+      {
+        "title": "Tell Me What You Did",
+        "author": "Carter Wilson",
+        "genre": "Thriller",
+        "note": "Thriller categorization"
+      }
+    ],
+    "match_methods": {
+      "exact_match": "Match by exact title and author if both provided",
+      "title_only": "Match by title alone if author not specified or doesn't match",
+      "author_match": "Partial author name matching (e.g., 'Sarah J. Maas' matches 'Maas')",
+      "wildcards": "Use * for partial matches (e.g., '*Games' matches any book ending in 'Games')"
+    }
+  }
+}
