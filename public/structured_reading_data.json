@@ -1512,7 +1512,26 @@
       "totalBooks": 13
     }
   ],
-  "consistentAuthors": [],
+  "consistentAuthors": [
+    {
+      "name": "Tahereh Mafi",
+      "currentYear": 9,
+      "pastYears": 0,
+      "totalBooks": 9
+    },
+    {
+      "name": "Carissa Broadbent",
+      "currentYear": 6,
+      "pastYears": 0,
+      "totalBooks": 6
+    },
+    {
+      "name": "Lauren Roberts",
+      "currentYear": 4,
+      "pastYears": 0,
+      "totalBooks": 4
+    }
+  ],
   "readingStats": {
     "pagesPerDay": 53,
     "pagesPerWeek": 371,

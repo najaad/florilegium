@@ -314,7 +314,7 @@ def process_reading_data():
             genre = normalize_genre(row.get('Genre', ''))
             author = clean_author_name(row.get('Author', ''))
             
-            if is_current and year == current_year:
+            if year and year == current_year:
                 # Track current year tracking for genres
                 if genre and genre != "Unknown":
                     if genre not in consistent_genres:
@@ -359,12 +359,13 @@ def process_reading_data():
     for author, counts in sorted(consistent_authors.items(), 
                                key=lambda x: (x[1]["current"], x[1]["past"]), 
                                reverse=True)[:3]:
-        if counts["current"] > 0 and counts["past"] > 0:
+        # Now allow up to current year readers even if no past reading 
+        if counts["current"] > 0:
             consistent_authors_top.append({
                 "name": author,
                 "currentYear": counts["current"],
-                "pastYears": counts["past"],
-                "totalBooks": counts["current"] + counts["past"]
+                "pastYears": counts.get("past", 0),
+                "totalBooks": counts["current"] + counts.get("past", 0)
             })
 
     # Add to data structure
