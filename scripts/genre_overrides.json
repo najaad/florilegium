@@ -10,7 +10,11 @@
       "Horror tales": "Horror",
       "FICTION": "Fiction",
       "Non-Fiction": "Nonfiction",
-      "JUVENILE FICTION": "Young Adult Fiction"
+      "JUVENILE FICTION": "Young Adult Fiction",
+      "Chick Lit": "Romance",
+      "Human-animal relationships": "Magical Realism",
+      "Conduct of life": "Horror",
+      "Aging": "Historical Fiction"
     },
     "notes": {
       "Juvenile Fiction": "Recategorize as Young Adult for consistency",
