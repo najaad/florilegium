@@ -45,27 +45,47 @@ def find_manual_genre(title: str, author: str, isbn13: str, manual_genres: List[
 def apply_manual_genres(csv_path: str = 'data/goodreads_enriched.csv') -> None:
     """
     Apply manual genre assignments to enriched CSV.
-    If enriched CSV doesn't exist yet, copy from preprocessed data.
+    Always sync with preprocessed data to include new books.
     """
     print("📋 Starting manual genre assignment...")
     
-    # Load data - if enriched CSV doesn't exist, copy from preprocessed
+    # Always load from preprocessed data to ensure we have all books
     try:
-        df = pd.read_csv(csv_path)
-        print(f"📖 Loaded existing enriched CSV with {len(df)} books")
-    except (FileNotFoundError, Exception):
-        print("📖 Enriched CSV not found - copying from preprocessed data...")
+        df = pd.read_csv('data/goodreads_preprocessed.csv').copy()
+        print(f"📖 Loaded preprocessed data with {len(df)} books")
+        
+        # Add Genre column if not present
+        if 'Genre' not in df.columns:
+            df['Genre'] = ''
+            
+        # If enriched CSV exists, preserve existing genre assignments
         try:
-            df = pd.read_csv('data/goodreads_preprocessed.csv').copy()
-            # Add Genre column if not present
-            if 'Genre' not in df.columns:
-                df['Genre'] = ''
-            # Save as enriched CSV for next steps
-            df.to_csv(csv_path, index=False)
-            print(f"📖 Created enriched CSV with {len(df)} books")
-        except Exception as e:
-            print(f"❌ Error creating enriched CSV: {e}")
-            return
+            existing_df = pd.read_csv(csv_path)
+            print(f"📖 Found existing enriched CSV with {len(existing_df)} books")
+            
+            # Merge genre assignments from existing enriched data
+            for idx, row in df.iterrows():
+                title = str(row.get('Title', '')).strip()
+                author = str(row.get('Author', '')).strip()
+                
+                # Find matching book in existing data
+                existing_match = existing_df[
+                    (existing_df['Title'] == title) & 
+                    (existing_df['Author'] == author)
+                ]
+                
+                if not existing_match.empty and 'Genre' in existing_match.columns:
+                    existing_genre = str(existing_match.iloc[0].get('Genre', '')).strip()
+                    if existing_genre and existing_genre not in ['Unknown', 'nan', '']:
+                        df.at[idx, 'Genre'] = existing_genre
+                        print(f"✅ Preserved genre for '{title}': {existing_genre}")
+                        
+        except FileNotFoundError:
+            print("📖 No existing enriched CSV found - starting fresh")
+            
+    except Exception as e:
+        print(f"❌ Error loading preprocessed data: {e}")
+        return
     
     manual_genres = load_manual_genres()
     print(f"📋 Loaded {len(manual_genres)} manual genre assignments")

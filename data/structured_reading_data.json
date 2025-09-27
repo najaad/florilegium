@@ -34,6 +34,11 @@
   ],
   "tbrList": [
     {
+      "title": "Big Swiss",
+      "author": "Jen Beagin",
+      "genre": "Unknown"
+    },
+    {
       "title": "Spread Me",
       "author": "Sarah Gailey",
       "genre": "Fiction"
@@ -1339,13 +1344,13 @@
       "genre": "Horror"
     }
   ],
-  "completedBooks": 42,
-  "completedPages": 16707,
+  "completedBooks": 43,
+  "completedPages": 17953,
   "byMonth": [
     {
       "month": "Jan",
-      "count": 2,
-      "pages": 928
+      "count": 3,
+      "pages": 2174
     },
     {
       "month": "Feb",
@@ -1418,7 +1423,7 @@
     },
     {
       "name": "Romantasy",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Science Fiction",
@@ -1447,12 +1452,12 @@
       "count": 4
     },
     {
-      "name": "Hugh Howey",
+      "name": "Rebecca Yarros",
       "count": 3
     },
     {
-      "name": "Madeline Miller",
-      "count": 2
+      "name": "Hugh Howey",
+      "count": 3
     }
   ],
   "longestBooksByGenre": [
@@ -1533,10 +1538,10 @@
     }
   ],
   "readingStats": {
-    "pagesPerDay": 61,
-    "pagesPerWeek": 427,
-    "pagesPerMonth": 1830,
-    "averageBookLength": 397,
+    "pagesPerDay": 66,
+    "pagesPerWeek": 462,
+    "pagesPerMonth": 1980,
+    "averageBookLength": 417,
     "fastestRead": {
       "pages": 69,
       "days": 1,
@@ -1552,8 +1557,8 @@
   "goals": {
     "books": {
       "annual": {
-        "current": 42,
-        "target": 54
+        "current": 43,
+        "target": 55
       },
       "monthly": {
         "current": 3,
@@ -1562,22 +1567,22 @@
     },
     "pages": {
       "annual": {
-        "current": 16707,
-        "target": 20048
+        "current": 17953,
+        "target": 21543
       },
       "monthly": {
-        "current": 1392,
-        "target": 1670
+        "current": 1496,
+        "target": 1795
       }
     }
   },
   "totals": {
-    "books": 42,
-    "pages": 16707
+    "books": 43,
+    "pages": 17953
   },
   "lastYearTotals": {
-    "books": 22,
-    "pages": 12933
+    "books": 21,
+    "pages": 11687
   },
   "currentYearStart": "2025-01-01"
 }
