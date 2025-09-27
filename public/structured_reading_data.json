@@ -36,7 +36,7 @@
     {
       "title": "Big Swiss",
       "author": "Jen Beagin",
-      "genre": "Unknown"
+      "genre": "Fiction"
     },
     {
       "title": "Spread Me",
@@ -1344,13 +1344,13 @@
       "genre": "Horror"
     }
   ],
-  "completedBooks": 43,
-  "completedPages": 17953,
+  "completedBooks": 44,
+  "completedPages": 18987,
   "byMonth": [
     {
       "month": "Jan",
-      "count": 3,
-      "pages": 2174
+      "count": 4,
+      "pages": 3208
     },
     {
       "month": "Feb",
@@ -1418,11 +1418,11 @@
       "count": 7
     },
     {
-      "name": "Fantasy",
-      "count": 6
+      "name": "Romantasy",
+      "count": 7
     },
     {
-      "name": "Romantasy",
+      "name": "Fantasy",
       "count": 6
     },
     {
@@ -1448,12 +1448,12 @@
       "count": 4
     },
     {
-      "name": "Lauren Roberts",
+      "name": "Rebecca Yarros",
       "count": 4
     },
     {
-      "name": "Rebecca Yarros",
-      "count": 3
+      "name": "Lauren Roberts",
+      "count": 4
     },
     {
       "name": "Hugh Howey",
@@ -1511,10 +1511,10 @@
       "totalBooks": 11
     },
     {
-      "name": "Fantasy",
-      "currentYear": 6,
-      "pastYears": 8,
-      "totalBooks": 14
+      "name": "Romantasy",
+      "currentYear": 7,
+      "pastYears": 3,
+      "totalBooks": 10
     }
   ],
   "consistentAuthors": [
@@ -1538,10 +1538,10 @@
     }
   ],
   "readingStats": {
-    "pagesPerDay": 66,
-    "pagesPerWeek": 462,
-    "pagesPerMonth": 1980,
-    "averageBookLength": 417,
+    "pagesPerDay": 70,
+    "pagesPerWeek": 490,
+    "pagesPerMonth": 2100,
+    "averageBookLength": 431,
     "fastestRead": {
       "pages": 69,
       "days": 1,
@@ -1557,8 +1557,8 @@
   "goals": {
     "books": {
       "annual": {
-        "current": 43,
-        "target": 55
+        "current": 44,
+        "target": 57
       },
       "monthly": {
         "current": 3,
@@ -1567,18 +1567,18 @@
     },
     "pages": {
       "annual": {
-        "current": 17953,
-        "target": 21543
+        "current": 18987,
+        "target": 22784
       },
       "monthly": {
-        "current": 1496,
-        "target": 1795
+        "current": 1582,
+        "target": 1898
       }
     }
   },
   "totals": {
-    "books": 43,
-    "pages": 17953
+    "books": 44,
+    "pages": 18987
   },
   "lastYearTotals": {
     "books": 21,
