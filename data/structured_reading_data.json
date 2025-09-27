@@ -631,7 +631,7 @@
     {
       "title": "Remarkably Bright Creatures",
       "author": "Shelby Van Pelt",
-      "genre": "Human-animal relationships"
+      "genre": "Magical Realism"
     },
     {
       "title": "Eragon",
@@ -651,7 +651,7 @@
     {
       "title": "The People in the Trees",
       "author": "Hanya Yanagihara",
-      "genre": "Aging"
+      "genre": "Historical Fiction"
     },
     {
       "title": "I Hope This Finds You Well",
@@ -711,7 +711,7 @@
     {
       "title": "The Bunker Diary",
       "author": "Kevin Brooks",
-      "genre": "Conduct of life"
+      "genre": "Horror"
     },
     {
       "title": "Outer Dark",
@@ -1458,9 +1458,9 @@
   "longestBooksByGenre": [
     {
       "genre": "Young Adult Fiction",
-      "title": "Mockingjay",
-      "author": "Suzanne Collins",
-      "pages": 780
+      "title": "Unravel Me",
+      "author": "Tahereh Mafi",
+      "pages": 461
     },
     {
       "genre": "Fiction",
@@ -1489,7 +1489,7 @@
     {
       "author": "Suzanne Collins",
       "title": "Catching Fire",
-      "pages": 782
+      "pages": 391
     }
   ],
   "consistentGenres": [
@@ -1533,9 +1533,9 @@
     }
   ],
   "readingStats": {
-    "pagesPerDay": 62,
-    "pagesPerWeek": 434,
-    "pagesPerMonth": 1860,
+    "pagesPerDay": 61,
+    "pagesPerWeek": 427,
+    "pagesPerMonth": 1830,
     "averageBookLength": 397,
     "fastestRead": {
       "pages": 69,
@@ -1544,9 +1544,9 @@
       "author": "Tahereh Mafi"
     },
     "longestBook": {
-      "pages": 782,
-      "title": "Catching Fire",
-      "author": "Suzanne Collins"
+      "pages": 638,
+      "title": "The Fallen and the Kiss of Dusk",
+      "author": "Carissa Broadbent"
     }
   },
   "goals": {
