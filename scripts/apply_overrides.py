@@ -6,7 +6,7 @@ Loads override.json and updates specific book fields.
 
 import pandas as pd
 import json
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 
 def load_overrides(overrides_file: str = 'scripts/override.json') -> Dict[str, Any]:
     """Load overrides from JSON file."""
@@ -21,11 +21,65 @@ def load_overrides(overrides_file: str = 'scripts/override.json') -> Dict[str, A
         print(f"❌ Error loading overrides: {e}")
         return []
 
+def robust_match_override(title: str, author: str, override: Dict[str, Any]) -> Optional[int]:
+    """Enhanced matching logic that handles title variations and partial matches."""
+    override_title = override.get('title', '').lower().strip()
+    override_author = override.get('author', '').lower().strip()
+    
+    # Clean current book data
+    book_title = str(title).lower().strip()
+    book_author = str(author).lower().strip()
+    
+    # Normalize author names for better matching
+    def normalize_author(name: str) -> str:
+        name = name.strip().lower()
+        # Remove common suffixes and parenthetical text
+        import re
+        name = re.sub(r'\s*(goodreads author)', '', name)
+        name = re.sub(r'\s*\(.*\)', '', name)
+        name = re.sub(r'\s*,\s*$', '', name)  # Remove trailing comma
+        return name.strip()
+    
+    book_author_norm = normalize_author(book_author)
+    override_author_norm = normalize_author(override_author)
+    
+    # 1. Exact title match (original method)
+    if override_title == book_title:
+        # Check author if provided in override
+        if not override_author or override_author_norm in book_author_norm or book_author_norm in override_author_norm:
+            return 2  # High confidence
+        return 1  # Medium confidence (title matches, author mismatch)
+    
+    # 2. Base title matching (for series with parens issue)
+    # Extract clean title from complex titles like "Title (Series Name #1)"
+    def extract_base_title(full_title: str) -> str:
+        import re
+        # Remove parenthetical content that might be series info
+        clean = re.sub(r'\s*\([^)]*#[^)]*\)$', '', str(full_title))
+        clean = re.sub(r'\s*\([^)]*#(\d+.\d*)\),?\s*$', '', clean)
+        return clean.strip().lower()
+    
+    override_base = extract_base_title(override_title)
+    book_base = extract_base_title(book_title)
+    
+    if override_base == book_base:
+        if not override_author or override_author_norm in book_author_norm or book_author_norm in override_author_norm:
+            return 2  # High confidence (base titles match)
+        return 1  # Medium confidence
+    
+    # 3. Partial title substring matching
+    if (override_title in book_title or book_title in override_title) and len(override_title) > 5:
+        if not override_author or override_author_norm in book_author_norm or book_author_norm in override_author_norm:
+            return 1  # Medium confidence
+    
+    return 0  # No match
+
+
 def apply_overrides_to_csv(csv_path: str = 'data/goodreads_enriched.csv'):
     """
-    Apply book overrides to the enriched CSV file.
+    Apply book overrides to the enriched CSV file with robust matching.
     """
-    print("🔧 Applying book overrides...")
+    print("🔧 Applying book overrides with robust matching...")
     
     # Load overrides
     overrides = load_overrides()
@@ -59,29 +113,35 @@ def apply_overrides_to_csv(csv_path: str = 'data/goodreads_enriched.csv'):
         if not title:
             continue
             
-        # Find matching books by title (and author if provided)
+        # Enhanced matching for titles that vary between exports
         matches = []
         for idx, row in df.iterrows():
             row_title = str(row.get('Title', '')).strip()
             row_author = str(row.get('Author', '')).strip()
             
-            if title.lower() == row_title.lower():
-                if not author or author.lower() in row_author.lower():
-                    matches.append((idx, row))
+            confidence = robust_match_override(row_title, row_author, override)
+            if confidence > 0:
+                matches.append((idx, row_title, row_author, confidence))
         
+        # Sort by confidence (high = 2, medium = 1)
+        matches.sort(key=lambda x: x[3], reverse=True)
+            
         if not matches:
-            print(f"⚠️  No matching book found for: '{title}'")
+            print(f"⚠️  No matching book found for: '{title}' by {author}")
             continue
-        elif len(matches) > 1:
-            print(f"⚠️  Multiple matches for '{title}': {len(matches)} books")
-            for idx, row in matches:
-                print(f"     {idx}: {row.get('Title', '')} by {row.get('Author', '')}")
-            continue
+        elif len(matches) > 1 and matches[0][3] == matches[1][3]:
+            # Multiple high-confidence matches found
+            print(f"⚠️  Multiple high-confidence matches for '{title}' by {author}: {len(matches)} books")
+            for idx, book_title, book_author, conf in matches:
+                if conf >= 2:
+                    print(f"     {idx}: {book_title} by {book_author} (match confidence: {conf})")
+            print(f"     👆 Using first high-confidence match:")
+            
+        # Apply the overrides to the best match
+        best_match = matches[0]
+        row_idx = best_match[0]
         
-        # Apply the overrides to the first/only match
-        row_idx = matches[0][0]
-        original_row = df.iloc[row_idx].copy()
-        
+        success = False
         for field, value in fields.items():
             if field in df.columns:
                 # Handle type conversion for numeric fields
@@ -92,13 +152,15 @@ def apply_overrides_to_csv(csv_path: str = 'data/goodreads_enriched.csv'):
                         print(f"⚠️  Invalid Read Count: {value} (skipping)")
                         continue
                 df.at[row_idx, field] = value
-                print(f"✅ Updated '{title}': {field} = {value}")
+                print(f"✅ Updated '{best_match[1]}' by {best_match[2]}: {field} = {value} (confidence={best_match[3]})")
+                success = True
             else:
                 print(f"⚠️  Column not found: {field} (skipping)")
         
-        applied_count += 1
-        if note:
-            print(f"   📝 Note: {note}")
+        if success:
+            applied_count += 1
+            if note:
+                print(f"   📝 Note: {note}")
     
     # Save the updated CSV
     if applied_count > 0:

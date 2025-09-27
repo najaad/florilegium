@@ -101,9 +101,48 @@ def validate_enriched_data() -> bool:
         print(f"❌ Validation failed with error: {e}")
         return False
 
+def verify_no_book_loss(stage_name: str, before_file: str, after_file: str) -> bool:
+    """Verify no books were lost between processing stages."""
+    try:
+        import pandas as pd
+        df_before = pd.read_csv(before_file)
+        df_after = pd.read_csv(after_file)
+        
+        before_count = len(df_before)
+        after_count = len(df_after)
+        
+        if after_count < before_count:
+            lost = before_count - after_count
+            print(f"❌ CRITICAL: {lost} books LOST during {stage_name}")
+            print(f"   Before: {before_count} books in {before_file}")
+            print(f"   After:  {after_count} books in {after_file}")
+            
+            # Find which books were lost
+            before_ids = set(df_before['Book Id'].astype(str))
+            after_ids = set(df_after['Book Id'].astype(str))
+            missing_ids = before_ids - after_ids
+            
+            if missing_ids:
+                print(f"   LOST BOOKS:")
+                for book_id in list(missing_ids)[:5]:  # Show first 5
+                    try:
+                        book = df_before[df_before['Book Id'].astype(str) == book_id].iloc[0]
+                        print(f"     • {book['Title']} by {book['Author']} (ID: {book_id})")
+                    except:
+                        print(f"     • Book ID: {book_id}")
+            
+            return False
+        else:
+            print(f"✅ {stage_name}: {before_count} → {after_count} books (no loss)")
+            return True
+            
+    except Exception as e:
+        print(f"❌ Error verifying {stage_name}: {e}")
+        return False
+
 def main():
     """
-    Run the complete data processing workflow.
+    Run the complete data processing workflow with book loss verification.
     """
     print("🎯 Starting Florilegium Data Processing Workflow")
     print("=" * 50)
@@ -113,6 +152,13 @@ def main():
         print("❌ Data cleaning failed. Stopping workflow!")
         return
     
+    # Verify no books lost during preprocessing
+    if not verify_no_book_loss("Preprocessing", 
+                               "data/goodreads_library_export.csv", 
+                               "data/goodreads_preprocessed.csv"):
+        print("❌ CRITICAL: Books lost during preprocessing! Stopping workflow!")
+        return
+    
     print()
     
     # Step 2: Apply manual genres first
@@ -120,11 +166,39 @@ def main():
         print("❌ Manual genre assignment failed. Stopping workflow!")
         return
     
+    # Verify no books lost during manual genre assignment
+    if not verify_no_book_loss("Manual Genre Assignment", 
+                               "data/goodreads_preprocessed.csv", 
+                               "data/goodreads_enriched.csv"):
+        print("❌ CRITICAL: Books lost during manual genre assignment! Stopping workflow!")
+        return
+    
     print()
     
     # Step 3: Enrich remaining books with Google Books API (interactive for user approval)
+    # Store count before API enrichment
+    try:
+        import pandas as pd
+        df_before_api = pd.read_csv("data/goodreads_enriched.csv")
+        books_before_api = len(df_before_api)
+    except:
+        books_before_api = 0
+    
     if not run_script("scripts/google_api_enrich.py", "Google Books API enrichment", interactive=True):
         print("❌ Google Books API enrichment failed. Stopping workflow!")
+        return
+    
+    # Verify no books lost during API enrichment
+    try:
+        df_after_api = pd.read_csv("data/goodreads_enriched.csv")
+        books_after_api = len(df_after_api)
+        if books_after_api < books_before_api:
+            print(f"❌ CRITICAL: {books_before_api - books_after_api} books lost during API enrichment!")
+            return
+        else:
+            print(f"✅ API Enrichment: {books_before_api} → {books_after_api} books (no loss)")
+    except Exception as e:
+        print(f"❌ Error verifying API enrichment: {e}")
         return
     
     print()
@@ -158,6 +232,16 @@ def main():
     
     print()
     
+    # Final verification: Check overall book count preservation
+    final_verification = verify_no_book_loss("Complete Pipeline", 
+                                           "data/goodreads_library_export.csv", 
+                                           "data/goodreads_enriched.csv")
+    
+    if not final_verification:
+        print("❌ CRITICAL: Books were lost during the complete pipeline!")
+        print("💡 Check the verification output above to identify which books were lost.")
+        return
+    
     # Vercel deployment is automatic via GitHub merge → skip prompt
     print("⏭️ Skipping manual deployment (Vercel auto-deploys from GitHub)")
     
@@ -168,6 +252,7 @@ def main():
     print("   • data/goodreads_enriched.csv (with genres)")
     print("   • data/structured_reading_data.json (dashboard-ready data)")
     print()
+    print("✅ VERIFIED: No books lost during processing")
     print("🚀 Ready for dashboard! Merge to GitHub for auto-deploy to Vercel")
 
 if __name__ == "__main__":

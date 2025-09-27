@@ -239,17 +239,19 @@ def process_reading_data():
             year, month, is_current = extract_year_month(date_read)
             
             if pages > 0:
-                # Calculate pages with read count multiplier
-                total_pages = int(pages * read_count)
+                # For reading stats: multiply by read count (total pages read)
+                total_pages_read = int(pages * read_count)
+                # For book length stats: use actual book length (not multiplied)
+                actual_book_length = int(pages)
                 
                 # Check if this was read in the previous year for forecasting  
                 if year == previous_year and month and month <= 12:
                     last_year_totals["books"] += 1
-                    last_year_totals["pages"] += total_pages
+                    last_year_totals["pages"] += total_pages_read
                 
                 # Only count books completed THIS YEAR 
                 if is_current and month and month <= 12:
-                    data_structure["completedPages"] += total_pages
+                    data_structure["completedPages"] += total_pages_read
                     data_structure["completedBooks"] += 1
                     month_name = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][month-1]
@@ -260,28 +262,28 @@ def process_reading_data():
                         monthly_stats[month_key] = {"count": 0, "pages": 0}
                     
                     monthly_stats[month_key]["count"] += 1
-                    monthly_stats[month_key]["pages"] += total_pages
+                    monthly_stats[month_key]["pages"] += total_pages_read
                     
                     # Update the byMonth array
                     for bm in data_structure["byMonth"]:
                         if bm["month"] == month_name:
                             bm["count"] += 1
-                            bm["pages"] += total_pages
+                            bm["pages"] += total_pages_read
                     
-                    # Track fastest read book for current year
-                    estimated_days = max(1, int(total_pages / 45))  # Estimate reading at ~45 pages/day
+                    # Track fastest read book for current year (use total pages read for speed calculation)
+                    estimated_days = max(1, int(total_pages_read / 45))  # Estimate reading at ~45 pages/day
                     if fastest_read_track["title"] == "" or estimated_days < fastest_read_track["days"]:
                         fastest_read_track = {
-                            "pages": total_pages,
+                            "pages": total_pages_read,
                             "days": estimated_days, 
                             "title": title,
                             "author": author
                         }
                     
-                    # Track longest book for current year
-                    if longest_book_track["title"] == "" or total_pages > longest_book_track["pages"]:
+                    # Track longest book for current year (use actual book length, not total pages read)
+                    if longest_book_track["title"] == "" or actual_book_length > longest_book_track["pages"]:
                         longest_book_track = {
-                            "pages": total_pages,
+                            "pages": actual_book_length,
                             "title": title, 
                             "author": author
                         }
@@ -293,17 +295,17 @@ def process_reading_data():
                         genre_counts[genre] = genre_counts.get(genre, 0) + 1
                         
                         if genre not in longest_books_by_genre:
-                            longest_books_by_genre[genre] = {"title": title, "author": author, "pages": total_pages}
-                        elif total_pages > longest_books_by_genre[genre]["pages"]:
-                            longest_books_by_genre[genre] = {"title": title, "author": author, "pages": total_pages}
+                            longest_books_by_genre[genre] = {"title": title, "author": author, "pages": actual_book_length}
+                        elif actual_book_length > longest_books_by_genre[genre]["pages"]:
+                            longest_books_by_genre[genre] = {"title": title, "author": author, "pages": actual_book_length}
                     
                     if author:
                         author_counts[author] = author_counts.get(author, 0) + 1
                         
                         if author not in longest_books_by_author:
-                            longest_books_by_author[author] = {"title": title, "pages": total_pages}
-                        elif total_pages > longest_books_by_author[author]["pages"]:
-                            longest_books_by_author[author] = {"title": title, "pages": total_pages}
+                            longest_books_by_author[author] = {"title": title, "pages": actual_book_length}
+                        elif actual_book_length > longest_books_by_author[author]["pages"]:
+                            longest_books_by_author[author] = {"title": title, "pages": actual_book_length}
     
     # Format the top results - limit to reasonable numbers
     top_genres = [{"name": genre, "count": count} for genre, count in 
