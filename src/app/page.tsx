@@ -1091,7 +1091,7 @@ function TBRRandomizer({ tbrList }: { tbrList: { title: string; author: string; 
                 </div>
               ) : (
                 <div className="text-sm md:text-base text-base-content/60 font-bold">
-                  Shuffle to pick a random TBR book
+                  Shuffle & Pick Random TBR ({tbrList.length})
                 </div>
               )}
             </div>
