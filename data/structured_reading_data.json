@@ -1414,7 +1414,7 @@
       "count": 13
     },
     {
-      "name": "Fiction",
+      "name": "Fantasy",
       "count": 7
     },
     {
@@ -1422,7 +1422,7 @@
       "count": 7
     },
     {
-      "name": "Fantasy",
+      "name": "Fiction",
       "count": 6
     },
     {
@@ -1469,9 +1469,9 @@
     },
     {
       "genre": "Fiction",
-      "title": "Two Twisted Crowns",
+      "title": "One Dark Window",
       "author": "Rachel Gillig",
-      "pages": 437
+      "pages": 432
     },
     {
       "genre": "Horror",
@@ -1505,10 +1505,10 @@
       "totalBooks": 18
     },
     {
-      "name": "Fiction",
+      "name": "Fantasy",
       "currentYear": 7,
-      "pastYears": 4,
-      "totalBooks": 11
+      "pastYears": 8,
+      "totalBooks": 15
     },
     {
       "name": "Romantasy",

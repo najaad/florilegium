@@ -356,6 +356,12 @@
         "author": "Carter Wilson",
         "genre": "Thriller",
         "note": "Thriller categorization"
+      },
+       {
+        "title": "Two Twisted Crowns",
+        "author": "Rachel Gillig",
+        "genre": "Fantasy",
+        "note": "Fantasy categorization"
       }
     ],
     "match_methods": {
