@@ -2,12 +2,6 @@
   "currentYear": 2025,
   "currentlyReading": [
     {
-      "title": "Imagine Me",
-      "author": "Tahereh Mafi",
-      "totalPages": 450,
-      "genre": "Young Adult Fiction"
-    },
-    {
       "title": "Flowers for Algernon",
       "author": "Daniel Keyes",
       "totalPages": 219,
@@ -33,6 +27,41 @@
     }
   ],
   "tbrList": [
+    {
+      "title": "Touching Spirit Bear",
+      "author": "Ben Mikaelsen",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Lost in the Garden",
+      "author": "Adam S. Leslie",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Willow Rose",
+      "author": "M Kevin Hayden",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The House Saphir",
+      "author": "Marissa Meyer",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Firebird",
+      "author": "Juliette Cross",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Exiles",
+      "author": "Mason Coile",
+      "genre": "Fiction"
+    },
+    {
+      "title": "The Three-Body Problem",
+      "author": "Liu Cixin",
+      "genre": "Unknown"
+    },
     {
       "title": "Big Swiss",
       "author": "Jen Beagin",
@@ -436,11 +465,6 @@
     {
       "title": "Break The Bodies, Haunt The Bones",
       "author": "Micah Dean Hicks",
-      "genre": "Fiction"
-    },
-    {
-      "title": "The Divine Farce",
-      "author": "Michael S.A. Graziano",
       "genre": "Fiction"
     },
     {
@@ -1344,8 +1368,8 @@
       "genre": "Horror"
     }
   ],
-  "completedBooks": 44,
-  "completedPages": 18987,
+  "completedBooks": 48,
+  "completedPages": 20110,
   "byMonth": [
     {
       "month": "Jan",
@@ -1389,8 +1413,8 @@
     },
     {
       "month": "Sep",
-      "count": 10,
-      "pages": 2696
+      "count": 14,
+      "pages": 3819
     },
     {
       "month": "Oct",
@@ -1411,10 +1435,10 @@
   "topGenres": [
     {
       "name": "Young Adult Fiction",
-      "count": 13
+      "count": 16
     },
     {
-      "name": "Fantasy",
+      "name": "Fiction",
       "count": 7
     },
     {
@@ -1422,8 +1446,8 @@
       "count": 7
     },
     {
-      "name": "Fiction",
-      "count": 6
+      "name": "Fantasy",
+      "count": 7
     },
     {
       "name": "Science Fiction",
@@ -1437,18 +1461,18 @@
   "topAuthors": [
     {
       "name": "Tahereh Mafi",
-      "count": 9
+      "count": 12
     },
     {
       "name": "Carissa Broadbent",
       "count": 6
     },
     {
-      "name": "Suzanne Collins",
+      "name": "Rebecca Yarros",
       "count": 4
     },
     {
-      "name": "Rebecca Yarros",
+      "name": "Suzanne Collins",
       "count": 4
     },
     {
@@ -1462,47 +1486,47 @@
   ],
   "longestBooksByGenre": [
     {
-      "genre": "Young Adult Fiction",
-      "title": "Unravel Me",
-      "author": "Tahereh Mafi",
-      "pages": 461
-    },
-    {
       "genre": "Fiction",
       "title": "One Dark Window",
       "author": "Rachel Gillig",
       "pages": 432
     },
     {
-      "genre": "Horror",
-      "title": "The Long Walk",
-      "author": "Richard Bachman",
-      "pages": 319
+      "genre": "Young Adult Fiction",
+      "title": "Unravel Me",
+      "author": "Tahereh Mafi",
+      "pages": 461
+    },
+    {
+      "genre": "Romantasy",
+      "title": "Iron Flame",
+      "author": "Rebecca Yarros",
+      "pages": 623
     }
   ],
   "longestBooksByAuthor": [
+    {
+      "author": "Michael S.A. Graziano",
+      "title": "The Divine Farce",
+      "pages": 128
+    },
     {
       "author": "Tahereh Mafi",
       "title": "Unravel Me",
       "pages": 461
     },
     {
-      "author": "Madeline Miller",
-      "title": "Circe",
-      "pages": 393
-    },
-    {
-      "author": "Suzanne Collins",
-      "title": "Catching Fire",
-      "pages": 391
+      "author": "Rebecca Yarros",
+      "title": "Iron Flame",
+      "pages": 623
     }
   ],
   "consistentGenres": [
     {
       "name": "Young Adult Fiction",
-      "currentYear": 13,
+      "currentYear": 16,
       "pastYears": 5,
-      "totalBooks": 18
+      "totalBooks": 21
     },
     {
       "name": "Fantasy",
@@ -1511,18 +1535,18 @@
       "totalBooks": 15
     },
     {
-      "name": "Romantasy",
+      "name": "Fiction",
       "currentYear": 7,
-      "pastYears": 3,
-      "totalBooks": 10
+      "pastYears": 4,
+      "totalBooks": 11
     }
   ],
   "consistentAuthors": [
     {
       "name": "Tahereh Mafi",
-      "currentYear": 9,
+      "currentYear": 12,
       "pastYears": 0,
-      "totalBooks": 9
+      "totalBooks": 12
     },
     {
       "name": "Carissa Broadbent",
@@ -1531,17 +1555,17 @@
       "totalBooks": 6
     },
     {
-      "name": "Suzanne Collins",
+      "name": "Rebecca Yarros",
       "currentYear": 4,
       "pastYears": 0,
       "totalBooks": 4
     }
   ],
   "readingStats": {
-    "pagesPerDay": 70,
-    "pagesPerWeek": 490,
-    "pagesPerMonth": 2100,
-    "averageBookLength": 431,
+    "pagesPerDay": 73,
+    "pagesPerWeek": 511,
+    "pagesPerMonth": 2190,
+    "averageBookLength": 418,
     "fastestRead": {
       "pages": 69,
       "days": 1,
@@ -1557,28 +1581,28 @@
   "goals": {
     "books": {
       "annual": {
-        "current": 44,
-        "target": 57
+        "current": 48,
+        "target": 62
       },
       "monthly": {
-        "current": 3,
-        "target": 4
+        "current": 4,
+        "target": 5
       }
     },
     "pages": {
       "annual": {
-        "current": 18987,
-        "target": 22784
+        "current": 20110,
+        "target": 24132
       },
       "monthly": {
-        "current": 1582,
-        "target": 1898
+        "current": 1675,
+        "target": 2011
       }
     }
   },
   "totals": {
-    "books": 44,
-    "pages": 18987
+    "books": 48,
+    "pages": 20110
   },
   "lastYearTotals": {
     "books": 21,

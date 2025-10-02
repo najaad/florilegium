@@ -362,6 +362,12 @@
         "author": "Rachel Gillig",
         "genre": "Fantasy",
         "note": "Fantasy categorization"
+      },
+      {
+        "title": "The Three-Body Problem",
+        "author": "Liu Cixin",
+        "genre": "Science Fiction",
+        "note": "Science Fiction categorization"
       }
     ],
     "match_methods": {
