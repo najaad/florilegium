@@ -503,6 +503,22 @@ def process_reading_data():
     # Apply genre overrides before finalizing
     data_structure = apply_genre_overrides(data_structure)
     
+    # Fix monthly goals to use current month's actual progress instead of yearly average
+    import datetime as dt
+    current_month = dt.datetime.now().strftime("%b")  # e.g., "Sep"
+    
+    current_month_books = 0
+    current_month_pages = 0
+    for month_data in data_structure["byMonth"]:
+        if month_data["month"] == current_month:
+            current_month_books = month_data["count"]
+            current_month_pages = month_data["pages"]
+            break
+    
+    # Update the goals with actual current month progress
+    data_structure["goals"]["books"]["monthly"]["current"] = current_month_books
+    data_structure["goals"]["pages"]["monthly"]["current"] = current_month_pages
+    
     # Note: Book-specific genre overrides are now applied at CSV level in main.py
     # No need to re-apply here since they're already in the source data
     
