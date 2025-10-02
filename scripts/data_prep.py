@@ -378,9 +378,14 @@ def process_reading_data():
     }
     
     # Calculate goals (let's use reasonable targets)
-    annual_books_target = max(50, int(total_books * 1.3)) if current_day_of_year < 365 else total_books + 5
+    # OLD LOGIC - Moving goalpost problem (always current * 1.3, never achievable)
+    # annual_books_target = max(50, int(total_books * 1.3)) if current_day_of_year < 365 else total_books + 5
+    # annual_pages_target = max(20000, int(total_pages * 1.2)) if current_day_of_year < 365 else total_pages + 2000
+    
+    # NEW LOGIC - Fixed goals that can be exceeded (>100% completion)
+    annual_books_target = 50  # Fixed goal, allows for >100% completion
     monthly_books_target = max(4, int(annual_books_target / 12))
-    annual_pages_target = max(20000, int(total_pages * 1.2)) if current_day_of_year < 365 else total_pages + 2000
+    annual_pages_target = 20000  # Fixed goal, allows for >100% completion  
     monthly_pages_target = max(1500, int(annual_pages_target / 12))
     
     goals = {

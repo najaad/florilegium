@@ -1583,21 +1583,21 @@
     "books": {
       "annual": {
         "current": 48,
-        "target": 62
+        "target": 50
       },
       "monthly": {
         "current": 0,
-        "target": 5
+        "target": 4
       }
     },
     "pages": {
       "annual": {
         "current": 20110,
-        "target": 24132
+        "target": 20000
       },
       "monthly": {
         "current": 0,
-        "target": 2011
+        "target": 1666
       }
     }
   },
