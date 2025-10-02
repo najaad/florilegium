@@ -175,7 +175,21 @@ def main():
     
     print()
     
-    # Step 3: Enrich remaining books with Google Books API (interactive for user approval)
+    # Step 3: Apply book overrides before enrichment
+    if not run_script("scripts/apply_overrides.py", "Applying book overrides"):
+        print("❌ Book overrides application failed. Stopping workflow!")
+        return
+    
+    print()
+    
+    # Step 4: Apply book-specific genre overrides to CSV BEFORE API enrichment
+    if not run_script("scripts/apply_book_genre_overrides.py", "Applying book-specific genre overrides"):
+        print("❌ Book-specific genre overrides application failed. Stopping workflow!")
+        return
+    
+    print()
+    
+    # Step 5: Enrich remaining books with Google Books API (interactive for user approval)
     # Store count before API enrichment
     try:
         import pandas as pd
@@ -203,7 +217,7 @@ def main():
     
     print()
     
-    # Step 3: Validate enrichment completed successfully
+    # Step 6: Validate enrichment completed successfully
     if not validate_enriched_data():
         print("❌ Data enrichment validation failed!")
         print("💡 Tip: Check missing genres above, may need to add to manual_genres.json")
@@ -211,21 +225,7 @@ def main():
     
     print()
     
-    # Step 4: Apply book overrides before data preparation
-    if not run_script("scripts/apply_overrides.py", "Applying book overrides"):
-        print("❌ Book overrides application failed. Stopping workflow!")
-        return
-    
-    print()
-    
-    # Step 5: Apply book-specific genre overrides to CSV
-    if not run_script("scripts/apply_book_genre_overrides.py", "Applying book-specific genre overrides"):
-        print("❌ Book-specific genre overrides application failed. Stopping workflow!")
-        return
-    
-    print()
-    
-    # Step 6: Run data preparation for dashboard
+    # Step 7: Run data preparation for dashboard
     if not run_script("scripts/data_prep.py", "Data preparation for dashboard"):
         print("❌ Data preparation failed. Stopping workflow!")
         return
