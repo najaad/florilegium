@@ -64,6 +64,7 @@ def apply_manual_genres(csv_path: str = 'data/goodreads_enriched.csv') -> None:
             print(f"📖 Found existing enriched CSV with {len(existing_df)} books")
             
             # Merge genre assignments from existing enriched data
+            preserved_count = 0
             for idx, row in df.iterrows():
                 title = str(row.get('Title', '')).strip()
                 author = str(row.get('Author', '')).strip()
@@ -78,7 +79,9 @@ def apply_manual_genres(csv_path: str = 'data/goodreads_enriched.csv') -> None:
                     existing_genre = str(existing_match.iloc[0].get('Genre', '')).strip()
                     if existing_genre and existing_genre not in ['Unknown', 'nan', '']:
                         df.at[idx, 'Genre'] = existing_genre
-                        print(f"✅ Preserved genre for '{title}': {existing_genre}")
+                        preserved_count += 1
+            
+            print(f"✅ Preserved {preserved_count} existing genre assignments")
                         
         except FileNotFoundError:
             print("📖 No existing enriched CSV found - starting fresh")

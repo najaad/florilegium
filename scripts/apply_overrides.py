@@ -152,15 +152,12 @@ def apply_overrides_to_csv(csv_path: str = 'data/goodreads_enriched.csv'):
                         print(f"⚠️  Invalid Read Count: {value} (skipping)")
                         continue
                 df.at[row_idx, field] = value
-                print(f"✅ Updated '{best_match[1]}' by {best_match[2]}: {field} = {value} (confidence={best_match[3]})")
                 success = True
             else:
                 print(f"⚠️  Column not found: {field} (skipping)")
         
         if success:
             applied_count += 1
-            if note:
-                print(f"   📝 Note: {note}")
     
     # Save the updated CSV
     if applied_count > 0:

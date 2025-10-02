@@ -92,7 +92,6 @@ def apply_book_genre_overrides_to_csv(csv_path: str = 'data/goodreads_enriched.c
                 
                 df.at[idx, 'Genre'] = new_genre
                 applied_count += 1
-                print(f"  ✅ Updated '{book_title}' by {book_author}: {old_genre} -> {new_genre}")
                 break  # Only match one override per book
     
     if applied_count > 0:

@@ -2,6 +2,12 @@
   "currentYear": 2025,
   "currentlyReading": [
     {
+      "title": "From Blood and Ash",
+      "author": "Jennifer L. Armentrout",
+      "totalPages": 622,
+      "genre": "Romantasy"
+    },
+    {
       "title": "Flowers for Algernon",
       "author": "Daniel Keyes",
       "totalPages": 219,
@@ -60,7 +66,7 @@
     {
       "title": "The Three-Body Problem",
       "author": "Liu Cixin",
-      "genre": "Unknown"
+      "genre": "Science Fiction"
     },
     {
       "title": "Big Swiss",
@@ -1191,11 +1197,6 @@
       "title": "A Soul to Keep",
       "author": "Opal Reyne",
       "genre": "Fantasy"
-    },
-    {
-      "title": "From Blood and Ash",
-      "author": "Jennifer L. Armentrout",
-      "genre": "Romantasy"
     },
     {
       "title": "The Inheritance Games",
