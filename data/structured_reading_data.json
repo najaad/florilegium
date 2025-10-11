@@ -2,9 +2,9 @@
   "currentYear": 2025,
   "currentlyReading": [
     {
-      "title": "From Blood and Ash",
+      "title": "The ​Crown of Gilded Bones",
       "author": "Jennifer L. Armentrout",
-      "totalPages": 622,
+      "totalPages": 645,
       "genre": "Romantasy"
     },
     {
@@ -34,6 +34,66 @@
   ],
   "tbrList": [
     {
+      "title": "I'll Give You the Sun",
+      "author": "Jandy Nelson",
+      "genre": "Young Adult Fiction"
+    },
+    {
+      "title": "Asunder",
+      "author": "Kerstin Hall",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "Fairydale",
+      "author": "Veronica Lancet",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Will of the Many",
+      "author": "James Islington",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Anthropocene Reviewed: Essays on a Human-Centered Planet",
+      "author": "John Green",
+      "genre": "Nonfiction"
+    },
+    {
+      "title": "House of Leaves",
+      "author": "Mark Z. Danielewski",
+      "genre": "Horror"
+    },
+    {
+      "title": "The September House",
+      "author": "Carissa Orlando",
+      "genre": "Horror"
+    },
+    {
+      "title": "Hungerstone",
+      "author": "Kat Dunn",
+      "genre": "Horror"
+    },
+    {
+      "title": "My Darling Dreadful Thing",
+      "author": "Johanna van Veen",
+      "genre": "Horror"
+    },
+    {
+      "title": "The Mezzanine",
+      "author": "Nicholson Baker",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Ruthless Creatures",
+      "author": "J.T. Geissinger",
+      "genre": "Dark Romance"
+    },
+    {
+      "title": "The Everlasting",
+      "author": "Alix E. Harrow",
+      "genre": "Fantasy"
+    },
+    {
       "title": "Touching Spirit Bear",
       "author": "Ben Mikaelsen",
       "genre": "Young Adult Fiction"
@@ -45,8 +105,8 @@
     },
     {
       "title": "Willow Rose",
-      "author": "M Kevin Hayden",
-      "genre": "Fiction"
+      "author": "M. Kevin Hayden",
+      "genre": "Horror"
     },
     {
       "title": "The House Saphir",
@@ -1369,8 +1429,8 @@
       "genre": "Horror"
     }
   ],
-  "completedBooks": 48,
-  "completedPages": 20110,
+  "completedBooks": 50,
+  "completedPages": 21369,
   "byMonth": [
     {
       "month": "Jan",
@@ -1419,8 +1479,8 @@
     },
     {
       "month": "Oct",
-      "count": 0,
-      "pages": 0
+      "count": 2,
+      "pages": 1259
     },
     {
       "month": "Nov",
@@ -1439,15 +1499,15 @@
       "count": 16
     },
     {
-      "name": "Fiction",
-      "count": 7
+      "name": "Fantasy",
+      "count": 8
     },
     {
       "name": "Romantasy",
-      "count": 7
+      "count": 8
     },
     {
-      "name": "Fantasy",
+      "name": "Fiction",
       "count": 7
     },
     {
@@ -1487,25 +1547,30 @@
   ],
   "longestBooksByGenre": [
     {
-      "genre": "Fiction",
-      "title": "One Dark Window",
-      "author": "Rachel Gillig",
-      "pages": 432
-    },
-    {
-      "genre": "Young Adult Fiction",
-      "title": "Unravel Me",
-      "author": "Tahereh Mafi",
-      "pages": 461
+      "genre": "Fantasy",
+      "title": "The Fallen and the Kiss of Dusk",
+      "author": "Carissa Broadbent",
+      "pages": 638
     },
     {
       "genre": "Romantasy",
       "title": "Iron Flame",
       "author": "Rebecca Yarros",
       "pages": 623
+    },
+    {
+      "genre": "Fiction",
+      "title": "One Dark Window",
+      "author": "Rachel Gillig",
+      "pages": 432
     }
   ],
   "longestBooksByAuthor": [
+    {
+      "author": "Jennifer L. Armentrout",
+      "title": "A Kingdom of Flesh and Fire",
+      "pages": 637
+    },
     {
       "author": "Michael S.A. Graziano",
       "title": "The Divine Farce",
@@ -1515,11 +1580,6 @@
       "author": "Tahereh Mafi",
       "title": "Unravel Me",
       "pages": 461
-    },
-    {
-      "author": "Rebecca Yarros",
-      "title": "Iron Flame",
-      "pages": 623
     }
   ],
   "consistentGenres": [
@@ -1531,14 +1591,14 @@
     },
     {
       "name": "Fantasy",
-      "currentYear": 7,
+      "currentYear": 8,
       "pastYears": 8,
-      "totalBooks": 15
+      "totalBooks": 16
     },
     {
-      "name": "Fiction",
-      "currentYear": 7,
-      "pastYears": 4,
+      "name": "Romantasy",
+      "currentYear": 8,
+      "pastYears": 3,
       "totalBooks": 11
     }
   ],
@@ -1563,10 +1623,10 @@
     }
   ],
   "readingStats": {
-    "pagesPerDay": 73,
-    "pagesPerWeek": 511,
-    "pagesPerMonth": 2190,
-    "averageBookLength": 418,
+    "pagesPerDay": 75,
+    "pagesPerWeek": 525,
+    "pagesPerMonth": 2250,
+    "averageBookLength": 427,
     "fastestRead": {
       "pages": 69,
       "days": 1,
@@ -1582,28 +1642,28 @@
   "goals": {
     "books": {
       "annual": {
-        "current": 48,
+        "current": 50,
         "target": 50
       },
       "monthly": {
-        "current": 0,
+        "current": 2,
         "target": 4
       }
     },
     "pages": {
       "annual": {
-        "current": 20110,
+        "current": 21369,
         "target": 20000
       },
       "monthly": {
-        "current": 0,
+        "current": 1259,
         "target": 1666
       }
     }
   },
   "totals": {
-    "books": 48,
-    "pages": 20110
+    "books": 50,
+    "pages": 21369
   },
   "lastYearTotals": {
     "books": 21,
