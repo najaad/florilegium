@@ -1,0 +1,133 @@
+COMPREHENSIVE PROJECT CONTEXT & RULES FOR FLORILEGIUM-DEV
+
+Hey! I'm working on a reading dashboard called "Florilegium" and need help setting up a new development environment and implementing an A-Z reading challenge feature. Here's everything you need to know:
+
+## PROJECT OVERVIEW
+This is a Next.js reading dashboard that processes Goodreads library exports and displays reading statistics, TBR randomizer, pacing calculator, etc. The main project is in `/Users/najaaddayib/florilegium` and I need to copy everything to `/Users/najaaddayib/florilegium-dev` for development.
+
+## CRITICAL RULES - READ THESE FIRST
+1. **NEVER suggest starting fresh or reinitializing Git** - I want to preserve my existing Git history
+2. **NEVER suggest creating new Vercel projects** - I'll handle deployment myself
+3. **ALWAYS ask before making major structural changes** - I have a complex data processing pipeline
+4. **DON'T assume you know the "best" way** - ask me what I want to achieve first
+5. **If you're confused about something, ASK instead of guessing**
+6. **DON'T blindly copy .git files** - they mess up Git history and cause conflicts
+
+## CURRENT PROJECT STRUCTURE
+```
+florilegium/
+├── src/                    # Next.js frontend
+│   ├── app/               # Next.js app router
+│   │   ├── page.tsx       # Main dashboard
+│   │   └── layout.tsx     # App layout
+│   └── components/        # React components
+├── scripts/               # Python data processing pipeline
+│   ├── main.py           # Orchestrates entire workflow
+│   ├── clean_data.py     # Cleans Goodreads CSV
+│   ├── manual_genres.py  # Applies manual genre assignments
+│   ├── google_api_enrich.py # Enriches with Google Books API
+│   ├── apply_overrides.py # Applies book overrides
+│   ├── apply_book_genre_overrides.py # Book-specific genre overrides
+│   └── data_prep.py      # Final JSON generation
+├── data/                  # CSV files and processed data
+│   ├── goodreads_library_export.csv # Raw Goodreads data
+│   ├── goodreads_enriched.csv # Processed data
+│   └── structured_reading_data.json # Frontend data
+└── public/               # Static assets
+```
+
+## DATA PROCESSING PIPELINE (CRITICAL)
+The system processes Goodreads exports through multiple stages:
+1. `clean_data.py` - Basic CSV cleaning
+2. `manual_genres.py` - Applies manual genre assignments
+3. `google_api_enrich.py` - Adds genres via Google Books API
+4. `apply_overrides.py` - Applies book-specific overrides (dates, read counts)
+5. `apply_book_genre_overrides.py` - Applies book-specific genre overrides
+6. `data_prep.py` - Generates final JSON for frontend
+
+**IMPORTANT**: This pipeline has verification checkpoints to prevent data loss. Don't modify the core logic without understanding the flow.
+
+## CURRENT FEATURES
+- Reading statistics dashboard
+- TBR (To Be Read) randomizer with genre filtering
+- Pacing calculator with dynamic goal setting
+- Genre-based book organization
+- A-Z book browsing
+- Progress tracking
+
+## WHAT I NEED HELP WITH
+
+### 1. COPY PROJECT TO DEV FOLDER
+I need to copy the entire project to florilegium-dev but:
+- EXCLUDE .git directory (don't want Git conflicts)
+- EXCLUDE node_modules (will reinstall)
+- Preserve all other files and structure
+- Set up new Git repo in dev folder
+
+### 2. A-Z READING CHALLENGE FEATURE
+I want to add a new feature where users can:
+- Select one book for each letter of the alphabet (A-Z)
+- Have a password-protected page for editing selections
+- Store the selections persistently
+- Display the A-Z challenge progress
+
+**Requirements:**
+- Password protection (simple environment variable)
+- Only one user (Shannon) can edit
+- Persistent storage of A-Z selections
+- Integration with existing book data
+
+**Authentication Options I'm Considering:**
+- Environment variable password (simple)
+- Basic auth middleware
+- Session-based auth
+
+**State Management Options:**
+- Supabase (preferred - I already have account)
+- Vercel KV
+- Airtable
+- Local JSON file (fallback)
+
+## TECHNICAL DETAILS
+
+### Frontend Stack
+- Next.js 14+ with App Router
+- React components
+- Tailwind CSS
+- TypeScript
+
+### Backend/Data Processing
+- Python scripts for data processing
+- CSV manipulation with pandas
+- Google Books API integration
+- JSON output for frontend
+
+### Key Files to Understand
+- `src/app/page.tsx` - Main dashboard component
+- `src/app/layout.tsx` - App layout
+- `scripts/main.py` - Data processing orchestration
+- `scripts/data_prep.py` - Core data transformation logic
+
+## WHAT I WANT TO ACHIEVE
+1. **Copy project to dev folder** - Safely copy without Git conflicts
+2. **Set up the A-Z challenge page** - New route and component
+3. **Implement authentication** - Password protection for editing
+4. **Set up data storage** - Persistent A-Z selections
+5. **Integrate with existing data** - Use current book database
+6. **Create editing interface** - For Shannon to manage A-Z selections
+
+## QUESTIONS FOR YOU
+1. What's the best way to copy the project excluding .git and node_modules?
+2. What's the best approach for simple password authentication in Next.js?
+3. Should I use Supabase for storing A-Z selections, or is there a simpler option?
+4. How should I structure the A-Z challenge data (JSON schema)?
+5. What's the cleanest way to integrate this with the existing codebase?
+
+## IMPORTANT NOTES
+- I have a working production version, so don't break anything
+- The data processing pipeline is complex and fragile - be careful
+- I prefer simple, maintainable solutions over complex ones
+- Ask questions if you're unsure about anything
+- DON'T blindly copy .git files - they cause conflicts
+
+Please help me figure out the best approach for copying the project and implementing the A-Z challenge feature while being careful not to break the existing functionality!

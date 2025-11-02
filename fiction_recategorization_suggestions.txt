@@ -1,0 +1,93 @@
+Fiction Books - Recategorization Suggestions
+==================================================
+
+Total Fiction books: 109
+Books with potential recategorizations: 27
+
+Most promising recategorizations:
+----------------------------------------
+
+1. You Like It Darker by Stephen        King
+   -> Horror (keywords: ['dark'])
+
+2. Between Life and Death by Jaclyn Kot
+   -> Horror (keywords: ['death'])
+
+3. Spellcaster by Jaymin Eve
+   -> Fantasy (keywords: ['spell'])
+
+4. Lord of the Flies by William Golding
+   -> Mystery (keywords: ['lie'])
+
+5. Bull Moon Rising by Ruby Dixon
+   -> Fantasy (keywords: ['moon'])
+
+6. The Stars Are Dying by C.C. Peñaranda
+   -> Fantasy (keywords: ['star'])
+
+7. A Game of Love and Betrayal by Elayna R. Gallea
+   -> Romance (keywords: ['love'])
+
+8. Break The Bodies, Haunt The Bones by Micah Dean Hicks
+   -> Fantasy (keywords: ['bone'])
+
+9. The Knight and the Moth by Rachel Gillig
+   -> Fantasy (keywords: ['night'])
+
+10. One Dark Window by Rachel Gillig
+   -> Horror (keywords: ['dark'])
+
+11. The Jasmine Throne by Tasha Suri
+   -> Fantasy (keywords: ['throne'])
+
+12. Mistborn: The Final Empire by Brandon Sanderson
+   -> Fantasy (keywords: ['empire'])
+
+13. The Devil All the Time by Donald Ray Pollock
+   -> Horror (keywords: ['devil', 'evil'])
+
+14. Starling House by Alix E. Harrow
+   -> Fantasy (keywords: ['star'])
+
+15. What We Talk About When We Talk About Love by Raymond Carver
+   -> Romance (keywords: ['love'])
+
+16. Dark Places by Gillian Flynn
+   -> Horror (keywords: ['dark'])
+
+17. City of Gods and Monsters by Kayla   Edwards
+   -> Horror (keywords: ['monster'])
+
+18. My Dark Vanessa by Kate Elizabeth Russell
+   -> Horror (keywords: ['dark'])
+
+19. The Secret History by Donna Tartt
+   -> Mystery (keywords: ['secret'])
+
+20. The Starless Sea by Erin Morgenstern
+   -> Fantasy (keywords: ['star'])
+
+21. A River Enchanted by Rebecca   Ross
+   -> Fantasy (keywords: ['enchanted'])
+
+22. Daughter of the Blood by Anne Bishop
+   -> Fantasy (keywords: ['blood'])
+   -> Horror (keywords: ['blood'])
+
+23. The Midnight Library by Matt Haig
+   -> Fantasy (keywords: ['night'])
+
+24. House of Flame and Shadow by Sarah J. Maas
+   -> Fantasy (keywords: ['shadow', 'flame'])
+
+25. New Moon by Stephenie Meyer
+   -> Fantasy (keywords: ['moon'])
+
+26. A ​Court of Silver Flames by Sarah J. Maas
+   -> Fantasy (keywords: ['court', 'flame'])
+
+27. Daisy Darker by Alice Feeney
+   -> Horror (keywords: ['dark'])
+
+
+Total potential recategorizations: 27

@@ -2,10 +2,10 @@
   "currentYear": 2025,
   "currentlyReading": [
     {
-      "title": "The ​Crown of Gilded Bones",
+      "title": "A Shadow in the Ember",
       "author": "Jennifer L. Armentrout",
-      "totalPages": 645,
-      "genre": "Romantasy"
+      "totalPages": 647,
+      "genre": "Fantasy"
     },
     {
       "title": "Flowers for Algernon",
@@ -33,6 +33,71 @@
     }
   ],
   "tbrList": [
+    {
+      "title": "Hidden Pictures",
+      "author": "Jason Rekulak",
+      "genre": "Horror"
+    },
+    {
+      "title": "The Ordeals",
+      "author": "Rachel Greenlaw",
+      "genre": "Romantasy"
+    },
+    {
+      "title": "The Games Gods Play",
+      "author": "Abigail Owen",
+      "genre": "Romantasy"
+    },
+    {
+      "title": "Ella Minnow Pea: A Novel in Letters",
+      "author": "Mark Dunn",
+      "genre": "Fiction"
+    },
+    {
+      "title": "Empire of Flame and Thorns",
+      "author": "Marion Blackwood",
+      "genre": "Romantasy"
+    },
+    {
+      "title": "Come Closer",
+      "author": "Sara Gran",
+      "genre": "Demoniac possession"
+    },
+    {
+      "title": "A Tongue so Sweet and Deadly",
+      "author": "Sophia St. Germain",
+      "genre": "Dark Romance"
+    },
+    {
+      "title": "Alphabet of Thorn",
+      "author": "Patricia A. McKillip",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "The Ascended",
+      "author": "Bree Grenwich",
+      "genre": "Romantasy"
+    },
+    {
+      "title": "Bride",
+      "author": "Ali Hazelwood",
+      "genre": "Romantasy"
+    },
+    {
+      "title": "The Bell at Sealey Head",
+      "author": "Patricia A. McKillip",
+      "genre": "Fantasy"
+    },
+    {
+      "title": "A Fate Inked in Blood",
+      "author": "Danielle L. Jensen",
+      "genre": "Romantasy"
+    },
+    {
+      "title": "FantasticLand",
+      "author": "Mike Bockoven",
+      "genre": "Horror"
+    },
     {
       "title": "I'll Give You the Sun",
       "author": "Jandy Nelson",
@@ -412,11 +477,6 @@
       "title": "Our Infinite Fates",
       "author": "Laura Steven",
       "genre": "Young Adult Fiction"
-    },
-    {
-      "title": "Normal People",
-      "author": "Sally Rooney",
-      "genre": "Fiction"
     },
     {
       "title": "The Hike",
@@ -1184,11 +1244,6 @@
       "genre": "Horror"
     },
     {
-      "title": "A Shadow in the Ember",
-      "author": "Jennifer L. Armentrout",
-      "genre": "Fantasy"
-    },
-    {
       "title": "1984",
       "author": "George Orwell",
       "genre": "Science Fiction"
@@ -1429,13 +1484,13 @@
       "genre": "Horror"
     }
   ],
-  "completedBooks": 50,
-  "completedPages": 21369,
+  "completedBooks": 53,
+  "completedPages": 23072,
   "byMonth": [
     {
       "month": "Jan",
       "count": 4,
-      "pages": 3208
+      "pages": 3242
     },
     {
       "month": "Feb",
@@ -1450,7 +1505,7 @@
     {
       "month": "Apr",
       "count": 3,
-      "pages": 827
+      "pages": 766
     },
     {
       "month": "May",
@@ -1475,12 +1530,12 @@
     {
       "month": "Sep",
       "count": 14,
-      "pages": 3819
+      "pages": 3900
     },
     {
       "month": "Oct",
-      "count": 2,
-      "pages": 1259
+      "count": 5,
+      "pages": 2908
     },
     {
       "month": "Nov",
@@ -1496,14 +1551,14 @@
   "topGenres": [
     {
       "name": "Young Adult Fiction",
-      "count": 16
-    },
-    {
-      "name": "Fantasy",
-      "count": 8
+      "count": 15
     },
     {
       "name": "Romantasy",
+      "count": 10
+    },
+    {
+      "name": "Fantasy",
       "count": 8
     },
     {
@@ -1529,6 +1584,10 @@
       "count": 6
     },
     {
+      "name": "Jennifer L. Armentrout",
+      "count": 4
+    },
+    {
       "name": "Rebecca Yarros",
       "count": 4
     },
@@ -1539,67 +1598,63 @@
     {
       "name": "Lauren Roberts",
       "count": 4
-    },
-    {
-      "name": "Hugh Howey",
-      "count": 3
     }
   ],
   "longestBooksByGenre": [
+    {
+      "genre": "Thriller",
+      "title": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "pages": 362
+    },
+    {
+      "genre": "Romantasy",
+      "title": "The ​Crown of Gilded Bones",
+      "author": "Jennifer L. Armentrout",
+      "pages": 659
+    },
     {
       "genre": "Fantasy",
       "title": "The Fallen and the Kiss of Dusk",
       "author": "Carissa Broadbent",
       "pages": 638
-    },
-    {
-      "genre": "Romantasy",
-      "title": "Iron Flame",
-      "author": "Rebecca Yarros",
-      "pages": 623
-    },
-    {
-      "genre": "Fiction",
-      "title": "One Dark Window",
-      "author": "Rachel Gillig",
-      "pages": 432
     }
   ],
   "longestBooksByAuthor": [
     {
+      "author": "Alex Michaelides",
+      "title": "The Silent Patient",
+      "pages": 362
+    },
+    {
       "author": "Jennifer L. Armentrout",
-      "title": "A Kingdom of Flesh and Fire",
-      "pages": 637
+      "title": "The ​Crown of Gilded Bones",
+      "pages": 659
     },
     {
       "author": "Michael S.A. Graziano",
       "title": "The Divine Farce",
       "pages": 128
-    },
-    {
-      "author": "Tahereh Mafi",
-      "title": "Unravel Me",
-      "pages": 461
     }
   ],
   "consistentGenres": [
     {
       "name": "Young Adult Fiction",
-      "currentYear": 16,
+      "currentYear": 15,
       "pastYears": 5,
-      "totalBooks": 21
+      "totalBooks": 20
+    },
+    {
+      "name": "Romantasy",
+      "currentYear": 10,
+      "pastYears": 3,
+      "totalBooks": 13
     },
     {
       "name": "Fantasy",
       "currentYear": 8,
       "pastYears": 8,
       "totalBooks": 16
-    },
-    {
-      "name": "Romantasy",
-      "currentYear": 8,
-      "pastYears": 3,
-      "totalBooks": 11
     }
   ],
   "consistentAuthors": [
@@ -1616,7 +1671,7 @@
       "totalBooks": 6
     },
     {
-      "name": "Rebecca Yarros",
+      "name": "Jennifer L. Armentrout",
       "currentYear": 4,
       "pastYears": 0,
       "totalBooks": 4
@@ -1626,7 +1681,7 @@
     "pagesPerDay": 75,
     "pagesPerWeek": 525,
     "pagesPerMonth": 2250,
-    "averageBookLength": 427,
+    "averageBookLength": 435,
     "fastestRead": {
       "pages": 69,
       "days": 1,
@@ -1634,36 +1689,36 @@
       "author": "Tahereh Mafi"
     },
     "longestBook": {
-      "pages": 638,
-      "title": "The Fallen and the Kiss of Dusk",
-      "author": "Carissa Broadbent"
+      "pages": 659,
+      "title": "The ​Crown of Gilded Bones",
+      "author": "Jennifer L. Armentrout"
     }
   },
   "goals": {
     "books": {
       "annual": {
-        "current": 50,
+        "current": 53,
         "target": 50
       },
       "monthly": {
-        "current": 2,
+        "current": 0,
         "target": 4
       }
     },
     "pages": {
       "annual": {
-        "current": 21369,
+        "current": 23072,
         "target": 20000
       },
       "monthly": {
-        "current": 1259,
+        "current": 0,
         "target": 1666
       }
     }
   },
   "totals": {
-    "books": 50,
-    "pages": 21369
+    "books": 53,
+    "pages": 23072
   },
   "lastYearTotals": {
     "books": 21,
